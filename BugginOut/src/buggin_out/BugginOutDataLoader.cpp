@@ -71,6 +71,7 @@ namespace cse380 {
     using namespace sssf::gsm::state;
     using namespace sssf::gui;
     using sssf::game::Game;
+	using std::stof;
 
     void BugginOutDataLoader::loadGame(Game* game, const wstring& path) {
 
@@ -88,7 +89,35 @@ namespace cse380 {
       wstring& screenWidthProp = properties[W_SCREEN_WIDTH];
       wstring& screenHeightProp = properties[W_SCREEN_HEIGHT];
       int screenWidth = stoi(screenWidthProp), screenHeight = stoi(screenHeightProp);
-
+	  W_GREEN_CURSOR_PATH = properties[W_GREEN_CURSOR_PATH];
+	  W_RED_CURSOR_PATH = properties[W_RED_CURSOR_PATH];
+	  W_SPLASH_SCREEN_PATH = properties[W_SPLASH_SCREEN_PATH];
+	  W_START_IMAGE_PATH = properties[W_START_IMAGE_PATH];
+	  W_START_IMAGE_MO_PATH = properties[W_START_IMAGE_MO_PATH];
+	  W_MAIN_MENU_PATH = properties[W_MAIN_MENU_PATH];
+	  W_QUIT_IMAGE_PATH = properties[W_QUIT_IMAGE_PATH];
+	  W_QUIT_IMAGE_MO_PATH = properties[W_QUIT_IMAGE_MO_PATH];
+	  W_EXIT_IMAGE_PATH = properties[W_EXIT_IMAGE_PATH];
+	  W_EXIT_IMAGE_MO_PATH = properties[W_EXIT_IMAGE_MO_PATH];
+	  W_ABOUT_IMAGE_PATH = properties[W_ABOUT_IMAGE_PATH];
+	  W_ABOUT_IMAGE_H_PATH = properties[W_ABOUT_IMAGE_H_PATH];
+	  W_HELP_IMAGE_PATH = properties[W_HELP_IMAGE_PATH];
+	  W_HELP_IMAGE_H_PATH = properties[W_HELP_IMAGE_H_PATH];
+	  SPRITE_TYPES_DIR = properties[SPRITE_TYPES_DIR];
+	  SPRITE_TYPES_LIST = SPRITE_TYPES_DIR + properties[SPRITE_TYPES_LIST];
+	  wstring& viewPortAxisProp = properties[L"MAX_VIEWPORT_AXIS_VELOCITY"];
+	  MAX_VIEWPORT_AXIS_VELOCITY = stof(viewPortAxisProp);
+	  W_GRAVITY = stof(properties[L"W_GRAVITY"]);
+	  JUMPING_BOT_MIN_CYCLES = stoi(properties[L"JUMPING_BOT_MIN_CYCLES"]);
+	  JUMPING_BOT_MAX_CYCLES = stoi(properties[L"JUMPING_BOT_MAX_CYCLES"]);
+	  JUMPING_BOT_MAX_VELOCITY = stoi(properties[L"JUMPING_BOT_MAX_VELOCITY"]);
+	  PLAYER_INIT_X = stof(properties[L"PLAYER_INIT_X"]);
+	  PLAYER_INIT_Y = stof(properties[L"PLAYER_INIT_Y"]);
+	  JUMP_SPEED = stof(properties[L"JUMP_SPEED"]);
+	  PLAYER_SPEED = stof(properties[L"PLAYER_SPEED"]);
+	  MIN_FPS = stoi(properties[L"MIN_FPS"]);
+	  MAX_FPS = stoi(properties[L"MAX_FPS"]);
+	  FPS_INC = stoi(properties[L"FPS_INC"]);
 
 #ifdef CROSS
       sf::VideoMode mode(screenWidth, screenHeight);

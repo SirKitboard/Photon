@@ -38,6 +38,7 @@ namespace cse380 {
         using std::round;
         using std::string;
         using std::stoi;
+		using std::stof;
         using std::stol;
         using std::stoll;
         using std::stoul;
