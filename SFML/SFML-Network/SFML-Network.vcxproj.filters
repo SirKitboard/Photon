@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Network">
+      <UniqueIdentifier>{b5e38803-2e07-48aa-bdaf-e1033812bc6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\Win32">
+      <UniqueIdentifier>{9a259060-680a-4720-a756-f6f35ac4f2d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\include\SFML\Network\Export.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\Ftp.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\Http.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\IpAddress.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\Packet.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\Socket.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\SocketHandle.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\SocketSelector.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\TcpListener.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\TcpSocket.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\SFML\Network\UdpSocket.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\src\SFML\Network\SocketImpl.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\src\SFML\Network\Win32\SocketImpl.hpp">
+      <Filter>Network\Win32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\src\SFML\Network\Ftp.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\Http.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\IpAddress.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\Packet.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\Socket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\SocketSelector.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\TcpListener.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\TcpSocket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\UdpSocket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\src\SFML\Network\Win32\SocketImpl.cpp">
+      <Filter>Network\Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug (SFML)|Win32">
+      <Configuration>Debug (SFML)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release (SFML)|Win32">
+      <Configuration>Release (SFML)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DD7A1E2A-3D7F-4512-950F-F3ED12955B64}</ProjectGuid>
+    <RootNamespace>SFMLGraphics</RootNamespace>
+    <ProjectName>sfml-graphics</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)/SFML/src/include;$(SolutionDir)/SFML/src/src;$(SolutionDir)/SFML/Dependencies/headers;$(SolutionDir)/SFML/Dependencies/headers/libfreetype;$(SolutionDir)/SFML/Dependencies/headers/jpeg;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
+    <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
+    <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
+    <LibraryPath>$(DXSDK_DIR)/Lib/$(PlatformTarget)/;$(SolutionDir)/SFML/Dependencies/libs-msvc/$(PlatformTarget);%(AdditionalLibraryDirectories);$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">
+    <IncludePath>$(SolutionDir)/SFML/src/include;$(SolutionDir)/SFML/src/src;$(SolutionDir)/SFML/Dependencies/headers;$(SolutionDir)/SFML/Dependencies/headers/libfreetype;$(SolutionDir)/SFML/Dependencies/headers/jpeg;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
+    <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
+    <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
+    <LibraryPath>$(DXSDK_DIR)/Lib/$(PlatformTarget)/;$(SolutionDir)/SFML/Dependencies/libs-msvc/$(PlatformTarget);%(AdditionalLibraryDirectories);$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)/SFML/src/include;$(SolutionDir)/SFML/src/src;$(SolutionDir)/SFML/Dependencies/headers;$(SolutionDir)/SFML/Dependencies/headers/libfreetype;$(SolutionDir)/SFML/Dependencies/headers/jpeg;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
+    <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
+    <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
+    <LibraryPath>$(DXSDK_DIR)/Lib/$(PlatformTarget)/;$(SolutionDir)/SFML/Dependencies/libs-msvc/$(PlatformTarget);%(AdditionalLibraryDirectories);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">
+    <IncludePath>$(SolutionDir)/SFML/src/include;$(SolutionDir)/SFML/src/src;$(SolutionDir)/SFML/Dependencies/headers;$(SolutionDir)/SFML/Dependencies/headers/libfreetype;$(SolutionDir)/SFML/Dependencies/headers/jpeg;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
+    <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
+    <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
+    <LibraryPath>$(DXSDK_DIR)/Lib/$(PlatformTarget)/;$(SolutionDir)/SFML/Dependencies/libs-msvc/$(PlatformTarget);%(AdditionalLibraryDirectories);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;GLEW_STATIC;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <OpenMPSupport>false</OpenMPSupport>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <StringPooling>true</StringPooling>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)/$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>$(IntDir)/vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <FloatingPointModel>Strict</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <BuildLog>
+      <Path>$(IntDir)/$(TargetName).log</Path>
+    </BuildLog>
+    <Lib>
+      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;GLEW_STATIC;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <OpenMPSupport>false</OpenMPSupport>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <StringPooling>true</StringPooling>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)/$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>$(IntDir)/vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <FloatingPointModel>Strict</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <BuildLog>
+      <Path>$(IntDir)/$(TargetName).log</Path>
+    </BuildLog>
+    <Lib>
+      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;GLEW_STATIC;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <OpenMPSupport>false</OpenMPSupport>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)/$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>$(IntDir)/vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <BuildLog>
+      <Path>$(IntDir)/$(TargetName).log</Path>
+    </BuildLog>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;GLEW_STATIC;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <OpenMPSupport>false</OpenMPSupport>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)/$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>$(IntDir)/vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <BuildLog>
+      <Path>$(IntDir)/$(TargetName).log</Path>
+    </BuildLog>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\include\SFML\Graphics\BlendMode.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\CircleShape.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Color.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\ConvexShape.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Drawable.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Export.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Font.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Glyph.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Image.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\PrimitiveType.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Rect.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\RectangleShape.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\RenderStates.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\RenderTarget.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\RenderTexture.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\RenderWindow.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Shader.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Shape.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Sprite.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Text.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Texture.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Transform.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Transformable.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\Vertex.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\VertexArray.hpp" />
+    <ClInclude Include="..\src\include\SFML\Graphics\View.hpp" />
+    <ClInclude Include="..\src\src\SFML\Graphics\GLCheck.hpp" />
+    <ClInclude Include="..\src\src\SFML\Graphics\GLExtensions.hpp" />
+    <ClInclude Include="..\src\src\SFML\Graphics\ImageLoader.hpp" />
+    <ClInclude Include="..\src\src\SFML\Graphics\RenderTextureImpl.hpp" />
+    <ClInclude Include="..\src\src\SFML\Graphics\RenderTextureImplDefault.hpp" />
+    <ClInclude Include="..\src\src\SFML\Graphics\RenderTextureImplFBO.hpp" />
+    <ClInclude Include="..\src\src\SFML\Graphics\stb_image\stb_image.h" />
+    <ClInclude Include="..\src\src\SFML\Graphics\stb_image\stb_image_write.h" />
+    <ClInclude Include="..\src\src\SFML\Graphics\TextureSaver.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\include\SFML\Graphics\Rect.inl">
+      <FileType>Document</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\src\SFML\Graphics\BlendMode.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\CircleShape.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Color.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\ConvexShape.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Font.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\GLCheck.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\GLExtensions.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Image.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\ImageLoader.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\RectangleShape.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\RenderStates.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\RenderTarget.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\RenderTexture.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\RenderTextureImpl.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\RenderTextureImplDefault.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\RenderTextureImplFBO.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\RenderWindow.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Shader.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Shape.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Sprite.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Text.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Texture.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\TextureSaver.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Transform.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Transformable.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\Vertex.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\VertexArray.cpp" />
+    <ClCompile Include="..\src\src\SFML\Graphics\View.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

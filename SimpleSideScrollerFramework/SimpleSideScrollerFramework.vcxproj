@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug (SFML)|Win32">
+      <Configuration>Debug (SFML)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release (SFML)|Win32">
+      <Configuration>Release (SFML)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src/sssf/data_loader/GameDataLoader.cpp" />
+    <ClCompile Include="src/sssf/game/Game.cpp" />
+    <ClCompile Include="src/sssf/game/WStringTable.cpp" />
+    <ClCompile Include="src/sssf/graphics/GameGraphics.cpp" />
+    <ClCompile Include="src/sssf/graphics/RenderList.cpp" />
+    <ClCompile Include="src/sssf/gsm/ai/BotRecycler.cpp" />
+    <ClCompile Include="src/sssf/gsm/ai/bots/RandomFloatingBot.cpp" />
+    <ClCompile Include="src/sssf/gsm/ai/bots/RandomJumpingBot.cpp" />
+    <ClCompile Include="src/sssf/gsm/physics/AABB.cpp" />
+    <ClCompile Include="src/sssf/gsm/physics/CollidableObject.cpp" />
+    <ClCompile Include="src/sssf/gsm/physics/Physics.cpp" />
+    <ClCompile Include="src/sssf/gsm/sprite/AnimatedSprite.cpp" />
+    <ClCompile Include="src/sssf/gsm/sprite/AnimatedSpriteType.cpp" />
+    <ClCompile Include="src/sssf/gsm/sprite/SpriteManager.cpp" />
+    <ClCompile Include="src/sssf/gsm/state/GameStateManager.cpp" />
+    <ClCompile Include="src/sssf/gsm/world/SparseLayer.cpp" />
+    <ClCompile Include="src/sssf/gsm/world/TiledLayer.cpp" />
+    <ClCompile Include="src/sssf/gsm/world/World.cpp" />
+    <ClCompile Include="src/sssf/gui/Button.cpp" />
+    <ClCompile Include="src/sssf/gui/Cursor.cpp" />
+    <ClCompile Include="src/sssf/gui/GameGUI.cpp" />
+    <ClCompile Include="src/sssf/gui/ScreenGUI.cpp" />
+    <ClCompile Include="src/sssf/gui/Viewport.cpp" />
+    <ClCompile Include="src/sssf/input/GameInput.cpp" />
+    <ClCompile Include="src/sssf/platforms/DirectX/DirectXGraphics.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src/sssf/platforms/DirectX/DirectXTextureManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src/sssf/platforms/Windows/WindowsInput.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src/sssf/platforms/Windows/WindowsOS.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src/sssf/platforms/Windows/WindowsTimer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src/sssf/text/BufferedTextFileReader.cpp" />
+    <ClCompile Include="src/sssf/text/GameText.cpp" />
+    <ClCompile Include="src/sssf/text/TextFileWriter.cpp" />
+    <ClCompile Include="src/sssf_VS/stdafx.cpp" />
+    <ClCompile Include="src\sssf\input\MultiKeyEventHandler.cpp" />
+    <ClCompile Include="src\sssf\platforms\Cross\SFMLGraphics.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\sssf\platforms\Cross\SFMLInput.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\sssf\platforms\Cross\SFMLOS.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\sssf\platforms\Cross\SFMLTextureManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\sssf\platforms\Cross\StandardTimer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\sssf\timer\GameTimer.cpp" />
+    <ClCompile Include="src\sssf\util\Util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src/sssf/data_loader/GameDataLoader.h" />
+    <ClInclude Include="src/sssf/game/Game.h" />
+    <ClInclude Include="src/sssf/game/IllegalArgumentException.h" />
+    <ClInclude Include="src/sssf/game/IllegalFileFormatException.h" />
+    <ClInclude Include="src/sssf/game/WStringTable.h" />
+    <ClInclude Include="src/sssf/graphics/GameGraphics.h" />
+    <ClInclude Include="src/sssf/graphics/RenderList.h" />
+    <ClInclude Include="src/sssf/graphics/TextureManager.h" />
+    <ClInclude Include="src/sssf/gsm/ai/Bot.h" />
+    <ClInclude Include="src/sssf/gsm/ai/BotRecycler.h" />
+    <ClInclude Include="src/sssf/gsm/ai/bots/RandomFloatingBot.h" />
+    <ClInclude Include="src/sssf/gsm/ai/bots/RandomJumpingBot.h" />
+    <ClInclude Include="src/sssf/gsm/physics/AABB.h" />
+    <ClInclude Include="src/sssf/gsm/physics/CollidableObject.h" />
+    <ClInclude Include="src/sssf/gsm/physics/Collision.h" />
+    <ClInclude Include="src/sssf/gsm/physics/CollisionListener.h" />
+    <ClInclude Include="src/sssf/gsm/physics/PhysicalProperties.h" />
+    <ClInclude Include="src/sssf/gsm/physics/Physics.h" />
+    <ClInclude Include="src/sssf/gsm/sprite/AnimatedSprite.h" />
+    <ClInclude Include="src/sssf/gsm/sprite/AnimatedSpriteType.h" />
+    <ClInclude Include="src/sssf/gsm/sprite/SpriteManager.h" />
+    <ClInclude Include="src/sssf/gsm/state/GameState.h" />
+    <ClInclude Include="src/sssf/gsm/state/GameStateManager.h" />
+    <ClInclude Include="src/sssf/gsm/world/SparseLayer.h" />
+    <ClInclude Include="src/sssf/gsm/world/Tile.h" />
+    <ClInclude Include="src/sssf/gsm/world/TiledLayer.h" />
+    <ClInclude Include="src/sssf/gsm/world/World.h" />
+    <ClInclude Include="src/sssf/gsm/world/WorldLayer.h" />
+    <ClInclude Include="src/sssf/gui/Button.h" />
+    <ClInclude Include="src/sssf/gui/Cursor.h" />
+    <ClInclude Include="src/sssf/gui/GameGUI.h" />
+    <ClInclude Include="src/sssf/gui/OverlayImage.h" />
+    <ClInclude Include="src/sssf/gui/ScreenGUI.h" />
+    <ClInclude Include="src/sssf/gui/Viewport.h" />
+    <ClInclude Include="src/sssf/input/ButtonEventHandler.h" />
+    <ClInclude Include="src/sssf/input/GameInput.h" />
+    <ClInclude Include="src/sssf/input/KeyEventHandler.h" />
+    <ClInclude Include="src/sssf/os/GameOS.h" />
+    <ClInclude Include="src/sssf/platforms/DirectX/DirectXGraphics.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src/sssf/platforms/DirectX/DirectXTextureManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src/sssf/platforms/Windows/WindowsInput.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src/sssf/platforms/Windows/WindowsOS.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src/sssf/platforms/Windows/WindowsTimer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src/sssf/text/BufferedTextFileReader.h" />
+    <ClInclude Include="src/sssf/text/GameText.h" />
+    <ClInclude Include="src/sssf/text/TextFileWriter.h" />
+    <ClInclude Include="src/sssf/text/TextGenerator.h" />
+    <ClInclude Include="src/sssf/timer/GameTimer.h" />
+    <ClInclude Include="src/sssf_VS/stdafx.h" />
+    <ClInclude Include="src/sssf_VS/targetver.h" />
+    <ClInclude Include="src\sssf\gsm\physics\Box2DWorld.h" />
+    <ClInclude Include="src\sssf\gsm\world\CollidableTile.h" />
+    <ClInclude Include="src\sssf\input\MultiKeyEventHandler.h" />
+    <ClInclude Include="src\sssf\platforms\Cross\SFMLGraphics.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\sssf\platforms\Cross\SFMLInput.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\sssf\platforms\Cross\SFMLOS.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\sssf\platforms\Cross\SFMLTextureManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\sssf\platforms\Cross\StandardTimer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\sssf\util\Util.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CDB6313F-0EFD-4C76-94EE-30084956B2F2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SimpleSideScrollerFramework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)/Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
+    <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
+    <IncludePath>$(SolutionDir)/SFML/src/include/;$(SolutionDir)/Box2D/;$(ProjectDir)/src/;$(DXSDK_DIR)/Include/;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
+    <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;*.vspx;*.psess;*.ipch;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\cse380.ruleset</CodeAnalysisRuleSet>
+    <ReferencePath>$(VC_ReferencesPath_x86);$(ProjectDir);$(VCInstallDir)lib;</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">
+    <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
+    <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
+    <IncludePath>E:\CSE 380\Photon\SimpleSideScrollerFramework\src\sssf\gsm\physics;$(SolutionDir)/Box2D/;$(SolutionDir)/SFML/src/include/;$(ProjectDir)/src/;$(DXSDK_DIR)/Include/;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
+    <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;*.vspx;*.psess;*.ipch;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\cse380.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
+    <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;*.vspx;*.psess;*.ipch;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
+    <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
+    <IncludePath>$(SolutionDir)/;$(SolutionDir)/SFML/src/include/;$(ProjectDir)/src/;$(DXSDK_DIR)/Include/;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">
+    <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
+    <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;*.vspx;*.psess;*.ipch;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
+    <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
+    <IncludePath>$(SolutionDir)/;$(SolutionDir)/SFML/src/include/;$(ProjectDir)/src/;$(DXSDK_DIR)/Include/;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;LIB;_LIB;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <SDLCheck>true</SDLCheck>
+      <StringPooling>true</StringPooling>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <PrecompiledHeaderOutputFile>$(IntDir)/$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>sssf_VS/stdafx.h</PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)/vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <FloatingPointModel>Strict</FloatingPointModel>
+      <EnablePREfast>true</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <BuildLog>
+      <Path>$(IntDir)/$(TargetName).log</Path>
+    </BuildLog>
+    <Lib>
+      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;LIB;_LIB;SFML_STATIC;_DEBUG;DEBUG;CROSS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <SDLCheck>true</SDLCheck>
+      <StringPooling>true</StringPooling>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <PrecompiledHeaderOutputFile>$(IntDir)/$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>sssf_VS/stdafx.h</PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)/vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <FloatingPointModel>Strict</FloatingPointModel>
+      <EnablePREfast>true</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <BuildLog>
+      <Path>$(IntDir)/$(TargetName).log</Path>
+    </BuildLog>
+    <Lib>
+      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/SFML/Dependencies/libs-msvc/$(PlatformTargetAsMSBuildArchitecture);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level2</WarningLevel>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;LIB;_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <SDLCheck>false</SDLCheck>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <PrecompiledHeaderOutputFile>$(IntDir)/$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>sssf_VS/stdafx.h</PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)/vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <BuildLog>
+      <Path>$(IntDir)/$(TargetName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release (SFML)|Win32'">
+    <ClCompile>
+      <WarningLevel>Level2</WarningLevel>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;LIB;_LIB;SFML_STATIC;NDEBUG;CROSS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <SDLCheck>false</SDLCheck>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <PrecompiledHeaderOutputFile>$(IntDir)/$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>sssf_VS/stdafx.h</PrecompiledHeaderFile>
+      <ProgramDataBaseFileName>$(IntDir)/vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <BuildLog>
+      <Path>$(IntDir)/$(TargetName).log</Path>
+    </BuildLog>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)/SFML/Dependencies/libs-msvc/$(PlatformTargetAsMSBuildArchitecture);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
