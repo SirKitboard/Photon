@@ -36,6 +36,9 @@
     <ClInclude Include="src/buggin_out/BugginOutTextGenerator.h" />
     <ClInclude Include="src/buggin_out_VS/stdafx.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="LuaTest.lua" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3E2D6D4A-BBFA-4423-AA70-CC0F35ECE4F8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -99,7 +102,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)/Apps/$(ProjectName)/</OutDir>
     <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
-    <IncludePath>$(SolutionDir)/Box2D/;$(ProjectDir)/src/;$(SolutionDir)/SimpleSideScrollerFramework/src/;$(SolutionDir)/PoseurSpriteTypesImporter/src/;$(SolutionDir)/tinyxml/src/;$(SolutionDir)/TMXMapImporter/src/;$(SolutionDir)/XMLFileImporter/src/;$(SolutionDir)/StandardWindowsLogger/src/;$(DXSDK_DIR)/Include;$(SolutionDir)/SFML/src/include/;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)/LuaPlusPlus/;$(SolutionDir)/Box2D/;$(ProjectDir)/src/;$(SolutionDir)/SimpleSideScrollerFramework/src/;$(SolutionDir)/PoseurSpriteTypesImporter/src/;$(SolutionDir)/tinyxml/src/;$(SolutionDir)/TMXMapImporter/src/;$(SolutionDir)/XMLFileImporter/src/;$(SolutionDir)/StandardWindowsLogger/src/;$(DXSDK_DIR)/Include;$(SolutionDir)/SFML/src/include/;$(SolutionDir)/;$(IncludePath)</IncludePath>
     <LibraryPath>$(DXSDK_DIR)/Lib/$(PlatformTarget)/;$(SolutionDir)/SFML/Dependencies/libs-msvc/$(PlatformTarget);E:\CSE 380\Photon\Box2D\Build\vs2012\bin\Debug;$(SolutionDir)/Common/$(Configuration)-$(Platform)/;%(AdditionalLibraryDirectories);$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
     <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;*.vspx;*.psess;*.ipch;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
@@ -190,7 +193,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew.lib;opengl32.lib;winmm.lib;jpeg.lib;freetype.lib;sfml-main-$(Configuration)-$(Platform).lib;sfml-graphics-$(Configuration)-$(Platform).lib;sfml-window-$(Configuration)-$(Platform).lib;sfml-system-$(Configuration)-$(Platform).lib;SimpleSideScrollerFramework-$(Configuration)-$(Platform).lib;tinyxml-$(Configuration)-$(Platform).lib;XMLFileImporter-$(Configuration)-$(Platform).lib;PoseurSpriteTypesImporter-$(Configuration)-$(Platform).lib;TMXMapImporter-$(Configuration)-$(Platform).lib;StandardWindowsLogger-$(Configuration)-$(Platform).lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew.lib;opengl32.lib;winmm.lib;jpeg.lib;freetype.lib;sfml-main-$(Configuration)-$(Platform).lib;sfml-graphics-$(Configuration)-$(Platform).lib;sfml-window-$(Configuration)-$(Platform).lib;sfml-system-$(Configuration)-$(Platform).lib;SimpleSideScrollerFramework-$(Configuration)-$(Platform).lib;tinyxml-$(Configuration)-$(Platform).lib;XMLFileImporter-$(Configuration)-$(Platform).lib;PoseurSpriteTypesImporter-$(Configuration)-$(Platform).lib;TMXMapImporter-$(Configuration)-$(Platform).lib;StandardWindowsLogger-$(Configuration)-$(Platform).lib;Box2D.lib;LuaPlusFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkStatus>false</LinkStatus>
       <GenerateMapFile>true</GenerateMapFile>
       <AssemblyDebug>true</AssemblyDebug>

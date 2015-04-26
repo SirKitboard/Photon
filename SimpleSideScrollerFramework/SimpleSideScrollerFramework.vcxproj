@@ -244,7 +244,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">
     <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
     <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
-    <IncludePath>E:\CSE 380\Photon\SimpleSideScrollerFramework\src\sssf\gsm\physics;$(SolutionDir)/Box2D/;$(SolutionDir)/SFML/src/include/;$(ProjectDir)/src/;$(DXSDK_DIR)/Include/;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)/LuaPlusPlus/;$(SolutionDir)/Box2D/;$(SolutionDir)/SFML/src/include/;$(ProjectDir)/src/;$(DXSDK_DIR)/Include/;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
     <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;*.vspx;*.psess;*.ipch;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>

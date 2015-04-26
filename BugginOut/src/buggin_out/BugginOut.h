@@ -87,6 +87,7 @@ namespace cse380 {
     static  wstring    ATTACKING_LEFT = L"ATTACKING_LEFT";
     static  wstring    IDLE = L"IDLE";
 
+
     // USED FOR MOVEMENT
 #ifdef CROSS
     const unsigned int W_KEY = sf::Keyboard::W;

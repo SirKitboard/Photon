@@ -86,7 +86,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (SFML)|Win32'">
     <OutDir>$(SolutionDir)/Common/$(Configuration)-$(Platform)/</OutDir>
     <IntDir>$(SolutionDir)/Temp/$(Configuration)-$(Platform)/$(ProjectName)/</IntDir>
-    <IncludePath>$(SolutionDir)/Box2D/;$(ProjectDir)/src/;$(SolutionDir)/tinyxml/src/;$(SolutionDir)/SimpleSideScrollerFramework/src/;$(SolutionDir)/XMLFileImporter/src/;$(DXSDK_DIR)/Include/;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)/LuaPlusPlus/;$(SolutionDir)/Box2D/;$(ProjectDir)/src/;$(SolutionDir)/tinyxml/src/;$(SolutionDir)/SimpleSideScrollerFramework/src/;$(SolutionDir)/XMLFileImporter/src/;$(DXSDK_DIR)/Include/;$(IncludePath)</IncludePath>
     <LibraryPath>C:/Program Files %28x86%29/Microsoft DirectX SDK %28June 2010%29/Lib/x86;$(SolutionDir)Common/;$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)-$(Configuration)-$(Platform)</TargetName>
     <ExtensionsToDeleteOnClean>*.o;*.a;*.log;*.out;*.vspx;*.psess;*.ipch;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>

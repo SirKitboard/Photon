@@ -119,6 +119,12 @@ namespace cse380 {
           /// Calls the update method for each sprite. Should be called once
           /// per frame.
           /// </summary>
+		  void incr(int incr) {
+			  int x = player.getPhysicalProperties().getX();
+			  int y = player.getPhysicalProperties().getY();
+			  player.getPhysicalProperties().setPosition(x + incr, y);
+		  }
+
           void update(game::Game* game);
 
         private:

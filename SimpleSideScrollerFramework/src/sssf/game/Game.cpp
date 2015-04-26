@@ -33,6 +33,8 @@ namespace cse380 {
         // AND THEN FED TO THIS Game USING THE init METHOD
 		  b2Vec2 gravity(0.0f, 0.0f);
 		  gameWorld = new b2World(gravity);
+		  luaState = LuaPlus::LuaState::Create();
+		  int result = luaState->DoFile("LuaTest.lua");
       }
 
       Game::~Game() {
@@ -79,7 +81,7 @@ namespace cse380 {
           if (gsm.isAppActive()) {
             // USE THE INPUT TO UPDATE THE GAME
             processGameData();
-
+			
             // AND RENDER THE GAME
             graphics->renderGame(this);
           }
@@ -89,6 +91,9 @@ namespace cse380 {
       void Game::processGameData() {
         // WE ONLY PERFORM GAME LOGIC IF THE GAME IS IN PROGRESS
         if (gsm.isGameInProgress()) {
+			LuaPlus::LuaObject inrement_object = luaState->GetGlobal("increment");
+			int incre = inrement_object.GetInteger();
+			this->getGSM().getSpriteManager().incr(incre);
           gsm.update(this);
         }
         else if (gsm.isGameLevelLoading()) {

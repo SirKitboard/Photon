@@ -15,6 +15,8 @@
 #include "sssf/gsm/state/GameStateManager.h"
 #include "sssf/gui/GameGUI.h"
 #include "sssf/text/GameText.h"
+#include <LuaPlusFramework/LuaState.h>
+#include <LuaPlusFramework/LuaObject.h>
 
 static const float PI = 3.1415926535897932384626433f;
 
@@ -111,6 +113,10 @@ namespace cse380 {
         GameTimer* getTimer() { return timer; }
         const GameTimer* getTimer() const { return timer; }
 
+		LuaPlus::LuaState* getLuaState() { return luaState; }
+		
+		//LuaPlus::LuaState* getLuaState() { return luaPState; }
+
 		b2World* getGameWorld() { return gameWorld; }
 
         // AND FOR GETTING THE NAME OF THE FILE USED FOR LOADING THIS LEVEL
@@ -206,6 +212,7 @@ namespace cse380 {
         GameOS* os;
         GameTimer* timer;
 		b2World *gameWorld;
+		LuaPlus::LuaState* luaState;
         // THIS KEEPS TRACK OF THE NAME OF THE LEVEL FILE THAT'S BEING USED
         wstring currentLevelFileName;
         wstring currentLevelDir;

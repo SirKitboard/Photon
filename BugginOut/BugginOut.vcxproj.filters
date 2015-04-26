@@ -11,6 +11,9 @@
     <Filter Include="src\buggin_out_VS">
       <UniqueIdentifier>{c33742fb-cb3d-4d8d-a88b-09ba1684fcdb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\LuaScripts">
+      <UniqueIdentifier>{d2e58646-41c3-4373-9225-863baa80c85d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src/buggin_out_VS/stdafx.cpp">
@@ -57,5 +60,10 @@
     <ClInclude Include="src/buggin_out/BugginOutTextGenerator.h">
       <Filter>src\buggin_out</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LuaTest.lua">
+      <Filter>src\LuaScripts</Filter>
+    </None>
   </ItemGroup>
 </Project>

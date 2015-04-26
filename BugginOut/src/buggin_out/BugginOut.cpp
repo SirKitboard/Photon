@@ -36,7 +36,7 @@
 #include "sssf/input/GameInput.h"
 #include "sssf/os/GameOS.h"
 #include "sssf/text/GameText.h"
-
+#include "LuaPlusPlus/LuaPlusFramework/LuaState.h"
 #include "sssf/gsm/physics/Physics.h"
 
 #ifdef CROSS
@@ -86,6 +86,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
   // CREATE THE GAME
   Game bugginOutGame;
+
 
   // FIRST WE'LL SETUP THE DATA LOADER, SINCE IT MAY NEED TO READ
   // IN DATA TO SETUP OTHER STUFF
