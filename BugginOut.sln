@@ -87,6 +87,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StandardWindowsLogger", "St
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Box2D", "Box2D\Build\vs2012\Box2D.vcxproj", "{98400D17-43A5-1A40-95BE-C53AC78E7694}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaPlusFramework", "LuaPlusPlus\LuaPlusFramework\LuaPlusFramework.vcxproj", "{AFCBE206-93CD-4F56-9579-C2ED194064F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug (SFML)|Win32 = Debug (SFML)|Win32
@@ -260,6 +262,18 @@ Global
 		{98400D17-43A5-1A40-95BE-C53AC78E7694}.Release|Win32.Build.0 = Release|Win32
 		{98400D17-43A5-1A40-95BE-C53AC78E7694}.Release|x64.ActiveCfg = Release|x64
 		{98400D17-43A5-1A40-95BE-C53AC78E7694}.Release|x64.Build.0 = Release|x64
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Debug (SFML)|Win32.ActiveCfg = Debug|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Debug (SFML)|Win32.Build.0 = Debug|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Debug (SFML)|x64.ActiveCfg = Debug|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Debug|Win32.Build.0 = Debug|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Debug|x64.ActiveCfg = Debug|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Release (SFML)|Win32.ActiveCfg = Release|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Release (SFML)|Win32.Build.0 = Release|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Release (SFML)|x64.ActiveCfg = Release|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Release|Win32.ActiveCfg = Release|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Release|Win32.Build.0 = Release|Win32
+		{AFCBE206-93CD-4F56-9579-C2ED194064F7}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

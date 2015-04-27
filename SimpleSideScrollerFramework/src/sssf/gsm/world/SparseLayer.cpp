@@ -77,6 +77,18 @@ namespace cse380 {
           CollidableObject* dynamicObject) {
           // CURRENTLY DOESN'T DO ANYTHING
         }
+		bool SparseLayer::overlapsCollidableTile(AABB aabb)
+		{
+			// CURRENTLY JUST A DUMMY METHOD
+			return false;
+		}
+
+
+		bool SparseLayer::willSpriteCollideOnTile(Physics *physics,
+			CollidableObject *dynamicObject)
+		{
+			return false;
+		}
       }
     }
   }

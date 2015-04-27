@@ -25,7 +25,8 @@ namespace cse380 {
     namespace gsm {
 
       namespace physics {
-        class CollidableObject;
+	      class AABB;
+	      class CollidableObject;
         class Physics;
       }
 
@@ -137,9 +138,13 @@ namespace cse380 {
           }
 
           // METHOD DEFINED IN CHILD CLASSES
+		  virtual int getColumns() const = 0;
+		  virtual int getRows() const = 0;
           virtual void addRenderItemsToRenderList(graphics::RenderList&, const gui::Viewport&) const = 0;
           virtual bool willSpriteCollideOnTile(Physics&, const CollidableObject&) const = 0;
           virtual void findTileCollisionsForSprite(Physics&, CollidableObject&) = 0;
+		  virtual bool overlapsCollidableTile(physics::AABB aabb) = 0;
+		  virtual bool isInsideCollidableTile(int centerX, int centerY) = 0;
         protected:
           unordered_map<string, string> properties;
           bool collidableTiles;

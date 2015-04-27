@@ -149,6 +149,10 @@ namespace cse380 {
           bool getBool(const string& key) const {
             return this->properties.at(key) == "true";
           }
+		  bool	overlapsCollidableTiles(int centerX, int centerY, int nodeWidth, int nodeHeight);
+		  bool	isInsideCollidableTile(int centerX, int centerY);
+		  int		getCollidableGridColumns();
+		  int		getCollidableGridRows();
         private:
           // NOTE, THE worldWidth & worldHeight REPRESENT THE FULL
           // SIZE OF THIS LEVEL. WHICH SHOULD BE AT LEAST THE SIZE OF

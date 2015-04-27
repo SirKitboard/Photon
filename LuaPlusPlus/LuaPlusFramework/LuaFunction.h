@@ -15,6 +15,7 @@
 
 #include "LuaPlusInternal.h"
 #include "LuaAutoBlock.h"
+#include "LuaObject.h"
 
 namespace LuaPlus {
 

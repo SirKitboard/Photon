@@ -75,6 +75,79 @@ namespace cse380 {
           // SHOULD YOU WISH TO ADD ANY NON-COLLIDABLE LAYERS WITH
           // DYNAMIC CONTENT OR PARTICLE SYSTEMS
         }
+
+		bool World::isInsideCollidableTile(int centerX, int centerY)
+		{
+			vector<WorldLayer*>::iterator it = layers.begin();
+			while (it != layers.end())
+			{
+				WorldLayer *layer = (*it);
+				if (layer->hasCollidableTiles())
+				{
+					if (layer->isInsideCollidableTile(centerX, centerY))
+						return true;
+				}
+				it++;
+			}
+			return false;
+		}
+
+		bool World::overlapsCollidableTiles(int centerX, int centerY, int nodeWidth, int nodeHeight)
+		{
+			vector<WorldLayer*>::iterator it = layers.begin();
+			while (it != layers.end())
+			{
+				WorldLayer *layer = (*it);
+				if (layer->hasCollidableTiles())
+				{
+					physics::AABB aabb;
+					aabb.setCenterX((float)centerX);
+					aabb.setCenterY((float)centerY);
+					aabb.setWidth((float)nodeWidth);
+					aabb.setHeight((float)nodeHeight);
+					bool overlaps = layer->overlapsCollidableTile(aabb);
+					if (overlaps)
+						return true;
+				}
+				it++;
+			}
+			return false;
+		}
+		int	World::getCollidableGridColumns()
+		{
+			int maxColumns = 0;
+			vector<WorldLayer*>::iterator it = layers.begin();
+			while (it != layers.end())
+			{
+				WorldLayer *layer = (*it);
+				if (layer->hasCollidableTiles())
+				{
+					int numColumns = layer->getColumns();
+					if (numColumns > maxColumns)
+						maxColumns = numColumns;
+				}
+				it++;
+			}
+			return maxColumns;
+		}
+
+		int World::getCollidableGridRows()
+		{
+			int maxRows = 0;
+			vector<WorldLayer*>::iterator it = layers.begin();
+			while (it != layers.end())
+			{
+				WorldLayer *layer = (*it);
+				if (layer->hasCollidableTiles())
+				{
+					int numRows = layer->getRows();
+					if (numRows > maxRows)
+						maxRows = numRows;
+				}
+				it++;
+			}
+			return maxRows;
+		}
       }
     }
   }

@@ -63,9 +63,16 @@ namespace cse380 {
             sparseTiles.at(index) = initTile;
           }
 
+
+		  int getColumns() const override { return 0; }
+		  int getRows() const override { return 0; }
           // METHODS DEFINED IN SparseLayer.cpp
           void addRenderItemsToRenderList(graphics::RenderList&, const gui::Viewport&) const override;
           void findTileCollisionsOverlappingSweptShape(Physics&, CollidableObject*);
+		  bool overlapsCollidableTile(AABB aabb);
+		  bool isInsideCollidableTile(int centerX, int centerY);
+		  bool willSpriteCollideOnTile(Physics *physics,
+			  CollidableObject *dynamicObject);
         private:
           // SPARSE TILES NEED NOT BE IN ANY ORDER OR PATTERNED ARRANGEMENT
           vector<OverlayImage> sparseTiles;

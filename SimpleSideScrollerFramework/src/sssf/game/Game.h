@@ -15,8 +15,7 @@
 #include "sssf/gsm/state/GameStateManager.h"
 #include "sssf/gui/GameGUI.h"
 #include "sssf/text/GameText.h"
-#include "sssf/Lua/LuaState.h"
-#include "sssf/Lua/LuaFunction.h"
+#include <LuaPlusFramework/LuaState.h>
 
 
 static const float PI = 3.1415926535897932384626433f;

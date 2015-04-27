@@ -11,8 +11,8 @@
 #include <cstdint>
 #include <functional>
 #include <string>
-
 #include "sssf/gsm/physics/CollidableObject.h"
+#include <sssf/gsm/ai/pathfinding/PathNode.h>
 
 namespace cse380 {
   namespace sssf {
@@ -22,6 +22,7 @@ namespace cse380 {
         using std::function;
         using std::wstring;
         using game::Game;
+		using std::list;
 
         class AnimatedSpriteType;
 
@@ -87,6 +88,20 @@ namespace cse380 {
             this->_onStateFinished = listener;
           }
 
+		  void advanceCurrentPathNode()
+		  {
+			  currentPathNode++;
+		  }
+		  void resetCurrentPathNode()
+		  {
+			  currentPathNode = currentPathToFollow.begin();
+		  }
+		  void clearPath()
+		  {
+			  currentPathToFollow.clear();
+			  currentPathNode = currentPathToFollow.end();
+		  }
+
           /// <summary>
           /// Advances the animation counter appropriately per the animation speed.
           /// Also updates the sprite location per the current velocity. Should
@@ -99,6 +114,13 @@ namespace cse380 {
           // when you start using Box2D.
           void affixTightAABBBoundingVolume();
           void correctToTightBoundingVolume();
+		  list<PathNode>*		getCurrentPathToFollow() { return &currentPathToFollow; }
+		  list<PathNode>::iterator getCurrentPathNode() { return currentPathNode; }
+		  bool hasReachedDestination()
+		  {
+			  return currentPathNode == currentPathToFollow.end();
+		  }
+
         protected:
           // SPRITE TYPE FOR THIS SPRITE. THE SPRITE TYPE IS THE ID
           // OF AN AnimatedSpriteType OBJECT AS STORED IN THE SpriteManager
@@ -119,6 +141,8 @@ namespace cse380 {
           unsigned int animationCounter;
 
           AnimationEndListener _onStateFinished;
+	        std::list<PathNode> currentPathToFollow;
+		  std::list<PathNode>::iterator currentPathNode;
         };
       }
     }

@@ -11,8 +11,9 @@
 #include <unordered_map>
 #include <vector>
 
-#include "sssf/gsm/ai/BotRecycler.h"
+
 #include "sssf/gsm/sprite/AnimatedSprite.h"
+#include "sssf/gsm/ai/BotRecycler.h"
 
 namespace cse380 {
   namespace sssf {

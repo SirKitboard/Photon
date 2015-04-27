@@ -229,26 +229,49 @@ namespace cse380 {
           return false;
         }
 
-        void TiledLayer::initOverlappingCellRange(const AABB& aabb,
-          int& startCol, int& endCol, int& startRow, int& endRow) const {
-          // GET ALL TILES THAT OVERLAP THE left,right,top,bottom AREA
-          // AND TAKE A CollidableObject FROM the recycledList FOR EACH
-          // ONE AND PUT IT INTO BOTH AXIS SWEEP VECTORS
-          float left = aabb.getLeft();
-          float right = aabb.getRight();
-          float top = aabb.getTop();
-          float bottom = aabb.getBottom();
-          startCol = round(left / tileWidth);
-          endCol = round(right / tileWidth);
-          startRow = round(top / tileHeight);
-          endRow = round(bottom / tileHeight);
+		void TiledLayer::initOverlappingCellRange(const AABB& aabb,
+			int& startCol, int& endCol, int& startRow, int& endRow) const {
+			// GET ALL TILES THAT OVERLAP THE left,right,top,bottom AREA
+			// AND TAKE A CollidableObject FROM the recycledList FOR EACH
+			// ONE AND PUT IT INTO BOTH AXIS SWEEP VECTORS
+			float left = aabb.getLeft();
+			float right = aabb.getRight();
+			float top = aabb.getTop();
+			float bottom = aabb.getBottom();
+			startCol = round(left / tileWidth);
+			endCol = round(right / tileWidth);
+			startRow = round(top / tileHeight);
+			endRow = round(bottom / tileHeight);
 
-          // DON'T ALLOW ILLEGAL VALUES
-          startCol = util::clamp(startCol, 0, columns - 1);
-          endCol = util::clamp(endCol, 0, columns - 1);
-          startRow = util::clamp(startRow, 0, rows - 1);
-          endRow = util::clamp(endRow, 0, rows - 1);
-        }
+			// DON'T ALLOW ILLEGAL VALUES
+			startCol = util::clamp(startCol, 0, columns - 1);
+			endCol = util::clamp(endCol, 0, columns - 1);
+			startRow = util::clamp(startRow, 0, rows - 1);
+			endRow = util::clamp(endRow, 0, rows - 1);
+		}
+
+		bool TiledLayer::isInsideCollidableTile(int centerX, int centerY)
+		{
+			int col = centerX / tileWidth;
+			int row = centerY / tileHeight;
+			return getTile(row, col)->collidable;
+		}
+
+		bool TiledLayer::overlapsCollidableTile(AABB aabb)
+		{
+			int startCol, endCol, startRow, endRow;
+			this->initOverlappingCellRange(aabb, startCol, endCol, startRow, endRow);
+			for (int i = startCol; i <= endCol; i++)
+			{
+				for (int j = startRow; j <= endRow; j++)
+				{
+					Tile *testTile = this->getTile(j, i);
+					if (testTile->collidable)
+						return true;
+				}
+			}
+			return false;
+		}
       }
     }
   }

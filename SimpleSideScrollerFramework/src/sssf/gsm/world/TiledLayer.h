@@ -253,6 +253,8 @@ namespace cse380 {
           // HELPER METHODS
           void initOverlappingCellRange(const AABB& aabb, int& startCol, int& endCol,
             int& startRow, int& endRow) const;
+		  bool overlapsCollidableTile(AABB aabb);
+		  bool isInsideCollidableTile(int centerX, int centerY);
 
         };
       }
