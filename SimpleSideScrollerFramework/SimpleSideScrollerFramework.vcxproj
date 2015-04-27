@@ -163,6 +163,7 @@
     <ClInclude Include="src\sssf\gsm\ai\pathfinding\GridPathfinder.h" />
     <ClInclude Include="src\sssf\gsm\ai\pathfinding\OrthographicGridPathfinder.h" />
     <ClInclude Include="src\sssf\gsm\ai\pathfinding\PathNode.h" />
+    <ClInclude Include="src\sssf\gsm\ai\Point.h" />
     <ClInclude Include="src\sssf\gsm\physics\Box2DWorld.h" />
     <ClInclude Include="src\sssf\gsm\world\CollidableTile.h" />
     <ClInclude Include="src\sssf\input\MultiKeyEventHandler.h" />

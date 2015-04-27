@@ -12,7 +12,7 @@ namespace cse380 {
   namespace sssf {
     namespace sfml {
       // THIS IS THE COLOR WE WILL USE TO CLEAR THE SCREEN WITH
-      const sf::Color BACKGROUND_COLOR(0,0,0);
+      const sf::Color BACKGROUND_COLOR(20,20,20);
 
       // BY DEFAULT, WE WILL USE THIS FOR TEXTURE DRAWING, IT USES NO TRANSPARENCY
       const sf::Color DEFAULT_ALPHA_COLOR(255, 255, 255, 255);

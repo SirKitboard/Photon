@@ -396,5 +396,8 @@
     <ClInclude Include="src\sssf\gsm\ai\pathfinding\PathNode.h">
       <Filter>src\sssf\gsm\ai\pathfinding</Filter>
     </ClInclude>
+    <ClInclude Include="src\sssf\gsm\ai\Point.h">
+      <Filter>src\sssf\gsm\ai</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

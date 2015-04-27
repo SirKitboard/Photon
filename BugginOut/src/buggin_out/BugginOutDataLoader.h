@@ -75,6 +75,7 @@ namespace cse380 {
       void initColors(GameGraphics*, unordered_map<wstring, wstring>&);
       void initViewport(GameGUI&, unordered_map<wstring, wstring>&);
       void makeRandomJumpingBot(Game*, AnimatedSpriteType*, float, float);
+	  void makeLightBot(Game*, AnimatedSpriteType*, float, float);
 
       // AND SOME HELPER METHODS FOR LOADING THE GUI
       void initCursor(GameGUI&, TextureManager*);

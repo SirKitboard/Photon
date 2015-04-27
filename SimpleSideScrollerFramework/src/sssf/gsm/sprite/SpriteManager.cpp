@@ -114,11 +114,54 @@ namespace cse380 {
 					255,
 					300,
 					300,
-					pp.getRotation() * 180 / PI);
+					0);
 			}
             // NOW ADD THE REST OF THE SPRITES
             for (const Bot* bot : bots) {
               addSpriteToRenderList(*bot, renderList, viewport);
+			  const PhysicalProperties& pp = bot->getPhysicalProperties();
+			  int xpos = pp.getX();
+			  int ypos = pp.getY();
+			  if (pp.getVelocityX() < -0.01) {
+				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRed.png"),
+					  round(pp.getX() - viewport.getViewportX()),
+					  round(pp.getY() - viewport.getViewportY()) + 150,
+					  round(pp.getZ()),
+					  255,
+					  300,
+					  300,
+					  180);
+			  }
+			  else if (pp.getVelocityY() < -0.01) {
+				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRed.png"),
+					  round(pp.getX() - viewport.getViewportX()) - 150,
+					  round(pp.getY() - viewport.getViewportY()),
+					  round(pp.getZ()),
+					  255,
+					  300,
+					  300,
+					  270);
+			  }
+			  else if (pp.getVelocityY() > 0.01) {
+				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRed.png"),
+					  round(pp.getX() - viewport.getViewportX()) + 150,
+					  round(pp.getY() - viewport.getViewportY()),
+					  round(pp.getZ()),
+					  255,
+					  300,
+					  300,
+					  90);
+			  }
+			  else {
+				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRed.png"),
+					  round(pp.getX() - viewport.getViewportX()),
+					  round(pp.getY() - viewport.getViewportY()) - 150,
+					  round(pp.getZ()),
+					  255,
+					  300,
+					  300,
+					  0);
+			  }
             }
           }
         }
@@ -158,7 +201,7 @@ namespace cse380 {
           // NOW UPDATE THE REST OF THE SPRITES
           for (Bot* bot : bots) {
             bot->think(game);
-            bot->updateSprite();
+//            bot->updateSprite();
           }
         }
       }

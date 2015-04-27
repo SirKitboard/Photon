@@ -6,6 +6,7 @@
 #include <random>
 
 #include "sssf/gsm/ai/Bot.h"
+#include "sssf/gsm/ai/Point.h"
 
 namespace cse380 {
 	namespace sssf {
@@ -57,6 +58,11 @@ namespace cse380 {
 						unsigned int maxCyclesBeforeThinking;
 						unsigned int maxVelocity;
 						unsigned int direction;
+						bool followPath;
+						bool reachedDest;
+						int destination;
+						int origin;
+						Point destinations[5];
 
 						// THIS PRIVATE CONSTRUCTOR IS ONLY USED FOR CLONING
 						RoamingLightBot(unsigned int initMin,

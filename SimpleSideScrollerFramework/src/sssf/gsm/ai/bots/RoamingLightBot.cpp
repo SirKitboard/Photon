@@ -4,6 +4,7 @@
 #include "sssf/game/Game.h"
 #include "sssf/gsm/physics/Physics.h"
 #include "sssf/gsm/state/GameStateManager.h"
+#include <LuaPlusFramework/LuaObject.h>
 
 namespace cse380 {
 	namespace sssf {
@@ -35,12 +36,21 @@ namespace cse380 {
 						unsigned int initMaxVelocity,
 						unsigned int direction) {
 						// INIT THE BASIC STUFF
+						destinations[0].x = 200; destinations[0].y = 300;
+						destinations[1].x = 1000; destinations[1].y = 350;
+						destinations[2].x = 1200; destinations[2].y = 1350;
+						destinations[3].x = 120; destinations[3].y = 1250;
+						destinations[4].x = 220; destinations[4].y = 1250;
+						destination = 1;
+						origin = 0;
+						followPath = true;
+						reachedDest = true;
 						initBot(initMin, initMax, initMaxVelocity,direction);
 
 						// AND START THE BOT OFF IN A RANDOM DIRECTION AND VELOCITY
 						// AND WITH RANDOM INTERVAL UNTIL IT THINKS AGAIN
-						pickRandomVelocity(game->getGSM().getPhysics());
-						pickRandomCyclesInRange();
+						//pickRandomVelocity(game->getGSM().getPhysics());
+						//pickRandomCyclesInRange();
 					}
 
 					/*
@@ -116,15 +126,80 @@ namespace cse380 {
 					decision-making. Note that we might not actually do any thinking each
 					frame, depending on the value of cyclesRemainingBeforeThinking.
 					*/
+					bool inRange(physics::PhysicalProperties* ppb, physics::PhysicalProperties* ppp, int maxDist) {
+						int x1 = ppb->getX();
+						int x2 = ppp->getX();
+						int y1 = ppb->getY();
+						int y2 = ppp->getY();
+
+						float dist = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+						if (dist < maxDist) {
+							return true;
+						}
+						return false;
+					}
+
 					void RoamingLightBot::think(Game* game) {
+						physics::PhysicalProperties* pp = &getPhysicalProperties();
+						LuaPlus::LuaState* luaState = game->getLuaState();
+						LuaPlus::LuaObject luaVelocity = luaState->GetGlobal("botVelocity");
+						LuaPlus::LuaObject luaDisatnce = luaState->GetGlobal("maxDistance");
+						//int incre = luaVelocity.GetInteger();
+						int velx = 0;
+						int vely = 0;
+						int botVelocity = luaVelocity.GetInteger();
+						int maxDist = luaDisatnce.GetInteger();
+						physics::PhysicalProperties* player = &(game->getGSM().getSpriteManager().getPlayer().getPhysicalProperties());
+						if (followPath) {
+							followPath = !inRange(pp, player,maxDist);
+						}
+						if (followPath) {
+							followPath = !inRange(pp, player,maxDist);
+							if (pp->getX() > destinations[destination].x + 20) {
+								velx -= botVelocity;
+							}
+							else if (pp->getX() < destinations[destination].x - 20) {
+								velx += botVelocity;
+							}
+
+							if (pp->getY() > destinations[destination].y + 20) {
+								vely -= botVelocity;
+							}
+							else if (pp->getY() < destinations[destination].y - 20) {
+								vely += botVelocity;
+							}
+
+							if (velx == 0 && vely == 0) {
+								origin = (origin + 1) % 5;
+								destination = (destination + 1) % 5;
+							}
+			
+						}
+						else {
+							if (pp->getX() > player->getX() + 20) {
+								velx -= botVelocity;
+							}
+							else if (pp->getX() < player->getX() - 20) {
+								velx += botVelocity;
+							}
+
+							if (pp->getY() > player->getY() + 20) {
+								vely -= botVelocity;
+							}
+							else if (pp->getY() < player->getY() - 20) {
+								vely += botVelocity;
+							}
+						}
+						pp->setVelocity(velx, vely);
+						
 						// EACH FRAME WE'LL TEST THIS BOT TO SEE IF WE NEED
 						// TO PICK A DIFFERENT DIRECTION TO FLOAT IN
 
-						if (cyclesRemainingBeforeThinking == 0) {
-							LuaPlus::LuaState* luaState = game->getLuaState();
-						}
-						else
-							cyclesRemainingBeforeThinking--;
+//						if (cyclesRemainingBeforeThinking == 0) {
+//							LuaPlus::LuaState* luaState = game->getLuaState();
+//						}
+//						else
+//							cyclesRemainingBeforeThinking--;
 					}
 				}
 			}

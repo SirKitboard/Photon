@@ -52,6 +52,7 @@
 // ANIMATED SPRITE TYPE LOADING
 #include "psti/PoseurSpriteTypesImporter.h"
 #include <sssf/gsm/ai/pathfinding/OrthographicGridPathfinder.h>
+#include <sssf/gsm/ai/bots/RoamingLightBot.h>
 
 /*
     loadGame - This method loads the setup game data into the game and
@@ -278,6 +279,11 @@ namespace cse380 {
       }*/
 
       // AND THEN STRATEGICALLY PLACED AROUND THE LEVEL
+	  makeLightBot(game, playerSpriteType, 200, 800);
+	  //makeLightBot(game, playerSpriteType, 1000, 350);
+	  //makeLightBot(game, playerSpriteType, 1200, 1350);
+	  //makeLightBot(game, playerSpriteType, 120, 1250);
+	  //makeLightBot(game, playerSpriteType, 220, 1250);
     /*  makeRandomJumpingBot(game, botSpriteType, 400, 100);
       makeRandomJumpingBot(game, botSpriteType, 200, 400);
       makeRandomJumpingBot(game, botSpriteType, 400, 400);
@@ -303,14 +309,35 @@ namespace cse380 {
       Physics& physics = game->getGSM().getPhysics();
       RandomJumpingBot* bot = new RandomJumpingBot(game->getGameWorld(),physics, 30, 120, 40);
       physics.addCollidableObject(bot);
-      PhysicalProperties& pp = bot->getPhysicalProperties();
-	  //pp.initBody(game->getGameWorld());
-      pp.setPosition(initX, initY);
-      bot->setSpriteType(randomJumpingBotType);
-      bot->setCurrentState(JUMPING);
-      bot->setAlpha(255);
-      spriteManager.addBot(bot);
-      bot->affixTightAABBBoundingVolume();
+	  bot->setSpriteType(randomJumpingBotType);
+	  bot->setCurrentState(JUMPING);
+	  bot->setAlpha(255);
+	  spriteManager.addBot(bot);
+	  bot->affixTightAABBBoundingVolume();
+
+    }
+
+	void BugginOutDataLoader::makeLightBot(Game* game, AnimatedSpriteType* sprite_type, float initX, float initY) {
+		SpriteManager& spriteManager = game->getGSM().getSpriteManager();
+		Physics& physics = game->getGSM().getPhysics();
+		RoamingLightBot* bot = new RoamingLightBot(game,  30, 120, 40, 0);
+		physics.addCollidableObject(bot);
+		PhysicalProperties& pp = bot->getPhysicalProperties();
+		pp.initBody(game->getGameWorld());
+		pp.setPosition(initX, initY);
+		//AnimatedSpriteType* playerSpriteType = spriteManager.getSpriteType(L"red_box_man");
+		bot->setSpriteType(sprite_type);
+		bot->setAlpha(255);
+		bot->setCurrentState(IDLE);
+		PhysicalProperties& playerProps = bot->getPhysicalProperties();
+		playerProps.initBody(game->getGameWorld());
+		playerProps.setPosition(initX, initY);
+		playerProps.setVelocity(0.0f, 0.0f);
+		playerProps.setAcceleration(0, 0);
+		bot->setOnTileThisFrame(false);
+		bot->setOnTileLastFrame(false);
+		bot->affixTightAABBBoundingVolume();
+		spriteManager.addBot(bot);
     }
 
     /*

@@ -36,9 +36,6 @@
     <ClInclude Include="src/buggin_out/BugginOutTextGenerator.h" />
     <ClInclude Include="src/buggin_out_VS/stdafx.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="LuaTest.lua" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3E2D6D4A-BBFA-4423-AA70-CC0F35ECE4F8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

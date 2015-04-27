@@ -61,9 +61,4 @@
       <Filter>src\buggin_out</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="LuaTest.lua">
-      <Filter>src\LuaScripts</Filter>
-    </None>
-  </ItemGroup>
 </Project>
