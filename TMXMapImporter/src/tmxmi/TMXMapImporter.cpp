@@ -421,7 +421,7 @@ namespace cse380 {
           }
 
           world.addLayer(layer);
-		  layer->generateCollidableTiles(game->getGameWorld());
+//		  layer->generateCollidableTiles(game->getGameWorld());
         }
 
         // AND MAKE THE WORLD DIMENSIONS THE SIZE OF THE LARGEST LAYER

@@ -17,6 +17,7 @@
 #include "sssf/text/GameText.h"
 #include "sssf/text/TextGenerator.h"
 #include "sssf/timer/GameTimer.h"
+#include <Box2D/Json/b2dJson.h>
 
 namespace cse380 {
   namespace sssf {
@@ -32,7 +33,10 @@ namespace cse380 {
         // IS TO BE USED THESE OBJECT SHOULD BE CONSTRUCTED
         // AND THEN FED TO THIS Game USING THE init METHOD
 		  b2Vec2 gravity(0.0f, 0.0f);
-		  gameWorld = new b2World(gravity);
+		  b2dJson json;
+		  std::basic_string<char> error = "o crap";
+		  gameWorld = json.readFromFile("data/levels/level_one.json",error);
+//		  gameWorld = new b2World(gravity);
 		  luaState = LuaPlus::LuaState::Create();
 		  int result = luaState->DoFile("LuaTest.lua");
       }

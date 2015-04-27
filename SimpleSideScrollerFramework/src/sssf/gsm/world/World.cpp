@@ -57,7 +57,26 @@ namespace cse380 {
             for (const WorldLayer* layer : layers) {
               layer->addRenderItemsToRenderList(renderList, viewport);
             }
+
+			for (b2Body* body = game->getGameWorld()->GetBodyList(); body != nullptr; body = body->GetNext())
+			{
+				for (b2Fixture* fixture = body->GetFixtureList(); fixture != nullptr; fixture = fixture->GetNext())
+				{
+					renderList.addRenderItem(
+						0,
+						fixture->GetAABB(0).lowerBound.x - viewport.getViewportX(),
+						fixture->GetAABB(0).lowerBound.y - viewport.getViewportY(),
+						0,
+						255,
+						fixture->GetAABB(0).upperBound.x - fixture->GetAABB(0).lowerBound.x,
+						fixture->GetAABB(0).upperBound.y - fixture->GetAABB(0).lowerBound.y,
+						0.0f);
+				}
+			}
           }
+
+		  
+
         }
 
         void World::unloadWorld() {

@@ -108,16 +108,16 @@ namespace cse380 {
 		              //int parallaxTileY = (int)((i * tileHeight) - (vy * (((float)(layerHeight - vh)) / ((float)(worldHeight - vh)))));
 
 		              // APPLY PARALLAX SCROLLING TO THE COORDINATES
-		              renderList.addRenderItem(
-			              tileToAdd->textureID,
-			              parallaxTileX,
-			              parallaxTileY,
-			              z,
-			              255,
-			              tileWidth,
-			              tileHeight,
-						  0
-		              );
+//		              renderList.addRenderItem(
+//			              tileToAdd->textureID,
+//			              parallaxTileX,
+//			              parallaxTileY,
+//			              z,
+//			              255,
+//			              tileWidth,
+//			              tileHeight,
+//						  0
+//		              );
 					  tileToAdd->textureID;
 	              }
 					  temp = tileToAdd->textureID;
@@ -131,16 +131,16 @@ namespace cse380 {
 			  b2Body* bodytoadd = cotile->tileBody;
 			  if (bodytoadd->GetPosition().x > vx-63 && bodytoadd->GetPosition().x < vx + vw+63){
 				  if (bodytoadd->GetPosition().y > vy-63 && bodytoadd->GetPosition().y < vy + vh+63) {
-					  renderList.addRenderItem(
-						  cotile->tile->textureID-1,
-						  bodytoadd->GetPosition().x - vx,
-						  bodytoadd->GetPosition().y - vy,
-						  z,
-						  255,
-						  tileWidth,
-						  tileHeight,
-						  0
-					  );
+//					  renderList.addRenderItem(
+//						  cotile->tile->textureID-1,
+//						  bodytoadd->GetPosition().x - vx,
+//						  bodytoadd->GetPosition().y - vy,
+//						  z,
+//						  255,
+//						  tileWidth,
+//						  tileHeight,
+//						  0
+//					  );
 				  }
 			  }
 			 
