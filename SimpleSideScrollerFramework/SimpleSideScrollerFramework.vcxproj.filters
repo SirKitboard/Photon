@@ -71,6 +71,12 @@
     <Filter Include="src\sssf\util">
       <UniqueIdentifier>{eb25a5c0-3aec-4adb-bf98-c9ddb5708341}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\sssf\lua">
+      <UniqueIdentifier>{4a15719f-e7d5-4f2a-a014-514acca2263a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sssf\lua\src">
+      <UniqueIdentifier>{b4f55e56-bc6b-41c0-90f7-ea1f4ca31552}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src/sssf_VS/stdafx.cpp">
@@ -195,6 +201,138 @@
     </ClCompile>
     <ClCompile Include="src\sssf\input\MultiKeyEventHandler.cpp">
       <Filter>src\sssf\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\gsm\ai\bots\RoamingLightBot.cpp">
+      <Filter>src\sssf\gsm\ai\bots</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaObject.cpp">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaPlus.cpp">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaPlus_Libs.cpp">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaPlusAddons.c">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaPlusAll.cpp">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaState.cpp">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaState_DumpObject.cpp">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaStateOutFile.cpp">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\LuaTableIterator.cpp">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\lwstrlib.c">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\popen.c">
+      <Filter>src\sssf\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lapi.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lauxlib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lbaselib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lcode.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\ldblib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\ldebug.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\ldo.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\ldump.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lfunc.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lgc.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\linit.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\liolib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\llex.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lmathlib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lmem.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\loadlib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lobject.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lopcodes.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\loslib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lparser.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lstate.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lstring.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lstrlib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\ltable.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\ltablib.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\ltm.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lua.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\luac.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lundump.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lvm.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\lzio.c">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\Lua\src\print.c">
+      <Filter>src\sssf\lua\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -375,5 +513,148 @@
     <ClInclude Include="src\sssf\gsm\world\CollidableTile.h">
       <Filter>src\sssf\gsm\world</Filter>
     </ClInclude>
+    <ClInclude Include="src\sssf\gsm\ai\bots\RoamingLightBot.h">
+      <Filter>src\sssf\gsm\ai\bots</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaAutoBlock.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaCall.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaFunction.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaHelper.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaHelper_Object.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaHelper_StackObject.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaLink.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaObject.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaPlus.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaPlusCD.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaPlusInternal.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaStackObject.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaStackTableIterator.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaState.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaStateCD.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaStateOutFile.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\LuaTableIterator.h">
+      <Filter>src\sssf\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lapi.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lauxlib.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lcode.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\ldebug.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\ldo.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lfunc.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lgc.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\llex.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\llimits.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lmem.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lobject.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lopcodes.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lparser.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lstate.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lstring.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\ltable.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\ltm.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lua.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\luaconf.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lualib.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lundump.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lvm.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\Lua\src\lzio.h">
+      <Filter>src\sssf\lua\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\sssf\Lua\LuaCall.inl">
+      <Filter>src\sssf\lua</Filter>
+    </None>
+    <None Include="src\sssf\Lua\LuaObject.inl">
+      <Filter>src\sssf\lua</Filter>
+    </None>
+    <None Include="src\sssf\Lua\LuaStackObject.inl">
+      <Filter>src\sssf\lua</Filter>
+    </None>
+    <None Include="src\sssf\Lua\LuaStackTableIterator.inl">
+      <Filter>src\sssf\lua</Filter>
+    </None>
+    <None Include="src\sssf\Lua\LuaState.inl">
+      <Filter>src\sssf\lua</Filter>
+    </None>
+    <None Include="src\sssf\Lua\src\Makefile">
+      <Filter>src\sssf\lua\src</Filter>
+    </None>
   </ItemGroup>
 </Project>

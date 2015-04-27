@@ -17,6 +17,9 @@
 #include "sssf/text/GameText.h"
 #include "sssf/text/TextGenerator.h"
 #include "sssf/timer/GameTimer.h"
+#include "sssf/Lua/LuaFunction.h"
+#include "sssf/Lua/LuaObject.h"
+
 
 namespace cse380 {
   namespace sssf {
@@ -91,7 +94,9 @@ namespace cse380 {
       void Game::processGameData() {
         // WE ONLY PERFORM GAME LOGIC IF THE GAME IS IN PROGRESS
         if (gsm.isGameInProgress()) {
-			LuaPlus::LuaObject inrement_object = luaState->GetGlobal("increment");
+			LuaPlus::LuaFunction<void> luaRandom = luaState->GetGlobal("generateDirection");
+			luaRandom();
+	        LuaPlus::LuaObject inrement_object = luaState->GetGlobal("increment");
 			int incre = inrement_object.GetInteger();
 			this->getGSM().getSpriteManager().incr(incre);
           gsm.update(this);
