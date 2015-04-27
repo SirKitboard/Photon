@@ -254,6 +254,7 @@ namespace cse380 {
       PhysicalProperties& playerProps = player.getPhysicalProperties();
 	  playerProps.initBody(game->getGameWorld());
       playerProps.setPosition(PLAYER_INIT_X, PLAYER_INIT_Y);
+	  playerProps.getBody()->SetFixedRotation(true);
       playerProps.setVelocity(0.0f, 0.0f);
       playerProps.setAcceleration(0, 0);
       player.setOnTileThisFrame(false);

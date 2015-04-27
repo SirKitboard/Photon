@@ -51,13 +51,13 @@ namespace cse380 {
             spriteType->getTextureWidth(),
             spriteType->getTextureHeight())) {
             // SINCE IT'S VIEWABLE, ADD IT TO THE RENDER LIST
-            renderList.addRenderItem(sprite.getCurrentImageID(),
-              round(pp.getX() - viewport.getViewportX()),
-              round(pp.getY() - viewport.getViewportY()),
-              round(pp.getZ()),
-              sprite.getAlpha(),
-              spriteType->getTextureWidth(),
-              spriteType->getTextureHeight(),
+			  renderList.addRenderItem(sprite.getCurrentImageID(),
+				  round(pp.getX() - viewport.getViewportX()),
+				  round(pp.getY() - viewport.getViewportY()),
+				  round(pp.getZ()),
+				  sprite.getAlpha(), 
+				  sprite.getBoundingVolume().getWidth(), 
+				  sprite.getBoundingVolume().getHeight(),
 			  pp.getRotation() * 180 / PI);
           }
         }

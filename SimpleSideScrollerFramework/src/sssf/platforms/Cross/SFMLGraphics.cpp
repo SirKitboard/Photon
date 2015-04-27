@@ -12,7 +12,7 @@ namespace cse380 {
   namespace sssf {
     namespace sfml {
       // THIS IS THE COLOR WE WILL USE TO CLEAR THE SCREEN WITH
-      const sf::Color BACKGROUND_COLOR(0,0,0);
+      const sf::Color BACKGROUND_COLOR(100,100,100);
 
       // BY DEFAULT, WE WILL USE THIS FOR TEXTURE DRAWING, IT USES NO TRANSPARENCY
       const sf::Color DEFAULT_ALPHA_COLOR(255, 255, 255, 255);
@@ -215,12 +215,32 @@ namespace cse380 {
         // GO THROUGH EACH ITEM IN THE LIST
         for (const RenderItem& itemToRender : worldRenderList) {
           // LET'S GET THE TEXTURE WE WANT TO RENDER
+			sf::ConvexShape bounding_box_shape;
           sf::IntRect rect;
           sf::Sprite sprite;
           sf::Texture& texture = manager->getTexture(itemToRender.id);
           sf::Vector2i position(itemToRender.x, itemToRender.y);
 		  sf::BlendMode blend = sf::BlendMultiply;
 		 // sf::Transformable transformable(itemToRender.roation);
+
+		  //establish the bounding box for rendering
+		  bounding_box_shape.setPointCount(4);
+		  sf::Vector2f upperLeft(itemToRender.x,itemToRender.y);
+		  bounding_box_shape.setPoint(0, upperLeft);
+		  sf::Vector2f upperRight(itemToRender.x + itemToRender.width, itemToRender.y);
+		  bounding_box_shape.setPoint(1, upperRight);
+		  sf::Vector2f lowerRight(itemToRender.x + itemToRender.width, itemToRender.y + itemToRender.height);
+		  bounding_box_shape.setPoint(2, lowerRight);
+		  sf::Vector2f lowerLeft(itemToRender.x, itemToRender.y + itemToRender.height);
+		  bounding_box_shape.setPoint(3, lowerLeft);
+
+		  //color the bounding box red
+		  sf::Color redColor(255, 0, 0);
+		  bounding_box_shape.setOutlineColor(redColor);
+		  bounding_box_shape.setOutlineThickness(3.0f);
+		  sf::Color transparent(0, 0, 0, 0);
+		  bounding_box_shape.setFillColor(transparent);
+
 
           position.x += viewport.getViewportOffsetX();
           position.y += viewport.getViewportOffsetY();
@@ -258,6 +278,7 @@ namespace cse380 {
           // Maybe you'll get to make this faster!
 
           window.draw(sprite, blend);
+		  window.draw(bounding_box_shape);
         }
         worldRenderList.clear();
       }

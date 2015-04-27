@@ -196,6 +196,9 @@
     <ClCompile Include="src\sssf\input\MultiKeyEventHandler.cpp">
       <Filter>src\sssf\input</Filter>
     </ClCompile>
+    <ClCompile Include="src\sssf\graphics\PhotonDebugDraw.cpp">
+      <Filter>src\sssf\graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src/sssf_VS/stdafx.h">
@@ -374,6 +377,9 @@
     </ClInclude>
     <ClInclude Include="src\sssf\gsm\world\CollidableTile.h">
       <Filter>src\sssf\gsm\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\graphics\PhotonDebugDraw.h">
+      <Filter>src\sssf\graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

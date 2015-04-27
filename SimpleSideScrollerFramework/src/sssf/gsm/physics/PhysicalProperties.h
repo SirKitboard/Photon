@@ -117,6 +117,11 @@ namespace cse380 {
 		  void setX(float a){}
 		  void setY(float b){}
 
+		  b2Body* getBody()
+          {
+			  return body;
+          }
+
         private:
 			b2Body* body;
         };

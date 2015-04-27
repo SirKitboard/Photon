@@ -67,6 +67,7 @@
     <ClCompile Include="src/sssf/text/GameText.cpp" />
     <ClCompile Include="src/sssf/text/TextFileWriter.cpp" />
     <ClCompile Include="src/sssf_VS/stdafx.cpp" />
+    <ClCompile Include="src\sssf\graphics\PhotonDebugDraw.cpp" />
     <ClCompile Include="src\sssf\input\MultiKeyEventHandler.cpp" />
     <ClCompile Include="src\sssf\platforms\Cross\SFMLGraphics.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -157,6 +158,7 @@
     <ClInclude Include="src/sssf/timer/GameTimer.h" />
     <ClInclude Include="src/sssf_VS/stdafx.h" />
     <ClInclude Include="src/sssf_VS/targetver.h" />
+    <ClInclude Include="src\sssf\graphics\PhotonDebugDraw.h" />
     <ClInclude Include="src\sssf\gsm\physics\Box2DWorld.h" />
     <ClInclude Include="src\sssf\gsm\world\CollidableTile.h" />
     <ClInclude Include="src\sssf\input\MultiKeyEventHandler.h" />
