@@ -97,6 +97,7 @@ namespace cse380 {
     const unsigned int G_KEY = sf::Keyboard::G;
     const unsigned int P_KEY = sf::Keyboard::P;
     const unsigned int T_KEY = sf::Keyboard::T;
+	const unsigned int P_KET = sf::Keyboard::T;
     const unsigned int UP_KEY = sf::Keyboard::Up;
     const unsigned int DOWN_KEY = sf::Keyboard::Down;
     const unsigned int LEFT_KEY = sf::Keyboard::Left;
@@ -117,6 +118,7 @@ namespace cse380 {
     const unsigned int G_KEY = (unsigned int)'G';
     const unsigned int P_KEY = (unsigned int)'P';
     const unsigned int T_KEY = (unsigned int)'T';
+	const unsigned int P_KET = (unsigned int)'P';
     const unsigned int UP_KEY = VK_UP;
     const unsigned int DOWN_KEY = VK_DOWN;
     const unsigned int LEFT_KEY = VK_LEFT;

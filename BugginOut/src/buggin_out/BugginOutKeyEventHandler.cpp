@@ -144,6 +144,11 @@ namespace cse380 {
         cursor->setActiveCursorID(id);
       }
 
+	  if (input->isKeyDownForFirstTime(P_KEY)) {
+		  sssf::gsm::ai::pathfinding::GridPathfinder *pathfinder = gsm.getSpriteManager().getPathFinder();
+		  pathfinder->mapPath(&player, 1000.0, 1000.0);
+	  }
+
       // LET'S MESS WITH THE TARGET FRAME RATE IF THE USER PRESSES THE HOME OR END KEYS
       GameTimer* timer = game->getTimer();
       int fps = timer->getTargetFPS();

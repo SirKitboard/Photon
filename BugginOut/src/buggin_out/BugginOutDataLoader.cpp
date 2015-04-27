@@ -51,6 +51,7 @@
 
 // ANIMATED SPRITE TYPE LOADING
 #include "psti/PoseurSpriteTypesImporter.h"
+#include <sssf/gsm/ai/pathfinding/OrthographicGridPathfinder.h>
 
 /*
     loadGame - This method loads the setup game data into the game and
@@ -243,7 +244,9 @@ namespace cse380 {
       GameStateManager& gsm = game->getGSM();
       Physics& physics = gsm.getPhysics();
       physics.setGravity(W_GRAVITY);
+	  pathfinding::OrthographicGridPathfinder *pathfinder = new pathfinding::OrthographicGridPathfinder(game);
       SpriteManager& spriteManager = gsm.getSpriteManager();
+	  spriteManager.setPathfinder(pathfinder);
       AnimatedSprite& player = spriteManager.getPlayer();
       physics.addCollidableObject(&player);
 

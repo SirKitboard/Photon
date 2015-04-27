@@ -465,9 +465,9 @@ namespace cse380 {
 
 					void OrthographicGridPathfinder::mapPath(AnimatedSprite *sprite, float worldX, float worldY)
 					{
-//						list<PathNode> *path = sprite->getCurrentPathToFollow();
-//						buildPath(path, sprite->getBoundingVolume().getCenterX(), sprite->getBoundingVolume().getCenterY(), worldX, worldY);
-//						sprite->resetCurrentPathNode();
+						list<PathNode> *path = sprite->getCurrentPathToFollow();
+						buildPath(path, sprite->getBoundingVolume().getCenterX(), sprite->getBoundingVolume().getCenterY(), worldX, worldY);
+						sprite->resetCurrentPathNode();
 					}
 
 					int OrthographicGridPathfinder::getGridWidth()

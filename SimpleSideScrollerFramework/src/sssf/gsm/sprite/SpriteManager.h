@@ -14,6 +14,7 @@
 
 #include "sssf/gsm/sprite/AnimatedSprite.h"
 #include "sssf/gsm/ai/BotRecycler.h"
+#include <sssf/gsm/ai/pathfinding/GridPathfinder.h>
 
 namespace cse380 {
   namespace sssf {
@@ -60,6 +61,9 @@ namespace cse380 {
           vector<Bot*>::const_iterator cbegin() const { return bots.cbegin(); }
           vector<Bot*>::iterator end() { return bots.end(); }
           vector<Bot*>::const_iterator cend() const { return bots.cend(); }
+
+		  ai::pathfinding::GridPathfinder* getPathFinder() { return pathfinder; }
+		  void				setPathfinder(ai::pathfinding::GridPathfinder *initPathfinder) { pathfinder = initPathfinder; }
           // ^ These allow SpriteManager to be used in foreach loops
 
           /// <summary>
@@ -143,6 +147,8 @@ namespace cse380 {
           // THE BotRecycler MAKES SURE WE DON'T HAVE TO CONSTRUCT BOTS WHENEVER
           // WE NEED TO SPAWN THEM, INSTEAD IT WILL RECYCLE THEM FOR US
           BotRecycler recyclableBots;
+
+	        ai::pathfinding::GridPathfinder *pathfinder;
         };
       }
     }

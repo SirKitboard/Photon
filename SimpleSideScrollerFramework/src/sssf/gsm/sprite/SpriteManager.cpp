@@ -150,6 +150,7 @@ namespace cse380 {
 
         void SpriteManager::update(Game* game) {
           // UPDATE THE PLAYER SPRITE
+			pathfinder->updatePath(&player);
           player.updateSprite();
 
           // NOW UPDATE THE REST OF THE SPRITES
