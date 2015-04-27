@@ -49,13 +49,13 @@ namespace cse380 {
         }
 
         void AnimatedSprite::updateSprite() {
-          uint16_t duration = spriteType->getDuration(currentState, frameIndex);
-          animationCounter++;
-
-          // WE ONLY CHANGE THE ANIMATION FRAME INDEX WHEN THE
-          // ANIMATION COUNTER HAS REACHED THE DURATION
-          if (animationCounter >= duration)
-            changeFrame();
+//          uint16_t duration = spriteType->getDuration(currentState, frameIndex);
+//          animationCounter++;
+//
+//          // WE ONLY CHANGE THE ANIMATION FRAME INDEX WHEN THE
+//          // ANIMATION COUNTER HAS REACHED THE DURATION
+//          if (animationCounter >= duration)
+//            changeFrame();
         }
 
         void AnimatedSprite::affixTightAABBBoundingVolume() {

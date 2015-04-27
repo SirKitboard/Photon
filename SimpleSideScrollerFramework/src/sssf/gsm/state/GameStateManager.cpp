@@ -78,7 +78,7 @@ namespace cse380 {
         void GameStateManager::update(Game* game) {
           spriteManager.update(game);
           world.update(game);
-          if (physics.isActivated() || physics.isActivatedForSingleUpdate()) {
+          if (true) {
             physics.update(game);
           }
         }

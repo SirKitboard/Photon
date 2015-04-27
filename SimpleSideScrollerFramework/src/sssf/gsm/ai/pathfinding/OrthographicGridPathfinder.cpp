@@ -401,41 +401,42 @@ namespace cse380 {
 							//sprite->setCurrentState(L"WALK_EAST");
 							float epsilon = 0.01f;
 
-							if ((int)vX == 0) {
-								if (vY < 0) {
-									sprite->setCurrentState(L"WALK_NORTH");
-								}
-								else {
-									sprite->setCurrentState(L"WALK_SOUTH");
-								}
-							}
-							else if ((int)vY == 0) {
-								if (vX < 0) {
-									sprite->setCurrentState(L"WALK_WEST");
-								}
-								else {
-									sprite->setCurrentState(L"WALK_EAST");
-								}
-							}
-							else {
-								if (vX > 0 && vY > 0) {
-									sprite->setCurrentState(L"WALK_SOUTH_EAST");
-								}
-								else if (vX > 0 && vY < 0) {
-									sprite->setCurrentState(L"WALK_NORTH_EAST");
-								}
-								else if (vX < 0 && vY < 0) {
-									sprite->setCurrentState(L"WALK_NORTH_WEST");
-								}
-								else {
-									sprite->setCurrentState(L"WALK_SOUTH_WEST");
-								}
-								//game->repositionViewport();
-							}
+//							if ((int)vX == 0) {
+//								if (vY < 0) {
+//									sprite->setCurrentState(L"WALK_NORTH");
+//								}
+//								else {
+//									sprite->setCurrentState(L"WALK_SOUTH");
+//								}
+//							}
+//							else if ((int)vY == 0) {
+//								if (vX < 0) {
+//									sprite->setCurrentState(L"WALK_WEST");
+//								}
+//								else {
+//									sprite->setCurrentState(L"WALK_EAST");
+//								}
+//							}
+//							else {
+//								if (vX > 0 && vY > 0) {
+//									sprite->setCurrentState(L"WALK_SOUTH_EAST");
+//								}
+//								else if (vX > 0 && vY < 0) {
+//									sprite->setCurrentState(L"WALK_NORTH_EAST");
+//								}
+//								else if (vX < 0 && vY < 0) {
+//									sprite->setCurrentState(L"WALK_NORTH_WEST");
+//								}
+//								else {
+//									sprite->setCurrentState(L"WALK_SOUTH_WEST");
+//								}
+//								//game->repositionViewport();
+//							}
+							//sprite->setCurrentState(L"IDLE");
 						}
 						else
 						{
-							sprite->setCurrentState(L"IDLE");
+							//sprite->setCurrentState(L"IDLE");
 						}
 					}
 
@@ -466,7 +467,7 @@ namespace cse380 {
 					void OrthographicGridPathfinder::mapPath(AnimatedSprite *sprite, float worldX, float worldY)
 					{
 						list<PathNode> *path = sprite->getCurrentPathToFollow();
-						buildPath(path, sprite->getBoundingVolume().getCenterX(), sprite->getBoundingVolume().getCenterY(), worldX, worldY);
+						buildPath(path, sprite->getPhysicalProperties().getX(), sprite->getPhysicalProperties().getY(), worldX, worldY);
 						sprite->resetCurrentPathNode();
 					}
 

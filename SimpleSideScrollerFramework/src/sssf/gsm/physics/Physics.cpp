@@ -156,6 +156,8 @@ namespace cse380 {
 			float32 timestep = 1.0f / 60.0f;
 			int32 velIt = 6;
 			int32 posit = 2;
+			int xvel = game->getGSM().getSpriteManager().getPlayer().getPhysicalProperties().getVelocityX();
+			int yvel = game->getGSM().getSpriteManager().getPlayer().getPhysicalProperties().getVelocityY();
 			game->getGameWorld()->Step(timestep,velIt,posit);
 //          // WE'LL USE A CONTINUOUS COLLISION SYSTEM TO ENSURE TEMPORAL
 //          // COHERENCE, WHICH MEANS WE'LL MAKE SURE COLLISIONS ARE RESOLVED

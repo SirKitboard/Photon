@@ -74,6 +74,8 @@ namespace cse380 {
             // ADD THE PLAYER SPRITE
             addSpriteToRenderList(player, renderList, viewport);
 			const PhysicalProperties& pp = player.getPhysicalProperties();
+			int xpos = pp.getX();
+			int ypos = pp.getY();
 			if (pp.getVelocityX() < -0.01) {
 				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/Light.png"),
 					round(pp.getX() - viewport.getViewportX()),

@@ -8,8 +8,8 @@
 const int DIAGONAL_COST = 14;
 const int COLUMN_COST = 10;
 const int ROW_COST = 10;
-const float GRID_EPSILON = 3.0f;
-const float MAX_WALK_SPEED = 6.0f;
+const float GRID_EPSILON = 30.0f;
+const float MAX_WALK_SPEED = 60.0f;
 
 
 namespace cse380 {
