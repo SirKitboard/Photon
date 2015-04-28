@@ -71,6 +71,11 @@ namespace cse380 {
           normalOffsetY = y;
         }
 
+		void reset() {
+			viewportX = 0;
+			viewportY = 0;
+        }
+
         void setToggleOffsetY(const int y) { toggleOffsetY = y; }
 
         /**

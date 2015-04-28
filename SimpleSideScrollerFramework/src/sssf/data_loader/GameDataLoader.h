@@ -65,6 +65,9 @@ namespace cse380 {
         virtual void loadGame(Game*, const wstring&) = 0;
         virtual void loadGUI(Game*, const wstring&) = 0;
         virtual void loadWorld(Game*, const wstring&) = 0;
+		virtual void loadLevel1(Game*) = 0;
+		virtual void loadLevel2(Game*) = 0;
+		virtual void loadLevel3(Game*) = 0;
 
       private:
         // THIS IS THE LOCATION OF ALL GAME DATA TO BE LOADED

@@ -279,7 +279,7 @@ namespace cse380 {
       }*/
 
       // AND THEN STRATEGICALLY PLACED AROUND THE LEVEL
-	  makeLightBot(game, playerSpriteType, 200, 800);
+	  makeLightBot(game, playerSpriteType, 1200, 800);
 	  //makeLightBot(game, playerSpriteType, 1000, 350);
 	  //makeLightBot(game, playerSpriteType, 1200, 1350);
 	  //makeLightBot(game, playerSpriteType, 120, 1250);
@@ -420,6 +420,49 @@ namespace cse380 {
       // AND REGISTER IT WITH THE GUI
       gui.addScreenGUI(GameState::GS_SPLASH_SCREEN, splashScreenGUI);
     }
+
+	void BugginOutDataLoader::loadLevel1(Game* game) {
+		GameStateManager* gsm = &(game->getGSM());
+		SpriteManager* sm = &(gsm->getSpriteManager());
+
+		sm->clearBots();
+		sm->getPlayer().getPhysicalProperties().setX(80);
+		sm->getPlayer().getPhysicalProperties().setX(100);
+		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
+		makeLightBot(game, playerSpriteType, 1200, 800);
+
+		game->getGUI().getViewport().reset();
+	}
+
+	void BugginOutDataLoader::loadLevel2(Game* game) {
+		GameStateManager* gsm = &(game->getGSM());
+		SpriteManager* sm = &(gsm->getSpriteManager());
+
+		sm->clearBots();
+		sm->getPlayer().getPhysicalProperties().setX(80);
+		sm->getPlayer().getPhysicalProperties().setX(100);
+		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
+		makeLightBot(game, playerSpriteType, 1200, 800);
+		makeLightBot(game, playerSpriteType, 800, 1200);
+		game->getGUI().getViewport().reset();
+	}
+
+	void BugginOutDataLoader::loadLevel3(Game* game) {
+		GameStateManager* gsm = &(game->getGSM());
+		SpriteManager* sm = &(gsm->getSpriteManager());
+
+		sm->clearBots();
+		sm->getPlayer().getPhysicalProperties().setX(80);
+		sm->getPlayer().getPhysicalProperties().setX(100);
+		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
+		makeLightBot(game, playerSpriteType, 1200, 800);
+		makeLightBot(game, playerSpriteType, 1240, 200);
+		makeLightBot(game, playerSpriteType, 2040, 1700);
+		game->getGUI().getViewport().reset();
+	}
+
+
+
 
     /*
         initMainMenu - initializes the game's main menu gui.

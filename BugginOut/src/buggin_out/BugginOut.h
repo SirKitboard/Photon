@@ -99,6 +99,8 @@ namespace cse380 {
     const unsigned int T_KEY = sf::Keyboard::T;
 	const unsigned int P_KET = sf::Keyboard::T;
     const unsigned int UP_KEY = sf::Keyboard::Up;
+	const unsigned int LCTRL_KEY = sf::Keyboard::LControl;
+	const unsigned int RCTRL_KEY = sf::Keyboard::RControl;
     const unsigned int DOWN_KEY = sf::Keyboard::Down;
     const unsigned int LEFT_KEY = sf::Keyboard::Left;
     const unsigned int RIGHT_KEY = sf::Keyboard::Right;
@@ -106,6 +108,9 @@ namespace cse380 {
     const unsigned int SHIFT_KEY = sf::Keyboard::RShift;
     const unsigned int HOME_KEY = sf::Keyboard::Home;
     const unsigned int END_KEY = sf::Keyboard::End;
+	const unsigned int ONE_KEY = sf::Keyboard::Num1;
+	const unsigned int TWO_KEY = sf::Keyboard::Num2;
+	const unsigned int THREE_KEY = sf::Keyboard::Num3;
 
 
     // THIS IS JUST FOR SHOWING HOW THE CURSOR CAN BE CHANGED

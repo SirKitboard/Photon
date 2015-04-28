@@ -30,6 +30,7 @@
 #else
 #include "sssf/platforms/Windows/WindowsTimer.h"
 #endif
+#include <sssf/data_loader/GameDataLoader.h>
 
 namespace cse380 {
   namespace bugginout {
@@ -147,6 +148,16 @@ namespace cse380 {
 	  if (input->isKeyDownForFirstTime(P_KEY)) {
 		  sssf::gsm::ai::pathfinding::GridPathfinder *pathfinder = gsm.getSpriteManager().getPathFinder();
 		  pathfinder->mapPath(&player, 1000.0, 1000.0);
+	  }
+
+	  if ((input->isKeyDown(RCTRL_KEY) || input->isKeyDown(LCTRL_KEY)) && input->isKeyDownForFirstTime(ONE_KEY)) {
+		  game->getDataLoader()->loadLevel1(game);
+	  }
+	  else if ((input->isKeyDown(RCTRL_KEY) || input->isKeyDown(LCTRL_KEY)) && input->isKeyDownForFirstTime(TWO_KEY)) {
+		  game->getDataLoader()->loadLevel2(game);
+	  }
+	  else if ((input->isKeyDown(RCTRL_KEY) || input->isKeyDown(LCTRL_KEY)) && input->isKeyDownForFirstTime(THREE_KEY)) {
+		  game->getDataLoader()->loadLevel3(game);
 	  }
 
       // LET'S MESS WITH THE TARGET FRAME RATE IF THE USER PRESSES THE HOME OR END KEYS

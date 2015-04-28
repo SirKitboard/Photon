@@ -82,6 +82,10 @@ namespace cse380 {
       void initSplashScreen(Game*, GameGUI&, TextureManager*);
       void initMainMenu(GameGUI&, TextureManager*);
       void initInGameGUI(GameGUI&, TextureManager*);
+	  void loadLevel1(Game* game);
+	  void loadLevel2(Game* game);
+	  void loadLevel3(Game* game);
+	  
 
     };
   }

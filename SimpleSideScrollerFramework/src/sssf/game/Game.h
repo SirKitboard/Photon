@@ -114,6 +114,8 @@ namespace cse380 {
         const GameTimer* getTimer() const { return timer; }
 
 		LuaPlus::LuaState* getLuaState() { return luaState; }
+
+		
 		
 		//LuaPlus::LuaState* getLuaState() { return luaPState; }
 

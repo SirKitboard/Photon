@@ -5,6 +5,7 @@
 #include "sssf/gsm/physics/Physics.h"
 #include "sssf/gsm/state/GameStateManager.h"
 #include <LuaPlusFramework/LuaObject.h>
+#include <time.h>
 
 namespace cse380 {
 	namespace sssf {
@@ -41,7 +42,7 @@ namespace cse380 {
 						destinations[2].x = 1200; destinations[2].y = 1350;
 						destinations[3].x = 120; destinations[3].y = 1250;
 						destinations[4].x = 220; destinations[4].y = 1250;
-						destination = 1;
+						destination = rand() % 5;
 						origin = 0;
 						followPath = true;
 						reachedDest = true;
@@ -170,8 +171,8 @@ namespace cse380 {
 							}
 
 							if (velx == 0 && vely == 0) {
-								origin = (origin + 1) % 5;
-								destination = (destination + 1) % 5;
+								origin = destination;
+								destination = rand() % 5;
 							}
 			
 						}

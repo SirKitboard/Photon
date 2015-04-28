@@ -113,6 +113,10 @@ namespace cse380 {
 
           Bot* removeBot(Bot* botToRemove);
 
+		  void clearBots() {
+			  bots.clear();
+		  }
+
           /// <summary>
           /// Removes all animated sprite types from memory. Any other resources
           /// owned by the sprite manager should be deleted here, too. This will
