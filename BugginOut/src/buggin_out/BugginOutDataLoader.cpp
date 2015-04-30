@@ -279,7 +279,7 @@ namespace cse380 {
       }*/
 
       // AND THEN STRATEGICALLY PLACED AROUND THE LEVEL
-	  makeLightBot(game, playerSpriteType, 1200, 800);
+	  //makeLightBot(game, playerSpriteType, 1200, 800);
 	  //makeLightBot(game, playerSpriteType, 1000, 350);
 	  //makeLightBot(game, playerSpriteType, 1200, 1350);
 	  //makeLightBot(game, playerSpriteType, 120, 1250);

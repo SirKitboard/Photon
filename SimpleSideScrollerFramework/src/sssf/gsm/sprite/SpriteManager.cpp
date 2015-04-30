@@ -77,39 +77,39 @@ namespace cse380 {
 			int xpos = pp.getX();
 			int ypos = pp.getY();
 			if (pp.getVelocityX() < -0.01) {
-				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/Light.png"),
-					round(pp.getX() - viewport.getViewportX()),
-					round(pp.getY() - viewport.getViewportY())+150,
+				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightW.png"),
+					round(pp.getX() - viewport.getViewportX())-300+32,
+					round(pp.getY() - viewport.getViewportY())-150+32,
 					round(pp.getZ()),
 					255,
 					300,
 					300,
-					180);
+					0);
 			}
 			else if (pp.getVelocityY() < -0.01) {
-				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/Light.png"),
-					round(pp.getX() - viewport.getViewportX())-150,
-					round(pp.getY() - viewport.getViewportY()),
+				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightN.png"),
+					round(pp.getX() - viewport.getViewportX())-150+32,
+					round(pp.getY() - viewport.getViewportY())-300+32,
 					round(pp.getZ()),
 					255,
 					300,
 					300,
-					270);
+					0);
 			}
 			else if (pp.getVelocityY() > 0.01) {
-				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/Light.png"),
-					round(pp.getX() - viewport.getViewportX()) + 150,
-					round(pp.getY() - viewport.getViewportY()),
+				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightS.png"),
+					round(pp.getX() - viewport.getViewportX())-150+32,
+					round(pp.getY() - viewport.getViewportY())+32,
 					round(pp.getZ()),
 					255,
 					300,
 					300,
-					90);
+					0);
 			}
 			else {
-				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/Light.png"),
-					round(pp.getX() - viewport.getViewportX()),
-					round(pp.getY() - viewport.getViewportY())-150,
+				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightE.png"),
+					round(pp.getX() - viewport.getViewportX())+32,
+					round(pp.getY() - viewport.getViewportY())-150+32,
 					round(pp.getZ()),
 					255,
 					300,
