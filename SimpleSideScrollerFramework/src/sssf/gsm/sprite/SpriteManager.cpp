@@ -123,9 +123,9 @@ namespace cse380 {
 			  int xpos = pp.getX();
 			  int ypos = pp.getY();
 			  if (pp.getVelocityX() < -0.01) {
-				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRed.png"),
-					  round(pp.getX() - viewport.getViewportX()),
-					  round(pp.getY() - viewport.getViewportY()) + 150,
+				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedW.png"),
+					  round(pp.getX() - viewport.getViewportX()) - 300 + 32,
+					  round(pp.getY() - viewport.getViewportY()) - 150 + 32,
 					  round(pp.getZ()),
 					  255,
 					  300,
@@ -133,9 +133,9 @@ namespace cse380 {
 					  180);
 			  }
 			  else if (pp.getVelocityY() < -0.01) {
-				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRed.png"),
-					  round(pp.getX() - viewport.getViewportX()) - 150,
-					  round(pp.getY() - viewport.getViewportY()),
+				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedN.png"),
+					  round(pp.getX() - viewport.getViewportX()) - 150 + 32,
+					  round(pp.getY() - viewport.getViewportY()) - 300 + 32,
 					  round(pp.getZ()),
 					  255,
 					  300,
@@ -143,9 +143,9 @@ namespace cse380 {
 					  270);
 			  }
 			  else if (pp.getVelocityY() > 0.01) {
-				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRed.png"),
-					  round(pp.getX() - viewport.getViewportX()) + 150,
-					  round(pp.getY() - viewport.getViewportY()),
+				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedS.png"),
+					  round(pp.getX() - viewport.getViewportX()) - 150 + 32,
+					  round(pp.getY() - viewport.getViewportY()) + 32,
 					  round(pp.getZ()),
 					  255,
 					  300,
@@ -153,9 +153,9 @@ namespace cse380 {
 					  90);
 			  }
 			  else {
-				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRed.png"),
-					  round(pp.getX() - viewport.getViewportX()),
-					  round(pp.getY() - viewport.getViewportY()) - 150,
+				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedE.png"),
+					  round(pp.getX() - viewport.getViewportX()) + 32,
+					  round(pp.getY() - viewport.getViewportY()) - 150 + 32,
 					  round(pp.getZ()),
 					  255,
 					  300,

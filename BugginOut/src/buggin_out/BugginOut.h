@@ -23,7 +23,11 @@ namespace cse380 {
     static  wstring    W_DATA_DIR = L"data/";
     static  wstring    W_LEVEL_1_DIR = L"data/levels/SideScrollerDesert/";
     static  wstring    W_LEVEL_1_NAME = L"SideScrollerDesertLevel.tmx";
+	static  wstring    W_LEVEL_2_NAME = L"SideScrollerDesertLevel2.tmx";
+	static  wstring    W_LEVEL_3_NAME = L"SideScrollerDesertLevel3.tmx";
     static  wstring    W_LEVEL_1_PATH = W_LEVEL_1_DIR + W_LEVEL_1_NAME;
+	static  wstring    W_LEVEL_2_PATH = W_LEVEL_1_DIR + W_LEVEL_2_NAME;
+	static  wstring    W_LEVEL_3_PATH = W_LEVEL_1_DIR + W_LEVEL_3_NAME;
     static  wstring    W_INIT_FILE = L"BugginOutInit.txt";
     static  wstring    W_GUI_INIT_FILE = L"BugginOutGUI.txt";
     static  string     W_DEBUG_FILE = "DebugOutput.txt";

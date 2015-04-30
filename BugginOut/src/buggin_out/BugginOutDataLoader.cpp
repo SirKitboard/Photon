@@ -238,7 +238,7 @@ namespace cse380 {
 
       // LOAD THE LEVEL'S BACKGROUND TILES
       tmxmi::TMXMapImporter tmxMapImporter;
-      tmxMapImporter.loadWorld(game, path);
+      tmxMapImporter.loadWorld(game, W_LEVEL_2_PATH);
 
       // LET'S MAKE A PLAYER SPRITE
       // @TODO - IT WOULD BE BETTER TO LOAD THIS STUFF FROM A FILE
@@ -279,7 +279,7 @@ namespace cse380 {
       }*/
 
       // AND THEN STRATEGICALLY PLACED AROUND THE LEVEL
-	  //makeLightBot(game, playerSpriteType, 1200, 800);
+	  makeLightBot(game, playerSpriteType, 1200, 800);
 	  //makeLightBot(game, playerSpriteType, 1000, 350);
 	  //makeLightBot(game, playerSpriteType, 1200, 1350);
 	  //makeLightBot(game, playerSpriteType, 120, 1250);
@@ -423,6 +423,11 @@ namespace cse380 {
 
 	void BugginOutDataLoader::loadLevel1(Game* game) {
 		GameStateManager* gsm = &(game->getGSM());
+		gsm->unloadCurrentLevel();
+
+		loadWorld(game, W_LEVEL_1_PATH);
+		
+		gsm = &(game->getGSM());
 		SpriteManager* sm = &(gsm->getSpriteManager());
 
 		sm->clearBots();
@@ -436,6 +441,10 @@ namespace cse380 {
 
 	void BugginOutDataLoader::loadLevel2(Game* game) {
 		GameStateManager* gsm = &(game->getGSM());
+		gsm->unloadCurrentLevel();
+
+		loadWorld(game, W_LEVEL_2_PATH);
+		gsm = &(game->getGSM());
 		SpriteManager* sm = &(gsm->getSpriteManager());
 
 		sm->clearBots();
@@ -443,7 +452,6 @@ namespace cse380 {
 		sm->getPlayer().getPhysicalProperties().setX(100);
 		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
 		makeLightBot(game, playerSpriteType, 1200, 800);
-		makeLightBot(game, playerSpriteType, 800, 1200);
 		game->getGUI().getViewport().reset();
 	}
 
