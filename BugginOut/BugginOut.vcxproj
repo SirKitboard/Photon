@@ -190,7 +190,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew.lib;opengl32.lib;winmm.lib;jpeg.lib;freetype.lib;sfml-main-$(Configuration)-$(Platform).lib;sfml-graphics-$(Configuration)-$(Platform).lib;sfml-window-$(Configuration)-$(Platform).lib;sfml-system-$(Configuration)-$(Platform).lib;SimpleSideScrollerFramework-$(Configuration)-$(Platform).lib;tinyxml-$(Configuration)-$(Platform).lib;XMLFileImporter-$(Configuration)-$(Platform).lib;PoseurSpriteTypesImporter-$(Configuration)-$(Platform).lib;TMXMapImporter-$(Configuration)-$(Platform).lib;StandardWindowsLogger-$(Configuration)-$(Platform).lib;Box2D.lib;LuaPlusFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew.lib;opengl32.lib;openal32.lib;sndfile.lib;winmm.lib;jpeg.lib;freetype.lib;sfml-main-$(Configuration)-$(Platform).lib;sfml-graphics-$(Configuration)-$(Platform).lib;sfml-window-$(Configuration)-$(Platform).lib;sfml-system-$(Configuration)-$(Platform).lib;sfml-audio-$(Configuration)-$(Platform).lib;SimpleSideScrollerFramework-$(Configuration)-$(Platform).lib;tinyxml-$(Configuration)-$(Platform).lib;XMLFileImporter-$(Configuration)-$(Platform).lib;PoseurSpriteTypesImporter-$(Configuration)-$(Platform).lib;TMXMapImporter-$(Configuration)-$(Platform).lib;StandardWindowsLogger-$(Configuration)-$(Platform).lib;Box2D.lib;LuaPlusFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkStatus>false</LinkStatus>
       <GenerateMapFile>true</GenerateMapFile>
       <AssemblyDebug>true</AssemblyDebug>

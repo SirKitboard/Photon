@@ -38,6 +38,7 @@
 #include "sssf/text/GameText.h"
 #include "LuaPlusPlus/LuaPlusFramework/LuaState.h"
 #include "sssf/gsm/physics/Physics.h"
+#include <SFML/Audio.hpp>
 
 #ifdef CROSS
 // SFML INCLUDES
@@ -121,6 +122,11 @@ int WINAPI WinMain(HINSTANCE hInstance,
   bugginOutGame.getGSM().getPhysics().setCollisionListener(bugginOutCollisionListener);
 
   // START THE GAME LOOP
+  sf::Music blah;
+  if (blah.openFromFile("data/audio/FastTalkin.ogg")) {
+	  blah.setLoop(true);
+	  blah.play();
+  }
   bugginOutGame.runGameLoop();
 
   // GAME'S OVER SHUTDOWN ALL THE STUFF WE CONSTRUCTED HERE
