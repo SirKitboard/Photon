@@ -138,15 +138,15 @@ namespace cse380 {
 							if (ps->GetVertexCount() == 4) {
 								b2Vec2 p0 = bodytoadd->GetWorldPoint(ps->GetVertex(0));
 								b2Vec2 p1 = bodytoadd->GetWorldPoint(ps->GetVertex(2));
-								float x = p0.x;
-								float y = p0.y;
+								float x = min(p0.x,p1.x);
+								float y = min(p1.y,p0.y);
 								float width = abs(p0.x - p1.x);
 								float height = abs(p0.y - p1.y);
 
 								tileList.addRenderItem(
 									0,
 									x - vx,
-									y + 64 - vy,
+									y - vy + 64,
 									z,
 									255,
 									width,
