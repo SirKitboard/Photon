@@ -31,6 +31,7 @@ namespace cse380 {
         guiRenderList(DEFAULT_INIT_GUI_RENDER_LIST_SIZE),
         worldRenderList(DEFAULT_INIT_LEVEL_RENDER_LIST_SIZE),
 		lights(DEFAULT_INIT_GUI_RENDER_LIST_SIZE),
+		tiles(DEFAULT_INIT_GUI_RENDER_LIST_SIZE),
         guiTextureManager(nullptr),
         worldTextureManager(nullptr),
         debugTextShouldBeRendered(false) {}

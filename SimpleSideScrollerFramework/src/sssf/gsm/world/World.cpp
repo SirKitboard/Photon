@@ -51,11 +51,12 @@ namespace cse380 {
 
           if (gsm.isWorldRenderable()) {
             GameGraphics* graphics = game->getGraphics();
-            RenderList& renderList = graphics->getWorldRenderList();
+			RenderList& renderList = graphics->getWorldRenderList();
+			RenderList& tileList = graphics->getTileRenderList();
             Viewport& viewport = gui.getViewport();
 
             for (const WorldLayer* layer : layers) {
-              layer->addRenderItemsToRenderList(renderList, viewport);
+              layer->addRenderItemsToRenderList(renderList, tileList,viewport);
             }
           }
         }

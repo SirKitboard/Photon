@@ -34,7 +34,7 @@ namespace cse380 {
             the viewport, and creates a RenderItem for each one. It then
             adds each one to the provided render list.
             */
-        void SparseLayer::addRenderItemsToRenderList(RenderList& renderList,
+        void SparseLayer::addRenderItemsToRenderList(RenderList& renderList,RenderList& tileList,
           const Viewport& viewport) const {
           // WE'LL USE THIS IN OUR CALCULATIONS
           float viewportX = viewport.getViewportX();

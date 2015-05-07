@@ -67,7 +67,7 @@ namespace cse380 {
 		  int getColumns() const override { return 0; }
 		  int getRows() const override { return 0; }
           // METHODS DEFINED IN SparseLayer.cpp
-          void addRenderItemsToRenderList(graphics::RenderList&, const gui::Viewport&) const override;
+          void addRenderItemsToRenderList(graphics::RenderList&, graphics::RenderList&,const gui::Viewport&) const override;
           void findTileCollisionsOverlappingSweptShape(Physics&, CollidableObject*);
 		  bool overlapsCollidableTile(AABB aabb);
 		  bool isInsideCollidableTile(int centerX, int centerY);

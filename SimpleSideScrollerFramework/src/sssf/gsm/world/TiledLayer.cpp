@@ -51,7 +51,7 @@ namespace cse380 {
           calculateAndSetLayerHeight();
         }
 
-        void TiledLayer::addRenderItemsToRenderList(graphics::RenderList& renderList,
+        void TiledLayer::addRenderItemsToRenderList(graphics::RenderList& renderList,graphics::RenderList& tileList,
           const gui::Viewport& viewport) const {
           // WE'LL USE THIS IN OUR CALCULATIONS
           int vx = viewport.getViewportX();
@@ -130,17 +130,41 @@ namespace cse380 {
 			  CollidableTile* cotile = (*co_iterator);
 			  b2Body* bodytoadd = cotile->tileBody;
 			  if (bodytoadd->GetPosition().x > vx-63 && bodytoadd->GetPosition().x < vx + vw+63){
-				  if (bodytoadd->GetPosition().y > vy-63 && bodytoadd->GetPosition().y < vy + vh+63) {
-					  renderList.addRenderItem(
-						  cotile->tile->textureID-1,
-						  bodytoadd->GetPosition().x - vx - 32,
-						  bodytoadd->GetPosition().y - vy - 32,
-						  z,
-						  255,
-						  tileWidth,
-						  tileHeight,
-						  0
-					  );
+				 if (bodytoadd->GetPosition().y > vy-63 && bodytoadd->GetPosition().y < vy + vh+63) {
+					for (b2Fixture* f = bodytoadd->GetFixtureList(); f; f = f->GetNext())
+					{
+						if (f->GetShape()->GetType() == b2Shape::e_polygon){
+							b2PolygonShape* ps = (b2PolygonShape*)f->GetShape();
+							if (ps->GetVertexCount() == 4) {
+								b2Vec2 p0 = bodytoadd->GetWorldPoint(ps->GetVertex(0));
+								b2Vec2 p1 = bodytoadd->GetWorldPoint(ps->GetVertex(2));
+								float x = p0.x;
+								float y = p0.y;
+								float width = abs(p0.x - p1.x);
+								float height = abs(p0.y - p1.y);
+
+								tileList.addRenderItem(
+									0,
+									x - vx,
+									y + 64 - vy,
+									z,
+									255,
+									width,
+									height,
+									0);
+							}
+						}
+					}
+//					  renderList.addRenderItem(
+//						  cotile->tile->textureID-1,
+//						  bodytoadd->GetPosition().x - vx - 32,
+//						  bodytoadd->GetPosition().y - vy - 32,
+//						  z,
+//						  255,
+//						  tileWidth,
+//						  tileHeight,
+//						  0
+//					  );
 				  }
 			  }
 			 

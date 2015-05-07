@@ -140,7 +140,7 @@ namespace cse380 {
           // METHOD DEFINED IN CHILD CLASSES
 		  virtual int getColumns() const = 0;
 		  virtual int getRows() const = 0;
-          virtual void addRenderItemsToRenderList(graphics::RenderList&, const gui::Viewport&) const = 0;
+          virtual void addRenderItemsToRenderList(graphics::RenderList&, graphics::RenderList&,const gui::Viewport&) const = 0;
           virtual bool willSpriteCollideOnTile(Physics&, const CollidableObject&) const = 0;
           virtual void findTileCollisionsForSprite(Physics&, CollidableObject&) = 0;
 		  virtual bool overlapsCollidableTile(physics::AABB aabb) = 0;

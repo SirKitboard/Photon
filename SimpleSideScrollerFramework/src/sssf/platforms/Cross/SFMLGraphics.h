@@ -30,6 +30,7 @@ namespace cse380 {
         void shutdown() override;
 		void renderLight();
 		void renderDynamicLight();
+		void renderWalls();
         const sf::Color& getColorKey() const { return this->_colorKey; }
         const sf::Color& getFontColor() const { return this->_fontColor; }
       protected:

@@ -90,7 +90,7 @@ namespace cse380 {
 		renderDynamicLight();
         // RENDER THE WORLD RENDER LIST
         renderWorldRenderList();
-		
+		renderWalls();
 
         // RENDER THE GUI RENDER LIST
         renderGUIRenderList();
@@ -208,6 +208,11 @@ namespace cse380 {
         SFMLOS* os = static_cast<SFMLOS*>(this->game->getOS());
         sf::RenderWindow& window = os->getWindow();
 
+		sf::RectangleShape gui(sf::Vector2f(window.getSize().x, 64));
+		gui.setPosition(0, 0);
+		gui.setFillColor(sf::Color(0,0,0));
+		window.draw(gui);
+
         for (const RenderItem& item : guiRenderList) {
           sf::Sprite sprite;
 
@@ -226,13 +231,30 @@ namespace cse380 {
         guiRenderList.clear();
       }
 
+	  void SFMLGraphics::renderWalls() {
+		  GameGUI& gui = game->getGUI();
+		  const Viewport& viewport = gui.getViewport();
+		  SFMLTextureManager* manager = static_cast<SFMLTextureManager*>(this->worldTextureManager);
+		  SFMLOS* os = static_cast<SFMLOS*>(this->game->getOS());
+		  sf::RenderWindow& window = os->getWindow();
+		  sf::BlendMode blend = sf::BlendMultiply;
+		  for (const RenderItem& itemToRender : tiles) {
+			  sf::RectangleShape gui(sf::Vector2f(itemToRender.width, itemToRender.height));
+			  gui.setPosition(itemToRender.x, itemToRender.y);
+			  gui.setFillColor(sf::Color(5,80,125));
+			  window.draw(gui,blend);
+		  }
+		  tiles.clear();
+	  }
+
+
       void SFMLGraphics::renderWorldRenderList() {
         GameGUI& gui = game->getGUI();
         const Viewport& viewport = gui.getViewport();
         SFMLTextureManager* manager = static_cast<SFMLTextureManager*>(this->worldTextureManager);
         SFMLOS* os = static_cast<SFMLOS*>(this->game->getOS());
         sf::RenderWindow& window = os->getWindow();
-
+		sf::BlendMode blend = sf::BlendMultiply;
         // GO THROUGH EACH ITEM IN THE LIST
         for (const RenderItem& itemToRender : worldRenderList) {
           // LET'S GET THE TEXTURE WE WANT TO RENDER
@@ -240,7 +262,7 @@ namespace cse380 {
           sf::Sprite sprite;
           sf::Texture& texture = manager->getTexture(itemToRender.id);
           sf::Vector2i position(itemToRender.x, itemToRender.y);
-		  sf::BlendMode blend = sf::BlendMultiply;
+		  
 		 // sf::Transformable transformable(itemToRender.roation);
 
           position.x += viewport.getViewportOffsetX();

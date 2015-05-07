@@ -65,6 +65,9 @@ namespace cse380 {
         TextureManager* getWorldTextureManager() { return worldTextureManager; }
         const TextureManager* getWorldTextureManager() const { return worldTextureManager; }
 
+		RenderList& getTileRenderList() { return tiles; }
+		const RenderList& getTileRenderList() const { return tiles; }
+
         // AND A METHOD FOR TURNING DEBUG TEXT ON AND OFF
         void toggleDebugTextShouldBeRendered() {
           debugTextShouldBeRendered = !debugTextShouldBeRendered;
@@ -133,6 +136,7 @@ namespace cse380 {
         RenderList guiRenderList;
         RenderList worldRenderList;
 		RenderList lights;
+		RenderList tiles;
 
         // NOTE THAT IF WE REALLY WANTED TO BE SLICK, WE COULD PROVIDE
         // MULTIPLE WORLD RENDER LISTS, ONE FOR EACH Z-LEVEL

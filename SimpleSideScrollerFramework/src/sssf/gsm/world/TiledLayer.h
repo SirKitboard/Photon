@@ -227,7 +227,7 @@ namespace cse380 {
           /// are in the viewport, and creates a RenderItem for each one. It
           /// then adds each one to the provided RenderList.
           /// </summary>
-          void addRenderItemsToRenderList(graphics::RenderList&, const gui::Viewport&) const override;
+          void addRenderItemsToRenderList(graphics::RenderList&, graphics::RenderList&,const gui::Viewport&) const override;
           void findTileCollisionsForSprite(Physics&, CollidableObject&) override;
           bool willSpriteCollideOnTile(Physics&, const CollidableObject&) const override;
 		  void generateCollidableTiles(b2World* gameWorld);
