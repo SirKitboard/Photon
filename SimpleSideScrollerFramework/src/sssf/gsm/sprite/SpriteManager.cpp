@@ -52,8 +52,8 @@ namespace cse380 {
             spriteType->getTextureHeight())) {
             // SINCE IT'S VIEWABLE, ADD IT TO THE RENDER LIST
             renderList.addRenderItem(sprite.getCurrentImageID(),
-              round(pp.getX() - viewport.getViewportX()),
-              round(pp.getY() - viewport.getViewportY()),
+              round(pp.getX() - viewport.getViewportX()) - 32,
+              round(pp.getY() - viewport.getViewportY()) - 32,
               round(pp.getZ()),
               sprite.getAlpha(),
               spriteType->getTextureWidth(),
@@ -73,95 +73,95 @@ namespace cse380 {
 			RenderList& lightList = graphics->getLightRenderList();
             // ADD THE PLAYER SPRITE
             addSpriteToRenderList(player, renderList, viewport);
-			const PhysicalProperties& pp = player.getPhysicalProperties();
-			int xpos = pp.getX();
-			int ypos = pp.getY();
-			if (pp.getVelocityX() < -0.01) {
-				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightW.png"),
-					round(pp.getX() - viewport.getViewportX())-300+32,
-					round(pp.getY() - viewport.getViewportY())-150+32,
-					round(pp.getZ()),
-					255,
-					300,
-					300,
-					0);
-			}
-			else if (pp.getVelocityY() < -0.01) {
-				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightN.png"),
-					round(pp.getX() - viewport.getViewportX())-150+32,
-					round(pp.getY() - viewport.getViewportY())-300+32,
-					round(pp.getZ()),
-					255,
-					300,
-					300,
-					0);
-			}
-			else if (pp.getVelocityY() > 0.01) {
-				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightS.png"),
-					round(pp.getX() - viewport.getViewportX())-150+32,
-					round(pp.getY() - viewport.getViewportY())+32,
-					round(pp.getZ()),
-					255,
-					300,
-					300,
-					0);
-			}
-			else {
-				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightE.png"),
-					round(pp.getX() - viewport.getViewportX())+32,
-					round(pp.getY() - viewport.getViewportY())-150+32,
-					round(pp.getZ()),
-					255,
-					300,
-					300,
-					0);
-			}
+//			const PhysicalProperties& pp = player.getPhysicalProperties();
+//			int xpos = pp.getX();
+//			int ypos = pp.getY();
+//			if (pp.getVelocityX() < -0.01) {
+//				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightW.png"),
+//					round(pp.getX() - viewport.getViewportX())-300+32,
+//					round(pp.getY() - viewport.getViewportY())-150+32,
+//					round(pp.getZ()),
+//					255,
+//					300,
+//					300,
+//					0);
+//			}
+//			else if (pp.getVelocityY() < -0.01) {
+//				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightN.png"),
+//					round(pp.getX() - viewport.getViewportX())-150+32,
+//					round(pp.getY() - viewport.getViewportY())-300+32,
+//					round(pp.getZ()),
+//					255,
+//					300,
+//					300,
+//					0);
+//			}
+//			else if (pp.getVelocityY() > 0.01) {
+//				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightS.png"),
+//					round(pp.getX() - viewport.getViewportX())-150+32,
+//					round(pp.getY() - viewport.getViewportY())+32,
+//					round(pp.getZ()),
+//					255,
+//					300,
+//					300,
+//					0);
+//			}
+//			else {
+//				lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightE.png"),
+//					round(pp.getX() - viewport.getViewportX())+32,
+//					round(pp.getY() - viewport.getViewportY())-150+32,
+//					round(pp.getZ()),
+//					255,
+//					300,
+//					300,
+//					0);
+//			}
             // NOW ADD THE REST OF THE SPRITES
             for (const Bot* bot : bots) {
               addSpriteToRenderList(*bot, renderList, viewport);
-			  const PhysicalProperties& pp = bot->getPhysicalProperties();
-			  int xpos = pp.getX();
-			  int ypos = pp.getY();
-			  if (pp.getVelocityX() < -0.01) {
-				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedW.png"),
-					  round(pp.getX() - viewport.getViewportX()) - 300 + 32,
-					  round(pp.getY() - viewport.getViewportY()) - 150 + 32,
-					  round(pp.getZ()),
-					  255,
-					  300,
-					  300,
-					  0);
-			  }
-			  else if (pp.getVelocityY() < -0.01) {
-				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedN.png"),
-					  round(pp.getX() - viewport.getViewportX()) - 150 + 32,
-					  round(pp.getY() - viewport.getViewportY()) - 300 + 32,
-					  round(pp.getZ()),
-					  255,
-					  300,
-					  300,
-					  0);
-			  }
-			  else if (pp.getVelocityY() > 0.01) {
-				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedS.png"),
-					  round(pp.getX() - viewport.getViewportX()) - 150 + 32,
-					  round(pp.getY() - viewport.getViewportY()) + 32,
-					  round(pp.getZ()),
-					  255,
-					  300,
-					  300,
-					  0);
-			  }
-			  else {
-				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedE.png"),
-					  round(pp.getX() - viewport.getViewportX()) + 32,
-					  round(pp.getY() - viewport.getViewportY()) - 150 + 32,
-					  round(pp.getZ()),
-					  255,
-					  300,
-					  300,
-					  0);
-			  }
+//			  const PhysicalProperties& pp = bot->getPhysicalProperties();
+//			  int xpos = pp.getX();
+//			  int ypos = pp.getY();
+//			  if (pp.getVelocityX() < -0.01) {
+//				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedW.png"),
+//					  round(pp.getX() - viewport.getViewportX()) - 300 + 32,
+//					  round(pp.getY() - viewport.getViewportY()) - 150 + 32,
+//					  round(pp.getZ()),
+//					  255,
+//					  300,
+//					  300,
+//					  0);
+//			  }
+//			  else if (pp.getVelocityY() < -0.01) {
+//				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedN.png"),
+//					  round(pp.getX() - viewport.getViewportX()) - 150 + 32,
+//					  round(pp.getY() - viewport.getViewportY()) - 300 + 32,
+//					  round(pp.getZ()),
+//					  255,
+//					  300,
+//					  300,
+//					  0);
+//			  }
+//			  else if (pp.getVelocityY() > 0.01) {
+//				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedS.png"),
+//					  round(pp.getX() - viewport.getViewportX()) - 150 + 32,
+//					  round(pp.getY() - viewport.getViewportY()) + 32,
+//					  round(pp.getZ()),
+//					  255,
+//					  300,
+//					  300,
+//					  0);
+//			  }
+//			  else {
+//				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedE.png"),
+//					  round(pp.getX() - viewport.getViewportX()) + 32,
+//					  round(pp.getY() - viewport.getViewportY()) - 150 + 32,
+//					  round(pp.getZ()),
+//					  255,
+//					  300,
+//					  300,
+//					  0);
+//			  }
             }
           }
         }

@@ -110,8 +110,8 @@ namespace cse380 {
 		              // APPLY PARALLAX SCROLLING TO THE COORDINATES
 		              renderList.addRenderItem(
 			              tileToAdd->textureID,
-			              parallaxTileX,
-			              parallaxTileY,
+			              parallaxTileX - 32,
+			              parallaxTileY - 32,
 			              z,
 			              255,
 			              tileWidth,
@@ -133,8 +133,8 @@ namespace cse380 {
 				  if (bodytoadd->GetPosition().y > vy-63 && bodytoadd->GetPosition().y < vy + vh+63) {
 					  renderList.addRenderItem(
 						  cotile->tile->textureID-1,
-						  bodytoadd->GetPosition().x - vx,
-						  bodytoadd->GetPosition().y - vy,
+						  bodytoadd->GetPosition().x - vx - 32,
+						  bodytoadd->GetPosition().y - vy - 32,
 						  z,
 						  255,
 						  tileWidth,
