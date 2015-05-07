@@ -83,7 +83,7 @@ namespace cse380 {
     static  float      PLAYER_INIT_X = 80.0f;
     static  float      PLAYER_INIT_Y = 100.0f;
     static  float      JUMP_SPEED = -24.0f;
-    static  float      PLAYER_SPEED = 240.0f;
+    static  float      PLAYER_SPEED = 50000.0f;
     static  int        MIN_FPS = 5;
     static  int        MAX_FPS = 100;
     static  int        FPS_INC = 1;

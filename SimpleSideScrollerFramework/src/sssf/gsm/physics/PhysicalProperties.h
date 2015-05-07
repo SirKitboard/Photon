@@ -24,6 +24,7 @@ namespace cse380 {
 			  playerBodyDef.type = b2_dynamicBody;
 			  playerBodyDef.position.Set(100,100);
 			  body = gameWorld->CreateBody(&playerBodyDef);
+			  body->SetFixedRotation(true);
 			  b2PolygonShape playerBox;
 			  playerBox.SetAsBox(32.0f, 32.0f);
 			  b2FixtureDef fixtureDef;

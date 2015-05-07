@@ -124,9 +124,6 @@ namespace cse380 {
 			  sf::Sprite sprite;
 			  sf::Texture& texture = manager->getTexture(itemToRender.id);
 			  sf::Vector2i position(itemToRender.x, itemToRender.y);
-			  sf::BlendMode blend = sf::BlendMultiply;
-			  blend.alphaDstFactor = sf::BlendMode::SrcAlpha;
-			  blend.colorDstFactor = sf::BlendMode::SrcColor;
 			  // sf::Transformable transformable(itemToRender.roation);
 
 			  position.x += viewport.getViewportOffsetX();

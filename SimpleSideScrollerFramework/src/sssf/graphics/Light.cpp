@@ -235,7 +235,7 @@ namespace cse380 {
 			sf::VertexArray Light::computeAndGetLightShape()
 			{
 				std::vector<b2Vec2> points = std::vector<b2Vec2>();
-				prePopulatePoints(&points, this->angle, this->halfAngleSpread, 200);
+				prePopulatePoints(&points, this->angle, this->halfAngleSpread, 100);
 				
 
 				/*gathering all of the bodies, and adding those points if they're in the light's area

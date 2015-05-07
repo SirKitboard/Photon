@@ -429,7 +429,7 @@ namespace cse380 {
 		
 		gsm = &(game->getGSM());
 		SpriteManager* sm = &(gsm->getSpriteManager());
-
+		
 		sm->clearBots();
 		sm->getPlayer().getPhysicalProperties().setX(80);
 		sm->getPlayer().getPhysicalProperties().setX(100);
