@@ -237,6 +237,7 @@ namespace cse380 {
 				std::vector<b2Vec2> points = std::vector<b2Vec2>();
 				prePopulatePoints(&points, this->angle, this->halfAngleSpread, 200);
 				
+
 				/*gathering all of the bodies, and adding those points if they're in the light's area
 				b2Body* body = game->getGameWorld()->GetBodyList();
 				while (body != nullptr)
