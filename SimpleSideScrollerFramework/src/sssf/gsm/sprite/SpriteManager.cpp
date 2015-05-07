@@ -130,7 +130,7 @@ namespace cse380 {
 					  255,
 					  300,
 					  300,
-					  180);
+					  0);
 			  }
 			  else if (pp.getVelocityY() < -0.01) {
 				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedN.png"),
@@ -140,7 +140,7 @@ namespace cse380 {
 					  255,
 					  300,
 					  300,
-					  270);
+					  0);
 			  }
 			  else if (pp.getVelocityY() > 0.01) {
 				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedS.png"),
@@ -150,7 +150,7 @@ namespace cse380 {
 					  255,
 					  300,
 					  300,
-					  90);
+					  0);
 			  }
 			  else {
 				  lightList.addRenderItem(graphics->getGUITextureManager()->loadTexture(L"data/gui/overlays/LightRedE.png"),

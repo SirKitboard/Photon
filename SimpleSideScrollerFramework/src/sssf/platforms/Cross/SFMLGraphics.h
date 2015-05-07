@@ -4,6 +4,7 @@
 #include "sssf/graphics/GameGraphics.h"
 
 #include <SFML/Graphics.hpp>
+#include "sssf/graphics/Light.h"
 
 const int DEFAULT_BPP = 32;
 
@@ -28,6 +29,7 @@ namespace cse380 {
         void setFontColor(const uint8_t, const uint8_t, const uint8_t) override;
         void shutdown() override;
 		void renderLight();
+		void renderDynamicLight();
         const sf::Color& getColorKey() const { return this->_colorKey; }
         const sf::Color& getFontColor() const { return this->_fontColor; }
       protected:
@@ -42,6 +44,7 @@ namespace cse380 {
         sf::Text _text;
         int _fontSize;
         bool _fontLoaded;
+		vector<Light*> dynamicLights;
       };
     }
   }

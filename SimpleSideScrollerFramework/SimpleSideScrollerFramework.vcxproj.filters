@@ -205,6 +205,12 @@
     <ClCompile Include="src\sssf\gsm\ai\pathfinding\OrthographicGridPathfinder.cpp">
       <Filter>src\sssf\gsm\ai\pathfinding</Filter>
     </ClCompile>
+    <ClCompile Include="src\sssf\graphics\Light.cpp">
+      <Filter>src\sssf\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\platforms\Cross\SFMLAudio.cpp">
+      <Filter>src\sssf\platforms\Cross</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src/sssf_VS/stdafx.h">
@@ -398,6 +404,15 @@
     </ClInclude>
     <ClInclude Include="src\sssf\gsm\ai\Point.h">
       <Filter>src\sssf\gsm\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\graphics\Light.h">
+      <Filter>src\sssf\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\graphics\RaycastCallback.h">
+      <Filter>src\sssf\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\platforms\Cross\SFMLAudio.h">
+      <Filter>src\sssf\platforms\Cross</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

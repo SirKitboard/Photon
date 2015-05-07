@@ -8,11 +8,13 @@
 #include "sssf/gsm/world/World.h"
 #include "sssf/gsm/state/GameStateManager.h"
 
+#include "sssf/graphics/Light.h"
+
 namespace cse380 {
   namespace sssf {
     namespace sfml {
       // THIS IS THE COLOR WE WILL USE TO CLEAR THE SCREEN WITH
-      const sf::Color BACKGROUND_COLOR(20,20,20);
+      const sf::Color BACKGROUND_COLOR(10,10,10);
 
       // BY DEFAULT, WE WILL USE THIS FOR TEXTURE DRAWING, IT USES NO TRANSPARENCY
       const sf::Color DEFAULT_ALPHA_COLOR(255, 255, 255, 255);
@@ -28,6 +30,7 @@ namespace cse380 {
       SFMLGraphics::SFMLGraphics(Game* initGame) {
         this->game = initGame;
         this->_fontLoaded = false;
+		this->dynamicLights = vector<Light*>();
       }
 
       TextureManager* SFMLGraphics::createTextureManager() {
@@ -84,6 +87,7 @@ namespace cse380 {
 
         window.clear(BACKGROUND_COLOR);
 		renderLight();
+		renderDynamicLight();
         // RENDER THE WORLD RENDER LIST
         renderWorldRenderList();
 		
@@ -164,6 +168,26 @@ namespace cse380 {
 		  }
 		  lights.clear();
       }
+
+	  void SFMLGraphics::renderDynamicLight() {
+		  GameGUI& gui = game->getGUI();
+		  const Viewport& viewport = gui.getViewport();
+		  //SFMLTextureManager* manager = static_cast<SFMLTextureManager*>(this->guiTextureManager);
+		  SFMLOS* os = static_cast<SFMLOS*>(this->game->getOS());
+		  sf::RenderWindow& window = os->getWindow();
+		  gsm::physics::PhysicalProperties pp = game->getGSM().getSpriteManager().getPlayer().getPhysicalProperties();
+		  if (game->getGSM().isGameInProgress())
+		  {
+			  Light light = Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, 3.14f, 6.5f, true);
+			  std::cout << light.pointRectDist(light.getPosition()) << " " << light.getReach();
+			  if (light.getReach() >= light.pointRectDist(light.getPosition()))
+			  {
+				  window.draw(light.computeAndGetLightShape());
+			  }
+			  //window.draw(light.computeAndGetLightShape());
+		  }
+		  
+	  }
 
       void SFMLGraphics::setColorKey(const uint8_t r, const uint8_t g,
         const uint8_t b) {
