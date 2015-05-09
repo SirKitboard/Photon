@@ -53,6 +53,7 @@
 #include "psti/PoseurSpriteTypesImporter.h"
 #include <sssf/gsm/ai/pathfinding/OrthographicGridPathfinder.h>
 #include <sssf/gsm/ai/bots/RoamingLightBot.h>
+#include <b2dJson/b2dJson.h>
 
 /*
     loadGame - This method loads the setup game data into the game and
@@ -425,6 +426,8 @@ namespace cse380 {
 		GameStateManager* gsm = &(game->getGSM());
 		gsm->unloadCurrentLevel();
 
+		game->setWorld("data/levels/level_one/level_one.json");
+
 		loadWorld(game, W_LEVEL_1_PATH);
 		
 		gsm = &(game->getGSM());
@@ -433,7 +436,7 @@ namespace cse380 {
 		sm->clearBots();
 		sm->getPlayer().getPhysicalProperties().setX(80);
 		sm->getPlayer().getPhysicalProperties().setX(100);
-		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
+		//AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
 		//makeLightBot(game, playerSpriteType, 1200, 800);
 
 		game->getGUI().getViewport().reset();

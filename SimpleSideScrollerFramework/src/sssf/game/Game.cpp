@@ -19,6 +19,7 @@
 #include "sssf/timer/GameTimer.h"
 #include <LuaPlusFramework/LuaFunction.h>
 #include <LuaPlusFramework/LuaObject.h>
+#include <b2dJson/b2dJson.h>
 
 
 namespace cse380 {
@@ -35,7 +36,10 @@ namespace cse380 {
         // IS TO BE USED THESE OBJECT SHOULD BE CONSTRUCTED
         // AND THEN FED TO THIS Game USING THE init METHOD
 		  b2Vec2 gravity(0.0f, 0.0f);
-		  gameWorld = new b2World(gravity);
+//		  gameWorld = new b2World(gravity);
+		  
+		  
+
 		  luaState = LuaPlus::LuaState::Create();
 		  int result = luaState->DoFile("LuaTest.lua");
       }
@@ -145,7 +149,7 @@ namespace cse380 {
         // AND UPDATE THE GAME STATE OF COURSE
         gsm.goToLoadLevel();   // NOTE THAT CURRENTLY THERE IS NO LEVEL FILE,
         // THAT'S ONE THING YOU'LL BE DOING
-        dataLoader->loadWorld(this, currentLevelDir + currentLevelFileName);
+        dataLoader->loadLevel1(this);
       }
     }
   }
