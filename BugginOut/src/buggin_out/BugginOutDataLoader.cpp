@@ -592,8 +592,8 @@ namespace cse380 {
       Button* buttonToAdd = new Button(
         normalTextureID,
         mouseOverTextureID,
-        0,
-        0,
+        480,
+        350,
         0,
         255,
         200,

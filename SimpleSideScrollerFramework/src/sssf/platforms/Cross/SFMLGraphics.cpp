@@ -93,7 +93,9 @@ namespace cse380 {
 		renderWalls();
 
         // RENDER THE GUI RENDER LIST
-        renderGUIRenderList();
+		if (!game->getPaused()) {
+			renderGUIRenderList();
+		}
 
         // RENDER THE TEXT
         renderText(text);
@@ -208,10 +210,10 @@ namespace cse380 {
         SFMLOS* os = static_cast<SFMLOS*>(this->game->getOS());
         sf::RenderWindow& window = os->getWindow();
 
-		sf::RectangleShape gui(sf::Vector2f(window.getSize().x, 64));
-		gui.setPosition(0, 0);
-		gui.setFillColor(sf::Color(0,0,0));
-		window.draw(gui);
+//		sf::RectangleShape gui(sf::Vector2f(window.getSize().x, 64));
+//		gui.setPosition(0, 0);
+//		gui.setFillColor(sf::Color(0,0,0));
+//		window.draw(gui);
 
         for (const RenderItem& item : guiRenderList) {
           sf::Sprite sprite;
@@ -241,7 +243,7 @@ namespace cse380 {
 		  for (const RenderItem& itemToRender : tiles) {
 			  sf::RectangleShape gui(sf::Vector2f(itemToRender.width, itemToRender.height));
 			  gui.setPosition(itemToRender.x, itemToRender.y);
-			  gui.setFillColor(sf::Color(5,80,125));
+			  gui.setFillColor(sf::Color(0,0,0));
 			  window.draw(gui,blend);
 		  }
 		  tiles.clear();
@@ -264,30 +266,12 @@ namespace cse380 {
           sf::Vector2i position(itemToRender.x, itemToRender.y);
 		  
 		 // sf::Transformable transformable(itemToRender.roation);
-
-          position.x += viewport.getViewportOffsetX();
-          position.y += viewport.getViewportOffsetY();
-
           sf::Vector2u size = texture.getSize();
           rect.left = 0;
           rect.top = 0;
           rect.width = size.x;
           rect.height = size.y;
 
-          // ADJUST FOR THE GUI OFFSET
-          if (position.x < viewport.getViewportOffsetX()) {
-            int dx = viewport.getViewportOffsetX() - position.x;
-            rect.left = dx;
-            rect.width -= dx;
-            position.x += dx;
-          }
-
-          if (position.y < viewport.getViewportOffsetY()) {
-            int dy = viewport.getViewportOffsetY() - position.y;
-            rect.top = dy;
-            rect.height -= dy;
-            position.y += dy;
-          }
           // This is a hackish form of clipping; when you start rotating and
           // scaling objects, this *will* stop being useful.
 

@@ -105,6 +105,7 @@ namespace cse380 {
     const unsigned int UP_KEY = sf::Keyboard::Up;
 	const unsigned int LCTRL_KEY = sf::Keyboard::LControl;
 	const unsigned int RCTRL_KEY = sf::Keyboard::RControl;
+	const unsigned int ESC_KEY = sf::Keyboard::Escape;
     const unsigned int DOWN_KEY = sf::Keyboard::Down;
     const unsigned int LEFT_KEY = sf::Keyboard::Left;
     const unsigned int RIGHT_KEY = sf::Keyboard::Right;

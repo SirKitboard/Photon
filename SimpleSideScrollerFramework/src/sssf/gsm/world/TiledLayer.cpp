@@ -146,7 +146,7 @@ namespace cse380 {
 								tileList.addRenderItem(
 									0,
 									x - vx,
-									y - vy + 64,
+									y - vy,
 									z,
 									255,
 									width,

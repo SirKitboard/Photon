@@ -50,8 +50,8 @@ namespace cse380 {
         }
 
         // CASCADE THIS CALL TO THE CURSOR, IF THERE IS ONE
-        if (customCursor != nullptr)
-          customCursor->addRenderItemToRenderList(guiRenderList);
+        //if (customCursor != nullptr)
+          //customCursor->addRenderItemToRenderList(guiRenderList);
 
       }
 

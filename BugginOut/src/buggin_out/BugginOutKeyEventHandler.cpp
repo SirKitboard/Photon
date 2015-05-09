@@ -160,6 +160,10 @@ namespace cse380 {
 		  game->getDataLoader()->loadLevel3(game);
 	  }
 
+	  if (input->isKeyDownForFirstTime(ESC_KEY)) {
+		  game->togglePause();
+	  }
+
       // LET'S MESS WITH THE TARGET FRAME RATE IF THE USER PRESSES THE HOME OR END KEYS
       GameTimer* timer = game->getTimer();
       int fps = timer->getTargetFPS();

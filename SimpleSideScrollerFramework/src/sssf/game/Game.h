@@ -158,6 +158,9 @@ namespace cse380 {
         void processGameData();
         void quitApp();
 
+		bool getPaused() { return paused; }
+		void togglePause() { paused = !paused; }
+
         /**
          * Forces the unloading of all game data loaded for the current level
          * and then return the user to the main menu.
@@ -215,7 +218,7 @@ namespace cse380 {
         GameTimer* timer;
 		b2World *gameWorld;
 		LuaPlus::LuaState* luaState;
-		
+		bool paused;
         // THIS KEEPS TRACK OF THE NAME OF THE LEVEL FILE THAT'S BEING USED
         wstring currentLevelFileName;
         wstring currentLevelDir;

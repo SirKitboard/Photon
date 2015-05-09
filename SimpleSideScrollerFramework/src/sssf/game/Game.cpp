@@ -41,6 +41,7 @@ namespace cse380 {
       }
 
       Game::~Game() {
+		  paused = false;
         // THE GAME AND PLATFORM STUFF SHOULD BE DELETED
         // BY WHOEVER CREATED THEM
       }
@@ -143,6 +144,7 @@ namespace cse380 {
 
       void Game::startGame() {
         // AND UPDATE THE GAME STATE OF COURSE
+		  togglePause();
         gsm.goToLoadLevel();   // NOTE THAT CURRENTLY THERE IS NO LEVEL FILE,
         // THAT'S ONE THING YOU'LL BE DOING
         dataLoader->loadWorld(this, currentLevelDir + currentLevelFileName);

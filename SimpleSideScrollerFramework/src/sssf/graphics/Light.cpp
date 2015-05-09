@@ -214,7 +214,7 @@ namespace cse380 {
 				float px = pointVec.x;
 				float py = pointVec.y;
 				gui::Viewport vp = game->getGUI().getViewport();
-				py += vp.getViewportOffsetY();
+				//py += vp.getViewportOffsetY();
 				float rx = (float)vp.getViewportX();
 				float ry = (float)vp.getViewportY();
 				float rwidth = (float)vp.getViewportWidth();
@@ -227,8 +227,8 @@ namespace cse380 {
 			sf::Vector2f Light::b2WorldToViewport(b2Vec2 point)
 			{
 				gui::Viewport viewport = game->getGUI().getViewport();
-				sf::Vector2f newVect = sf::Vector2f((point.x)-viewport.getViewportX()+viewport.getViewportOffsetX(),
-					((point.y)-viewport.getViewportY()+viewport.getViewportOffsetY()));
+				sf::Vector2f newVect = sf::Vector2f((point.x)-viewport.getViewportX(),
+					((point.y)-viewport.getViewportY()));
 				return newVect;
 			}
 
