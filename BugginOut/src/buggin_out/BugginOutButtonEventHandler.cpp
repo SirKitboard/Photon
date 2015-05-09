@@ -44,6 +44,10 @@ namespace cse380 {
       else if (command == W_QUIT_COMMAND) {
         game->quitGame();
       }
+
+	  else if (command == W_RESUME_COMMAND) {
+		  game->togglePause();
+	  }
     }
   }
 }

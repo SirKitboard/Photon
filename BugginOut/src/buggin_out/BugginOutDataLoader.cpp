@@ -101,6 +101,8 @@ namespace cse380 {
 	  W_QUIT_IMAGE_MO_PATH = properties[W_QUIT_IMAGE_MO_PATH];
 	  W_EXIT_IMAGE_PATH = properties[W_EXIT_IMAGE_PATH];
 	  W_EXIT_IMAGE_MO_PATH = properties[W_EXIT_IMAGE_MO_PATH];
+	  W_RESUME_IMAGE_PATH = properties[W_RESUME_IMAGE_PATH];
+	  W_RESUME_IMAGE_MO_PATH = properties[W_RESUME_IMAGE_MO_PATH];
 	  W_ABOUT_IMAGE_PATH = properties[W_ABOUT_IMAGE_PATH];
 	  W_ABOUT_IMAGE_H_PATH = properties[W_ABOUT_IMAGE_H_PATH];
 	  W_HELP_IMAGE_PATH = properties[W_HELP_IMAGE_PATH];
@@ -352,7 +354,7 @@ namespace cse380 {
       TextureManager* guiTextureManager = graphics->getGUITextureManager();
 
       // SETUP THE CURSOR VIA OUR HELPER METHOD
-      initCursor(gui, guiTextureManager);
+      //initCursor(gui, guiTextureManager);
       initSplashScreen(game, gui, guiTextureManager);
       initMainMenu(gui, guiTextureManager);
       initInGameGUI(gui, guiTextureManager);
@@ -586,14 +588,14 @@ namespace cse380 {
       ScreenGUI* inGameGUI = new ScreenGUI();
 
       size_t normalTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_PATH);
-      size_t mouseOverTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_PATH);
+      size_t mouseOverTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_MO_PATH);
 
       // INIT THE QUIT BUTTON
       Button* buttonToAdd = new Button(
         normalTextureID,
         mouseOverTextureID,
-        480,
-        350,
+        452,
+        430,
         0,
         255,
         200,
@@ -602,6 +604,25 @@ namespace cse380 {
         W_QUIT_COMMAND
         );
       inGameGUI->addButton(buttonToAdd);
+
+
+	  normalTextureID = guiTextureManager->loadTexture(W_RESUME_IMAGE_PATH);
+	  mouseOverTextureID = guiTextureManager->loadTexture(W_RESUME_IMAGE_MO_PATH);
+
+	  // INIT THE QUIT BUTTON
+	  buttonToAdd = new Button(
+		  normalTextureID,
+		  mouseOverTextureID,
+		  437,
+		  330,
+		  0,
+		  255,
+		  200,
+		  100,
+		  false,
+		  W_RESUME_COMMAND
+		  );
+	  inGameGUI->addButton(buttonToAdd);
 
       // AND LET'S ADD OUR SCREENS
       gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);

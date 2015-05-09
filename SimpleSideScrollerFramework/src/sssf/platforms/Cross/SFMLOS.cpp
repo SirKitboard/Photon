@@ -35,7 +35,7 @@ namespace cse380 {
             exit(0);
           case sf::Event::Resized:
           case sf::Event::MouseEntered:
-            this->_window.setMouseCursorVisible(false);
+            this->_window.setMouseCursorVisible(true);
           }
         }
       }

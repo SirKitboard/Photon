@@ -61,78 +61,83 @@ namespace cse380 {
 
       // IF THE GAME IS IN PROGRESS
       if (gsm.isGameInProgress()) {
-		  player.setCurrentState(IDLE);
-        // WASD KEY PRESSES WILL CONTROL THE PLAYER
-        // SO WE'LL UPDATE THE PLAYER VELOCITY WHEN THESE KEYS ARE
-        // PRESSED, THAT WAY PHYSICS CAN CORRECT AS NEEDED
-        float vX = pp.getVelocityX();
-        float vY = pp.getVelocityY();
+	      if (game->getPaused()) {
+		      player.setCurrentState(IDLE);
+		      // WASD KEY PRESSES WILL CONTROL THE PLAYER
+		      // SO WE'LL UPDATE THE PLAYER VELOCITY WHEN THESE KEYS ARE
+		      // PRESSED, THAT WAY PHYSICS CAN CORRECT AS NEEDED
+		      float vX = pp.getVelocityX();
+		      float vY = pp.getVelocityY();
 
-        // YOU MIGHT WANT TO UNCOMMENT THIS FOR SOME TESTING,
-        // BUT IN THIS ASSIGNMENT, THE USER MOVES VIA MOUSE BUTTON PRESSES
-        if (input->isKeyDown(A_KEY)) {
-          vX = -PLAYER_SPEED;
-          //player.setCurrentState(ATTACKING_LEFT);
-        }
-        else if (input->isKeyDown(D_KEY)) {
-          vX = PLAYER_SPEED;
-          //player.setCurrentState(ATTACKING_RIGHT);
-        }
-		else {
-			vX = 0.0f;
-			player.setCurrentState(IDLE);
-		}
-		if (input->isKeyDown(W_KEY)) {
-			vY = -PLAYER_SPEED;
-			//player.setCurrentState(ATTACKING_RIGHT);
-		}
-		else if (input->isKeyDown(S_KEY)) {
-			vY = PLAYER_SPEED;
-			//player.setCurrentState(ATTACKING_RIGHT);
-		}
-		else {
-			vY = 0.0f;
-			player.setCurrentState(IDLE);
-		}
-		if (input->isKeyDownForFirstTime(G_KEY)) {
-          viewport.toggleDebugView();
-          game->getGraphics()->toggleDebugTextShouldBeRendered();
-        }
-       
-        if (input->isKeyDownForFirstTime(P_KEY)) {
-          gsm.getPhysics().togglePhysics();
-        }
-        if (input->isKeyDownForFirstTime(T_KEY)) {
-          gsm.getPhysics().activateForSingleUpdate();
-        }
+		      // YOU MIGHT WANT TO UNCOMMENT THIS FOR SOME TESTING,
+		      // BUT IN THIS ASSIGNMENT, THE USER MOVES VIA MOUSE BUTTON PRESSES
+		      if (input->isKeyDown(A_KEY)) {
+			      vX = -PLAYER_SPEED;
+			      //player.setCurrentState(ATTACKING_LEFT);
+		      }
+		      else if (input->isKeyDown(D_KEY)) {
+			      vX = PLAYER_SPEED;
+			      //player.setCurrentState(ATTACKING_RIGHT);
+		      }
+		      else {
+			      vX = 0.0f;
+			      player.setCurrentState(IDLE);
+		      }
+		      if (input->isKeyDown(W_KEY)) {
+			      vY = -PLAYER_SPEED;
+			      //player.setCurrentState(ATTACKING_RIGHT);
+		      }
+		      else if (input->isKeyDown(S_KEY)) {
+			      vY = PLAYER_SPEED;
+			      //player.setCurrentState(ATTACKING_RIGHT);
+		      }
+		      else {
+			      vY = 0.0f;
+			      player.setCurrentState(IDLE);
+		      }
+		      if (input->isKeyDownForFirstTime(G_KEY)) {
+			      viewport.toggleDebugView();
+			      game->getGraphics()->toggleDebugTextShouldBeRendered();
+		      }
 
-        // NOW SET THE ACTUAL PLAYER VELOCITY
-        pp.setVelocity(vX, vY);
+		      if (input->isKeyDownForFirstTime(P_KEY)) {
+			      gsm.getPhysics().togglePhysics();
+		      }
+		      if (input->isKeyDownForFirstTime(T_KEY)) {
+			      gsm.getPhysics().activateForSingleUpdate();
+		      }
 
-        bool viewportMoved = false;
-        float viewportVx = 0.0f;
-        float viewportVy = 0.0f;
-        if (input->isKeyDown(UP_KEY)) {
-          viewportVy -= MAX_VIEWPORT_AXIS_VELOCITY;
-          viewportMoved = true;
-        }
-        if (input->isKeyDown(DOWN_KEY)) {
-          viewportVy += MAX_VIEWPORT_AXIS_VELOCITY;
-          viewportMoved = true;
-        }
-        if (input->isKeyDown(LEFT_KEY)) {
-          viewportVx -= MAX_VIEWPORT_AXIS_VELOCITY;
-          viewportMoved = true;
-        }
-        if (input->isKeyDown(RIGHT_KEY)) {
-          viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
-          viewportMoved = true;
-        }
+		      // NOW SET THE ACTUAL PLAYER VELOCITY
+		      pp.setVelocity(vX, vY);
 
-        if (viewportMoved)
-          viewport.moveViewport((int)floor(viewportVx + 0.5f), (int)floor(viewportVy + 0.5f),
-          game->getGSM().getWorld().getWorldWidth(),
-          game->getGSM().getWorld().getWorldHeight());
+		      bool viewportMoved = false;
+		      float viewportVx = 0.0f;
+		      float viewportVy = 0.0f;
+		      if (input->isKeyDown(UP_KEY)) {
+			      viewportVy -= MAX_VIEWPORT_AXIS_VELOCITY;
+			      viewportMoved = true;
+		      }
+		      if (input->isKeyDown(DOWN_KEY)) {
+			      viewportVy += MAX_VIEWPORT_AXIS_VELOCITY;
+			      viewportMoved = true;
+		      }
+		      if (input->isKeyDown(LEFT_KEY)) {
+			      viewportVx -= MAX_VIEWPORT_AXIS_VELOCITY;
+			      viewportMoved = true;
+		      }
+		      if (input->isKeyDown(RIGHT_KEY)) {
+			      viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
+			      viewportMoved = true;
+		      }
+
+		      if (viewportMoved)
+			      viewport.moveViewport((int)floor(viewportVx + 0.5f), (int)floor(viewportVy + 0.5f),
+			                            game->getGSM().getWorld().getWorldWidth(),
+			                            game->getGSM().getWorld().getWorldHeight());
+	      }
+		if (input->isKeyDownForFirstTime(ESC_KEY)) {
+			game->togglePause();
+		}
 
       }
 
@@ -160,9 +165,7 @@ namespace cse380 {
 		  game->getDataLoader()->loadLevel3(game);
 	  }
 
-	  if (input->isKeyDownForFirstTime(ESC_KEY)) {
-		  game->togglePause();
-	  }
+	  
 
       // LET'S MESS WITH THE TARGET FRAME RATE IF THE USER PRESSES THE HOME OR END KEYS
       GameTimer* timer = game->getTimer();

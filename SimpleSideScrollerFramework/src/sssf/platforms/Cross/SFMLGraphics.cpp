@@ -212,7 +212,7 @@ namespace cse380 {
 
 		sf::RectangleShape gui(sf::Vector2f(window.getSize().x, window.getSize().y));
 		gui.setPosition(0, 0);
-		gui.setFillColor(sf::Color(0,0,0,100));
+		gui.setFillColor(sf::Color(0,0,0,180));
 		window.draw(gui);
 
         for (const RenderItem& item : guiRenderList) {

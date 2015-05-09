@@ -82,7 +82,7 @@ namespace cse380 {
         _mouse.x = util::clamp(_mouse.x, 0, graphics->getScreenWidth() - 1);
         _mouse.y = util::clamp(_mouse.y, 0, graphics->getScreenHeight() - 1);
 
-        cursor->setPosition(_mouse.x, _mouse.y);
+        //scursor->setPosition(_mouse.x, _mouse.y);
       }
     }
   }

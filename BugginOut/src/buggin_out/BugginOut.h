@@ -53,6 +53,7 @@ namespace cse380 {
     static  wstring    W_START_COMMAND = L"Start";
     static  wstring    W_EXIT_COMMAND = L"Exit";
     static  wstring    W_QUIT_COMMAND = L"Quit";
+	static  wstring    W_RESUME_COMMAND = L"Resume";
     static  wstring    W_GREEN_CURSOR_PATH = L"GREEN_CURSOR_PATH";
     static  wstring    W_RED_CURSOR_PATH = L"RED_CURSOR_PATH";
 	static  wstring	W_SPLASH_SCREEN_PATH = L"SPLASH_SCREEN_PATH";
@@ -64,6 +65,8 @@ namespace cse380 {
 	static  wstring	W_QUIT_IMAGE_MO_PATH = L"QUIT_IMAGE_MO_PATH";
 	static  wstring	W_EXIT_IMAGE_PATH = L"EXIT_IMAGE_PATH";
 	static  wstring	W_EXIT_IMAGE_MO_PATH = L"EXIT_IMAGE_MO_PATH";
+	static  wstring W_RESUME_IMAGE_PATH = L"RESUME_IMAGE_PATH";
+	static  wstring W_RESUME_IMAGE_MO_PATH = L"RESUME_IMAGE_MO_PATH";
 	static  wstring	W_ABOUT_IMAGE_PATH = L"ABOUT_IMAGE_PATH";
 	static  wstring	W_ABOUT_IMAGE_H_PATH = L"ABOUT_IMAGE_H_PATH";
 	static  wstring	W_HELP_IMAGE_PATH = L"HELP_IMAGE_PATH";
