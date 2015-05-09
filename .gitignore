@@ -1,5 +1,7 @@
 /*
 !.gitignore
+!Apps/BugginOut/LuaTest.lua
+!Apps/BugginOut/data/BugginOutInit.txt
 !BugginOut.sln
 !Box2D/
 !BugginOut/
@@ -14,5 +16,4 @@
 !LuaPlusPlus/
 !READ_ME.txt
 !cse380.ruleset
-BugginOut.v12.suo
 Box2D/Build/

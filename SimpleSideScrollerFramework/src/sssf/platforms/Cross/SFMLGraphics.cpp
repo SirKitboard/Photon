@@ -210,10 +210,10 @@ namespace cse380 {
         SFMLOS* os = static_cast<SFMLOS*>(this->game->getOS());
         sf::RenderWindow& window = os->getWindow();
 
-//		sf::RectangleShape gui(sf::Vector2f(window.getSize().x, 64));
-//		gui.setPosition(0, 0);
-//		gui.setFillColor(sf::Color(0,0,0));
-//		window.draw(gui);
+		sf::RectangleShape gui(sf::Vector2f(window.getSize().x, window.getSize().y));
+		gui.setPosition(0, 0);
+		gui.setFillColor(sf::Color(0,0,0,100));
+		window.draw(gui);
 
         for (const RenderItem& item : guiRenderList) {
           sf::Sprite sprite;
