@@ -136,6 +136,8 @@ namespace cse380 {
 
           void update(game::Game* game);
 
+		  vector<Bot*> getBots() { return bots; }
+
         private:
           // NOTE THAT MULTIPLE SPRITES MAY SHARE ARTWORK, SO SPRITE TYPES
           // SPECIFIES A TYPE OF SPRITE, OF WHICH THERE MAY BE MANY INSTANCES

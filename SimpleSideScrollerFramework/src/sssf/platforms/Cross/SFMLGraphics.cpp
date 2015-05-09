@@ -181,7 +181,36 @@ namespace cse380 {
 			  std::cout << light.pointRectDist(light.getPosition()) << " " << light.getReach();
 			  if (light.getReach() >= light.pointRectDist(light.getPosition()))
 			  {
-				  window.draw(light.computeAndGetLightShape());
+				  window.draw(light.computeAndGetLightShape(255,255,255));
+			  }
+			  vector<gsm::ai::Bot*> bots = game->getGSM().getSpriteManager().getBots();
+			  for (gsm::ai::Bot* bot : bots) {
+				  pp = bot->getPhysicalProperties();
+				  double angle;
+				  if (pp.getVelocityX() > 0 && pp.getVelocityY() == 0) 
+					  angle = 1.57;
+				  else if (pp.getVelocityX() < 0 && pp.getVelocityY() == 0) 
+					  angle = -1.57;
+				  else if (pp.getVelocityX() == 0 && pp.getVelocityY() > 0) 
+					  angle = 3.14;
+				  else if (pp.getVelocityX() == 0 && pp.getVelocityY() < 0) 
+					  angle = 0;
+				  else if (pp.getVelocityX() > 0 && pp.getVelocityY() > 0) 
+					  angle = 2.335;
+				  else if (pp.getVelocityX() > 0 && pp.getVelocityY() < 0) 
+					  angle = 0.765;
+				  else if (pp.getVelocityX() < 0 && pp.getVelocityY() > 0) 
+					  angle = -2.335;
+				  else 
+					  angle = -0.765;
+//				  if (pp.getVelocityX() < 0 && pp.getVelocityY() == 0) angle = 1.57;
+//				  if (pp.getVelocityX() == 0 && pp.getVelocityY() > 0) angle = 3.14;
+//				  if (pp.getVelocityX() == 0 && pp.getVelocityY() < 0) angle = 0;
+				  light = Light(Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, angle, 2.0f, true));
+				  if (light.getReach() >= light.pointRectDist(light.getPosition()))
+				  {
+					  window.draw(light.computeAndGetLightShape(255, 50, 50));
+				  }
 			  }
 			  //window.draw(light.computeAndGetLightShape());
 		  }

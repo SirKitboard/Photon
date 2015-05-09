@@ -240,6 +240,7 @@ namespace cse380 {
 
       // LOAD THE LEVEL'S BACKGROUND TILES
       tmxmi::TMXMapImporter tmxMapImporter;
+	  game->createNewWorld();
       tmxMapImporter.loadWorld(game, path);
 
       // LET'S MAKE A PLAYER SPRITE
@@ -323,10 +324,7 @@ namespace cse380 {
 		SpriteManager& spriteManager = game->getGSM().getSpriteManager();
 		Physics& physics = game->getGSM().getPhysics();
 		RoamingLightBot* bot = new RoamingLightBot(game,  30, 120, 40, 0);
-		physics.addCollidableObject(bot);
-		PhysicalProperties& pp = bot->getPhysicalProperties();
-		pp.initBody(game->getGameWorld());
-		pp.setPosition(initX, initY);
+		//physics.addCollidableObject(bot);
 		//AnimatedSpriteType* playerSpriteType = spriteManager.getSpriteType(L"red_box_man");
 		bot->setSpriteType(sprite_type);
 		bot->setAlpha(255);
@@ -428,7 +426,7 @@ namespace cse380 {
 		gsm->unloadCurrentLevel();
 
 		loadWorld(game, W_LEVEL_1_PATH);
-		
+		game->createNewWorld();
 		gsm = &(game->getGSM());
 		SpriteManager* sm = &(gsm->getSpriteManager());
 		
@@ -444,7 +442,7 @@ namespace cse380 {
 	void BugginOutDataLoader::loadLevel2(Game* game) {
 		GameStateManager* gsm = &(game->getGSM());
 		gsm->unloadCurrentLevel();
-
+		
 		loadWorld(game, W_LEVEL_2_PATH);
 		gsm = &(game->getGSM());
 		SpriteManager* sm = &(gsm->getSpriteManager());
@@ -468,6 +466,7 @@ namespace cse380 {
 		makeLightBot(game, playerSpriteType, 1200, 800);
 		makeLightBot(game, playerSpriteType, 1240, 200);
 		makeLightBot(game, playerSpriteType, 2040, 1700);
+		game->createNewWorld();
 		game->getGUI().getViewport().reset();
 	}
 

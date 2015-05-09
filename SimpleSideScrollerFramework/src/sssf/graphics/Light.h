@@ -23,7 +23,7 @@ namespace cse380 {
 				Light(Game* game, b2Vec2 position, float reach, float angle, float angleSpread, bool active);
 				~Light() {}
 				
-				sf::VertexArray computeAndGetLightShape();
+				sf::VertexArray computeAndGetLightShape(int r, int g, int b);
 
 				b2Vec2 getPosition() { return position; }
 				void setPosition(b2Vec2 position) { this->position = position; }

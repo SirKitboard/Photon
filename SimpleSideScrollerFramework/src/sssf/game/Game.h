@@ -115,7 +115,10 @@ namespace cse380 {
 
 		LuaPlus::LuaState* getLuaState() { return luaState; }
 
-		
+		void createNewWorld() {
+			b2Vec2 gravity(0.0f, 0.0f);
+			gameWorld = new b2World(gravity);
+        }
 		
 		//LuaPlus::LuaState* getLuaState() { return luaPState; }
 

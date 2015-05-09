@@ -231,6 +231,9 @@ namespace cse380 {
           void findTileCollisionsForSprite(Physics&, CollidableObject&) override;
           bool willSpriteCollideOnTile(Physics&, const CollidableObject&) const override;
 		  void generateCollidableTiles(b2World* gameWorld);
+		  void clearCollidableTileList() {
+			  collidableTilesList.clear();
+		  }
         protected:
           // NOTE: tileLayout stores a grid of Tiles (rows X columns),
           // but does so using a one-dimensional vector. So, when

@@ -232,7 +232,7 @@ namespace cse380 {
 				return newVect;
 			}
 
-			sf::VertexArray Light::computeAndGetLightShape()
+			sf::VertexArray Light::computeAndGetLightShape(int r, int g, int b)
 			{
 				std::vector<b2Vec2> points = std::vector<b2Vec2>();
 				prePopulatePoints(&points, this->angle, this->halfAngleSpread, 100);
@@ -301,12 +301,12 @@ namespace cse380 {
 
 				sf::VertexArray fan(sf::TrianglesFan, points.size()+1);
 				fan[0].position = b2WorldToViewport(this->position);
-				fan[0].color = sf::Color(255, 255, 255, 255);
+				fan[0].color = sf::Color(r,g,b, 255);
 				for (int i = 1; i < points.size()+1; i++)
 				{
 					fan[i].position = b2WorldToViewport(points[i-1]);
 					int intensity = (int)(255*(1.0f-(distance(this->position, points[i-1]) / this->reach)));
-					fan[i].color = sf::Color(255, 255, 255, intensity);
+					fan[i].color = sf::Color(r,g,b, intensity);
 				}
 
 				return fan;

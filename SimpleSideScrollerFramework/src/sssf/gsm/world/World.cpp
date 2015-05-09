@@ -65,7 +65,7 @@ namespace cse380 {
           for (WorldLayer* layer : layers) {
             delete layer;
           }
-
+		  
           layers.clear();
           worldWidth = 0;
           worldHeight = 0;
