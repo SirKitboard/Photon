@@ -1,7 +1,5 @@
 /*
 !.gitignore
-!Apps/BugginOut/LuaTest.lua
-!Apps/BugginOut/data/BugginOutInit.txt
 !BugginOut.sln
 !Box2D/
 !BugginOut/
