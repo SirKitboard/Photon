@@ -24,6 +24,7 @@
 #include "sssf/gui/GameGUI.h"
 #include "sssf/input/GameInput.h"
 #include "sssf/timer/GameTimer.h"
+#include "sssf/audio/GameAudio.h"
 
 #ifdef CROSS
 #include "sssf/platforms/Cross/StandardTimer.h"
@@ -165,6 +166,9 @@ namespace cse380 {
 		  game->getDataLoader()->loadLevel3(game);
 	  }
 
+	  else if ((input->isKeyDown(LCTRL_KEY) || input->isKeyDown(RCTRL_KEY)) && input->isKeyDownForFirstTime(A_KEY)) {
+		  game->getAudio()->playSound(0);
+	  }
 	  
 
       // LET'S MESS WITH THE TARGET FRAME RATE IF THE USER PRESSES THE HOME OR END KEYS

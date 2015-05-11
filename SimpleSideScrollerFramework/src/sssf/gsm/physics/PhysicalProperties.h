@@ -83,7 +83,13 @@ namespace cse380 {
 
 		  
 
-		  
+		  void setUserData(void* data) {
+			  body->SetUserData(data);
+          }
+
+		  void* getUserData() {
+			  return body->GetUserData();
+          }
 
           void applyForce(const float forceX, const float forceY, const float posX, const float posY, bool wake) {
 			  b2Vec2 force;

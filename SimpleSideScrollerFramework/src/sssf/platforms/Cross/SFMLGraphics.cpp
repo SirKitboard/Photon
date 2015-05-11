@@ -206,7 +206,7 @@ namespace cse380 {
 //				  if (pp.getVelocityX() < 0 && pp.getVelocityY() == 0) angle = 1.57;
 //				  if (pp.getVelocityX() == 0 && pp.getVelocityY() > 0) angle = 3.14;
 //				  if (pp.getVelocityX() == 0 && pp.getVelocityY() < 0) angle = 0;
-				  light = Light(Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, angle, 2.0f, true));
+				  light = Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, angle, 2.0f, true);
 				  if (light.getReach() >= light.pointRectDist(light.getPosition()))
 				  {
 					  window.draw(light.computeAndGetLightShape(255, 50, 50));

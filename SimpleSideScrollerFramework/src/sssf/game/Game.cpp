@@ -19,6 +19,7 @@
 #include "sssf/timer/GameTimer.h"
 #include <LuaPlusFramework/LuaFunction.h>
 #include <LuaPlusFramework/LuaObject.h>
+#include <sssf/gsm/physics/CollisionHandler.h>
 
 
 namespace cse380 {
@@ -36,6 +37,7 @@ namespace cse380 {
         // AND THEN FED TO THIS Game USING THE init METHOD
 		  b2Vec2 gravity(0.0f, 0.0f);
 		  gameWorld = new b2World(gravity);
+		  gameWorld->SetContactListener(new gsm::physics::CollisionHandler(this));
 		  luaState = LuaPlus::LuaState::Create();
 		  int result = luaState->DoFile("LuaTest.lua");
       }
@@ -49,12 +51,16 @@ namespace cse380 {
       void Game::initPlatformPlugins(GameGraphics* initGraphics,
         GameInput* initInput,
         GameOS* initOS,
-        GameTimer* initTimer) {
+        GameTimer* initTimer,
+		GameAudio* initAudio,
+		CollisionHandler* colHand) {
         // INITIALIZE ALL OF THE GAME'S CUSTOM OBJECTS
         graphics = initGraphics;
         input = initInput;
         os = initOS;
         timer = initTimer;
+		audio = initAudio;
+		collisionHandler = colHand;
       }
 
       void Game::reloadAllDevices() {
@@ -62,6 +68,13 @@ namespace cse380 {
 
         // WE MIGHT ADD MORE LATER
       }
+
+	  void Game::createNewWorld() {
+		    b2Vec2 gravity(0.0f, 0.0f);
+			gameWorld = new b2World(gravity);
+			gameWorld->SetContactListener(new gsm::physics::CollisionHandler(this));
+	  }
+
 
       void Game::runGameLoop() {
         // FIRST PROFILE?

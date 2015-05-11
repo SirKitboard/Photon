@@ -67,6 +67,7 @@
     <ClCompile Include="src/sssf/text/GameText.cpp" />
     <ClCompile Include="src/sssf/text/TextFileWriter.cpp" />
     <ClCompile Include="src/sssf_VS/stdafx.cpp" />
+    <ClCompile Include="src\sssf\audio\GameAudio.cpp" />
     <ClCompile Include="src\sssf\graphics\Light.cpp" />
     <ClCompile Include="src\sssf\gsm\ai\bots\RoamingLightBot.cpp" />
     <ClCompile Include="src\sssf\gsm\ai\pathfinding\OrthographicGridPathfinder.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="src/sssf/timer/GameTimer.h" />
     <ClInclude Include="src/sssf_VS/stdafx.h" />
     <ClInclude Include="src/sssf_VS/targetver.h" />
+    <ClInclude Include="src\sssf\audio\GameAudio.h" />
     <ClInclude Include="src\sssf\graphics\Light.h" />
     <ClInclude Include="src\sssf\graphics\RaycastCallback.h" />
     <ClInclude Include="src\sssf\gsm\ai\bots\RoamingLightBot.h" />
@@ -169,6 +171,7 @@
     <ClInclude Include="src\sssf\gsm\ai\pathfinding\PathNode.h" />
     <ClInclude Include="src\sssf\gsm\ai\Point.h" />
     <ClInclude Include="src\sssf\gsm\physics\Box2DWorld.h" />
+    <ClInclude Include="src\sssf\gsm\physics\CollisionHandler.h" />
     <ClInclude Include="src\sssf\gsm\world\CollidableTile.h" />
     <ClInclude Include="src\sssf\input\MultiKeyEventHandler.h" />
     <ClInclude Include="src\sssf\platforms\Cross\SFMLAudio.h" />

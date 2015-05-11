@@ -218,6 +218,7 @@ namespace cse380 {
 							CollidableTile* cotile = new CollidableTile();
 							cotile->tile = tileToAdd;
 							cotile->tileBody = tileBody;
+							cotile->tileBody->SetUserData(new char('w'));
 							collidableTilesList.push_back(cotile);
 						}
 

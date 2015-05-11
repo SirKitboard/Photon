@@ -74,6 +74,9 @@
     <Filter Include="src\sssf\gsm\ai\pathfinding">
       <UniqueIdentifier>{b323bbc9-dfcd-47fd-a51e-84fa786540b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\sssf\audio">
+      <UniqueIdentifier>{5f096f5d-e768-4039-97f7-cfe5c8005b88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src/sssf_VS/stdafx.cpp">
@@ -210,6 +213,9 @@
     </ClCompile>
     <ClCompile Include="src\sssf\platforms\Cross\SFMLAudio.cpp">
       <Filter>src\sssf\platforms\Cross</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sssf\audio\GameAudio.cpp">
+      <Filter>src\sssf\audio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -413,6 +419,12 @@
     </ClInclude>
     <ClInclude Include="src\sssf\platforms\Cross\SFMLAudio.h">
       <Filter>src\sssf\platforms\Cross</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\audio\GameAudio.h">
+      <Filter>src\sssf\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sssf\gsm\physics\CollisionHandler.h">
+      <Filter>src\sssf\gsm\physics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
