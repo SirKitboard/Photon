@@ -178,7 +178,7 @@ namespace cse380 {
 		  if (game->getGSM().isGameInProgress())
 		  {
 			  Light light = Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, 3.14f, 6.5f, true);
-			  std::cout << light.pointRectDist(light.getPosition()) << " " << light.getReach();
+//			  std::cout << light.pointRectDist(light.getPosition()) << " " << light.getReach();
 			  if (light.getReach() >= light.pointRectDist(light.getPosition()))
 			  {
 				  window.draw(light.computeAndGetLightShape(255,255,255));

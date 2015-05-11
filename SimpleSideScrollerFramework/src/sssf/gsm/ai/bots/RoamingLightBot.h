@@ -36,6 +36,7 @@ namespace cse380 {
 						void    pickRandomVelocity(physics::Physics& physics);
 						void    think(game::Game* game) override;
 						size_t type() const override { return TYPE; }
+						void	rotate();
 
 						static const size_t TYPE = 2;
 

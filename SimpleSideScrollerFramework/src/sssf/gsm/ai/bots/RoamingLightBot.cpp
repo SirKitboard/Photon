@@ -25,6 +25,7 @@ namespace cse380 {
 						unsigned int direction) {
 						// INIT THE BASIC STUFF
 						initBot(initMin, initMax, initMaxVelocity, direction);
+						this->getPhysicalProperties().setUserData(new char('s'));
 					}
 
 					/*
@@ -92,6 +93,13 @@ namespace cse380 {
 
 						// AND OUR VELOCITY CAPPER
 						maxVelocity = initMaxVelocity;
+					}
+
+					void RoamingLightBot::rotate()
+					{
+						float vX = this->getPhysicalProperties().getVelocityX();
+						float vY = this->getPhysicalProperties().getVelocityY();
+						this->getPhysicalProperties().setVelocity(-vY, vX);
 					}
 
 					/*
