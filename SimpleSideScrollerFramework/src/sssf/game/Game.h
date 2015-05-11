@@ -16,6 +16,7 @@
 #include "sssf/gui/GameGUI.h"
 #include "sssf/text/GameText.h"
 #include <LuaPlusFramework/LuaState.h>
+#include <b2dJson/b2dJson.h>
 
 
 static const float PI = 3.1415926535897932384626433f;
@@ -133,6 +134,19 @@ namespace cse380 {
 		//LuaPlus::LuaState* getLuaState() { return luaPState; }
 
 		b2World* getGameWorld() { return gameWorld; }
+
+		void setWorld(const char* filename)
+        {
+			b2dJson json;
+	        std::string errorMsg;
+			gameWorld = json.readFromFile(filename, errorMsg);
+
+			this->getGSM().clearBodies();
+
+			json.getBodiesByCustomString("type", "wall", this->getGSM().getWalls());
+			json.getBodiesByCustomString("type", "sentry", this->getGSM().getSentries());
+
+        }
 
         // AND FOR GETTING THE NAME OF THE FILE USED FOR LOADING THIS LEVEL
         const wstring& getCurrentLevelFileName() const {

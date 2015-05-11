@@ -20,6 +20,7 @@
 #include <LuaPlusFramework/LuaFunction.h>
 #include <LuaPlusFramework/LuaObject.h>
 #include <sssf/gsm/physics/CollisionHandler.h>
+#include <b2dJson/b2dJson.h>
 
 
 namespace cse380 {
@@ -35,9 +36,9 @@ namespace cse380 {
         // ARE CUSTOM GAME OBJECTS. DEPENDING ON WHAT TECHNOLOGY
         // IS TO BE USED THESE OBJECT SHOULD BE CONSTRUCTED
         // AND THEN FED TO THIS Game USING THE init METHOD
-		  b2Vec2 gravity(0.0f, 0.0f);
-		  gameWorld = new b2World(gravity);
-		  gameWorld->SetContactListener(new gsm::physics::CollisionHandler(this));
+//		  b2Vec2 gravity(0.0f, 0.0f);
+//		  gameWorld = new b2World(gravity);
+//		  gameWorld->SetContactListener(new gsm::physics::CollisionHandler(this));
 		  luaState = LuaPlus::LuaState::Create();
 		  int result = luaState->DoFile("LuaTest.lua");
       }
@@ -160,7 +161,7 @@ namespace cse380 {
 		  togglePause();
         gsm.goToLoadLevel();   // NOTE THAT CURRENTLY THERE IS NO LEVEL FILE,
         // THAT'S ONE THING YOU'LL BE DOING
-        dataLoader->loadWorld(this, currentLevelDir + currentLevelFileName);
+        dataLoader->loadLevel1(this);
       }
     }
   }

@@ -102,7 +102,7 @@
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <ProgramDataBaseFileName>$(OutDir)Box2D.pdb</ProgramDataBaseFileName>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -208,6 +208,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\b2dJson\b2dJson.h" />
+    <ClInclude Include="..\..\b2dJson\b2dJsonImage.h" />
+    <ClInclude Include="..\..\b2dJson\b2dJsonImage_OpenGL.h" />
+    <ClInclude Include="..\..\b2dJson\bitmap.h" />
+    <ClInclude Include="..\..\b2dJson\json\json-forwards.h" />
+    <ClInclude Include="..\..\b2dJson\json\json.h" />
     <ClInclude Include="..\..\Box2D\Box2D.h" />
     <ClInclude Include="..\..\Box2D\Collision\b2BroadPhase.h" />
     <ClInclude Include="..\..\Box2D\Collision\b2Collision.h" />
@@ -256,6 +262,10 @@
     <ClInclude Include="..\..\Box2D\Dynamics\Joints\b2WheelJoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\b2dJson\b2dJson.cpp" />
+    <ClCompile Include="..\..\b2dJson\b2dJsonImage.cpp" />
+    <ClCompile Include="..\..\b2dJson\b2dJsonImage_OpenGL.cpp" />
+    <ClCompile Include="..\..\b2dJson\jsoncpp.cpp" />
     <ClCompile Include="..\..\Box2D\Collision\b2BroadPhase.cpp">
     </ClCompile>
     <ClCompile Include="..\..\Box2D\Collision\b2CollideCircle.cpp">

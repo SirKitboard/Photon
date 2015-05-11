@@ -80,6 +80,20 @@ namespace cse380 {
           World& getWorld() { return world; }
           const World& getWorld() const { return world; }
 
+		  vector<b2Body*>& getWalls() { return walls; }
+		  const vector<b2Body*>& getWalls() const { return walls; }
+
+		  void clearBodies()
+          {
+			  walls.clear();
+			  sentries.clear();
+          }
+
+		  
+
+		  vector<b2Body*>& getSentries() { return sentries; }
+		  const vector<b2Body*>& getSentries() const { return sentries; }
+
           const wstring& getCurrentLevelName() const { return levelNames[currentLevel]; }
 
           // METHODS FOR TESTING THE CURRENT GAME STATE
@@ -235,6 +249,10 @@ namespace cse380 {
           // TILES, PLATFORMS, etc. BASICALLY THINGS THAT ARE NOT ANIMATED
           // AND DO NOT MOVE
           World world;
+
+		  //LIST ALL THE BODIES IN THE WORLD
+		  vector<b2Body*> walls;
+		  vector<b2Body*> sentries;
 
           // FOR MANAGING DYNAMIC GAME OBJECTS FOR CURRENT LEVEL
           // NOTE THAT WE CALL THE DYNAMIC OBJECTS "SPRITES"

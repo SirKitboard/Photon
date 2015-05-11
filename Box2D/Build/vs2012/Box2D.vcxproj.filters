@@ -19,6 +19,12 @@
     <Filter Include="Dynamics\Joints">
       <UniqueIdentifier>{CFBD1F37-CEEA-CA41-9715-5C0ACDD84298}</UniqueIdentifier>
     </Filter>
+    <Filter Include="b2dJson">
+      <UniqueIdentifier>{1216aca0-1090-4507-be4d-e8bcae0f4e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="b2dJson\json">
+      <UniqueIdentifier>{61bf830b-1309-4016-897c-b769ce4058a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Box2D\Box2D.h" />
@@ -157,6 +163,24 @@
     <ClInclude Include="..\..\Box2D\Dynamics\Joints\b2MotorJoint.h">
       <Filter>Dynamics\Joints</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\b2dJson\b2dJson.h">
+      <Filter>b2dJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\b2dJson\b2dJsonImage.h">
+      <Filter>b2dJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\b2dJson\b2dJsonImage_OpenGL.h">
+      <Filter>b2dJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\b2dJson\bitmap.h">
+      <Filter>b2dJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\b2dJson\json\json.h">
+      <Filter>b2dJson\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\b2dJson\json\json-forwards.h">
+      <Filter>b2dJson\json</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Box2D\Collision\b2BroadPhase.cpp">
@@ -293,6 +317,18 @@
     </ClCompile>
     <ClCompile Include="..\..\Box2D\Dynamics\Joints\b2MotorJoint.cpp">
       <Filter>Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\b2dJson\b2dJson.cpp">
+      <Filter>b2dJson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\b2dJson\b2dJsonImage.cpp">
+      <Filter>b2dJson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\b2dJson\b2dJsonImage_OpenGL.cpp">
+      <Filter>b2dJson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\b2dJson\jsoncpp.cpp">
+      <Filter>b2dJson</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
