@@ -24,6 +24,7 @@
 #include "sssf/input/GameInput.h"
 #include "sssf/os/GameOS.h"
 #include "sssf/text/GameText.h"
+#include "sssf/audio/GameAudio.h"
 
 #ifdef CROSS
 // SFML INCLUDES
@@ -31,7 +32,7 @@
 #include "sssf/platforms/Cross/SFMLOS.h"
 #include "sssf/platforms/Cross/SFMLGraphics.h"
 #include "sssf/platforms/Cross/SFMLInput.h"
-
+#include "sssf/gsm/physics/CollisionHandler.h"
 // C++ has built-in timing functionality now
 #include "sssf/platforms/Cross/StandardTimer.h"
 
@@ -72,6 +73,7 @@ namespace cse380 {
     using namespace sssf::gsm::sprite;
     using namespace sssf::gsm::state;
     using namespace sssf::gui;
+	using namespace sssf::audio;
     using sssf::game::Game;
 	using std::stof;
 
@@ -122,7 +124,6 @@ namespace cse380 {
 	  MIN_FPS = stoi(properties[L"MIN_FPS"]);
 	  MAX_FPS = stoi(properties[L"MAX_FPS"]);
 	  FPS_INC = stoi(properties[L"FPS_INC"]);
-
 #ifdef CROSS
       sf::VideoMode mode(screenWidth, screenHeight);
       unsigned int style = useFullscreen ? sf::Style::Fullscreen : sf::Style::Default;
@@ -158,7 +159,8 @@ namespace cse380 {
 
       wstring& textFontSizeProp = properties[W_TEXT_FONT_SIZE];
       int textFontSize = stoi(textFontSizeProp);
-
+	  GameAudio* game_audio = new GameAudio();
+	  CollisionHandler* collision = new CollisionHandler(game);
       bugginOutGraphics->init(screenWidth, screenHeight);
       bugginOutGraphics->initGraphics(bugginOutOS, useFullscreen);
       bugginOutGraphics->initTextFont(textFontSize);
@@ -173,7 +175,9 @@ namespace cse380 {
         bugginOutGraphics,
         bugginOutInput,
         bugginOutOS,
-        bugginOutTimer
+        bugginOutTimer,
+		game_audio,
+		collision
         );
 
       // LOAD OUR CUSTOM TEXT GENERATOR, WHICH DRAWS
@@ -183,7 +187,8 @@ namespace cse380 {
       text.setTextGenerator(bugginOutTextGenerator);
       text.initDebugFile(W_DEBUG_FILE);
       bugginOutTextGenerator->initText(game);
-
+	  game->getAudio()->initSoundEffect(0, "data/audio/effects/alert.ogg");
+	  game->getAudio()->initSoundEffect(1, "data/audio/effects/bump.ogg");
       // INIT THE VIEWPORT TOO
       initViewport(game->getGUI(), properties);
 
@@ -243,7 +248,8 @@ namespace cse380 {
 	  game->createNewWorld();
       tmxMapImporter.loadWorld(game, path);
 
-      // LET'S MAKE A PLAYER SPRITE
+      
+	  // LET'S MAKE A PLAYER SPRITE
       // @TODO - IT WOULD BE BETTER TO LOAD THIS STUFF FROM A FILE
       GameStateManager& gsm = game->getGSM();
       Physics& physics = gsm.getPhysics();
@@ -263,6 +269,7 @@ namespace cse380 {
       playerProps.setPosition(PLAYER_INIT_X, PLAYER_INIT_Y);
       playerProps.setVelocity(0.0f, 0.0f);
       playerProps.setAcceleration(0, 0);
+	  playerProps.setUserData(new char('p'));
       player.setOnTileThisFrame(false);
       player.setOnTileLastFrame(false);
       player.affixTightAABBBoundingVolume();
@@ -334,6 +341,7 @@ namespace cse380 {
 		playerProps.setPosition(initX, initY);
 		playerProps.setVelocity(0.0f, 0.0f);
 		playerProps.setAcceleration(0, 0);
+		playerProps.setUserData(new char('b'));
 		bot->setOnTileThisFrame(false);
 		bot->setOnTileLastFrame(false);
 		bot->affixTightAABBBoundingVolume();

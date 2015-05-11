@@ -24,8 +24,15 @@ static const float PI = 3.1415926535897932384626433f;
 
 namespace cse380 {
   namespace sssf {
+	  namespace gsm{namespace physics{
+		  class CollisionHandler;
+	  }}
 
-    namespace data { class GameDataLoader; }
+	  namespace audio{
+		  class GameAudio;
+	  }
+
+	  namespace data { class GameDataLoader; }
     namespace graphics { class GameGraphics; }
     namespace input { class GameInput; }
     namespace os { class GameOS; }
@@ -42,6 +49,8 @@ namespace cse380 {
       using os::GameOS;
       using text::GameText;
       using time::GameTimer;
+	  using audio::GameAudio;
+	  using gsm::physics::CollisionHandler;
 
       /// <summary>
       /// <para>
@@ -104,6 +113,9 @@ namespace cse380 {
         GameGraphics* getGraphics() { return graphics; }
         const GameGraphics* getGraphics() const { return graphics; }
 
+		GameAudio* getAudio() { return audio; }
+		const GameAudio* getAudio() const { return audio; }
+
         GameInput* getInput() { return input; }
         const GameInput* getInput() const { return input; }
 
@@ -115,10 +127,8 @@ namespace cse380 {
 
 		LuaPlus::LuaState* getLuaState() { return luaState; }
 
-		void createNewWorld() {
-			b2Vec2 gravity(0.0f, 0.0f);
-			gameWorld = new b2World(gravity);
-        }
+		void createNewWorld();
+        
 		
 		//LuaPlus::LuaState* getLuaState() { return luaPState; }
 
@@ -151,7 +161,7 @@ namespace cse380 {
         /// Feeds this Game the technology-specific objects that manage game or
         /// system-specific resources (textures, timing, input, etc.).
         /// </summary>
-        void initPlatformPlugins(GameGraphics*, GameInput*, GameOS*, GameTimer*);
+        void initPlatformPlugins(GameGraphics*, GameInput*, GameOS*, GameTimer*, GameAudio*, CollisionHandler*);
 
         /**
          * Directs game logic to be executed or not, depending on the game state,
@@ -220,7 +230,9 @@ namespace cse380 {
         GameOS* os;
         GameTimer* timer;
 		b2World *gameWorld;
+		GameAudio* audio;
 		LuaPlus::LuaState* luaState;
+		CollisionHandler* collisionHandler;
 		bool paused;
         // THIS KEEPS TRACK OF THE NAME OF THE LEVEL FILE THAT'S BEING USED
         wstring currentLevelFileName;
