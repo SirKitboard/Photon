@@ -85,14 +85,11 @@ namespace cse380 {
 
 		  
 
-          void applyForce(const float forceX, const float forceY, const float posX, const float posY, bool wake) {
+          void applyForce(const float forceX, const float forceY, bool wake) {
 			  b2Vec2 force;
 			  force.x = forceX;
 			  force.y = forceY;
-			  b2Vec2 pos;
-			  pos.x = posX;
-			  pos.y = posY;
-			  body->ApplyForce(force, pos, wake);
+			  body->ApplyForceToCenter(force, wake);
 		  }
 
 		  void applyForce(b2Vec2 force, b2Vec2 pos, bool wake){

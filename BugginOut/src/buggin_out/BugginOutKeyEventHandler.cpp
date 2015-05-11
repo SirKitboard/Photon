@@ -108,7 +108,7 @@ namespace cse380 {
 		      }
 
 		      // NOW SET THE ACTUAL PLAYER VELOCITY
-		      pp.setVelocity(vX, vY);
+		      pp.setVelocity(vX*1000, vY*1000);
 
 		      bool viewportMoved = false;
 		      float viewportVx = 0.0f;

@@ -140,6 +140,12 @@ namespace cse380 {
     const unsigned int SHIFT_KEY = VK_SHIFT;
     const unsigned int HOME_KEY = VK_HOME;
     const unsigned int END_KEY = VK_END;
+    const unsigned int ESC_KEY = VK_ESCAPE;
+	const unsigned int LCTRL_KEY = VK_LCONTROL;
+	const unsigned int RCTRL_KEY = VK_RCONTROL;
+	const unsigned int ONE_KEY = (unsigned int)'1';
+	const unsigned int TWO_KEY = (unsigned int)'2';
+	const unsigned int THREE_KEY = (unsigned int)'3';
 
     // THIS IS JUST FOR SHOWING HOW THE CURSOR CAN BE CHANGED
     const unsigned int C_KEY = (unsigned int)'C';
