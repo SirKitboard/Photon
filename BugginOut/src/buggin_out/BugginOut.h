@@ -67,10 +67,15 @@ namespace cse380 {
 	static  wstring	W_EXIT_IMAGE_MO_PATH = L"EXIT_IMAGE_MO_PATH";
 	static  wstring W_RESUME_IMAGE_PATH = L"RESUME_IMAGE_PATH";
 	static  wstring W_RESUME_IMAGE_MO_PATH = L"RESUME_IMAGE_MO_PATH";
+	static  wstring W_NEXT_LEVEL_PATH = L"NEXT_LEVEL_PATH";
+	static  wstring W_NEXT_LEVEL_MO_PATH = L"NEXT_LEVEL_MO_PATH";
 	static  wstring	W_ABOUT_IMAGE_PATH = L"ABOUT_IMAGE_PATH";
 	static  wstring	W_ABOUT_IMAGE_H_PATH = L"ABOUT_IMAGE_H_PATH";
 	static  wstring	W_HELP_IMAGE_PATH = L"HELP_IMAGE_PATH";
 	static  wstring	W_HELP_IMAGE_H_PATH = L"HELP_IMAGE_H_PATH";
+	static  wstring W_WIN_IMAGE_PATH = L"WIN_IMAGE_PATH";
+	static  wstring W_LOSE_IMAGE_PATH = L"LOSE_IMAGE_PATH";
+	static  wstring W_THANKS_IMAGE_PATH = L"THANKS_IMAGE_PATH";
 
     // FOR OUR SPRITE
     static  wstring    SPRITE_TYPES_DIR = L"SPRITE_TYPES_DIR";
@@ -93,7 +98,7 @@ namespace cse380 {
     static  wstring    ATTACKING_RIGHT = L"ATTACKING_RIGHT";
     static  wstring    ATTACKING_LEFT = L"ATTACKING_LEFT";
     static  wstring    IDLE = L"IDLE";
-
+	static	int			CURRENT_LEVEL = 0;
 
     // USED FOR MOVEMENT
 #ifdef CROSS

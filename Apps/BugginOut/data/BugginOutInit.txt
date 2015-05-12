@@ -23,12 +23,17 @@ QUIT_IMAGE_PATH:data/gui/buttons/exit.png
 QUIT_IMAGE_MO_PATH:data/gui/buttons/exit_h.png
 EXIT_IMAGE_PATH:data/gui/buttons/quit.png
 EXIT_IMAGE_MO_PATH:data/gui/buttons/quit_h.png
+NEXT_LEVEL_PATH:data/gui/buttons/next.png
+NEXT_LEVEL_MO_PATH:data/gui/buttons/next_h.png
 RESUME_IMAGE_PATH:data/gui/buttons/resume.png
 RESUME_IMAGE_MO_PATH:data/gui/buttons/resume_h.png
 ABOUT_IMAGE_PATH:data/gui/buttons/about.png
 ABOUT_IMAGE_H_PATH:data/gui/buttons/about_h.png
 HELP_IMAGE_PATH:data/gui/buttons/help.png
 HELP_IMAGE_H_PATH:data/gui/buttons/help_h.png
+WIN_IMAGE_PATH:data/gui/overlays/win.png
+LOSE_IMAGE_PATH:data/gui/overlays/lose.png
+THANKS_IMAGE_PATH:data/gui/overlays/thanks.png
 SPRITE_TYPES_DIR:data/sprite_types/
 SPRITE_TYPES_LIST:sprite_type_list.xml
 MAX_VIEWPORT_AXIS_VELOCITY:20.0

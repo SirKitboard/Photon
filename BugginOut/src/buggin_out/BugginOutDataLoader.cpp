@@ -109,6 +109,9 @@ namespace cse380 {
 	  W_ABOUT_IMAGE_PATH = properties[W_ABOUT_IMAGE_PATH];
 	  W_ABOUT_IMAGE_H_PATH = properties[W_ABOUT_IMAGE_H_PATH];
 	  W_HELP_IMAGE_PATH = properties[W_HELP_IMAGE_PATH];
+	  W_LOSE_IMAGE_PATH = properties[W_LOSE_IMAGE_PATH];
+	  W_WIN_IMAGE_PATH = properties[W_WIN_IMAGE_PATH];
+	  W_THANKS_IMAGE_PATH = properties[W_THANKS_IMAGE_PATH];
 	  W_HELP_IMAGE_H_PATH = properties[W_HELP_IMAGE_H_PATH];
 	  SPRITE_TYPES_DIR = properties[SPRITE_TYPES_DIR];
 	  SPRITE_TYPES_LIST = SPRITE_TYPES_DIR + properties[SPRITE_TYPES_LIST];
@@ -248,7 +251,7 @@ namespace cse380 {
       tmxmi::TMXMapImporter tmxMapImporter;
       tmxMapImporter.loadWorld(game, path);
 
-      
+	  CURRENT_LEVEL = 1;
 	  // LET'S MAKE A PLAYER SPRITE
       // @TODO - IT WOULD BE BETTER TO LOAD THIS STUFF FROM A FILE
       GameStateManager& gsm = game->getGSM();
@@ -639,6 +642,52 @@ namespace cse380 {
       // AND LET'S ADD OUR SCREENS
       gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
     }
+
+	void BugginOutDataLoader::initWinGUI(GameGUI& gui,
+		TextureManager* guiTextureManager) {
+		// NOW ADD THE IN-GAME GUI
+		ScreenGUI* inGameGUI = new ScreenGUI();
+
+		size_t normalTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_PATH);
+		size_t mouseOverTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_MO_PATH);
+
+		// INIT THE QUIT BUTTON
+		Button* buttonToAdd = new Button(
+			normalTextureID,
+			mouseOverTextureID,
+			452,
+			430,
+			0,
+			255,
+			200,
+			100,
+			false,
+			W_QUIT_COMMAND
+			);
+		inGameGUI->addButton(buttonToAdd);
+
+
+		normalTextureID = guiTextureManager->loadTexture(W_RESUME_IMAGE_PATH);
+		mouseOverTextureID = guiTextureManager->loadTexture(W_RESUME_IMAGE_MO_PATH);
+
+		// INIT THE QUIT BUTTON
+		buttonToAdd = new Button(
+			normalTextureID,
+			mouseOverTextureID,
+			437,
+			330,
+			0,
+			255,
+			200,
+			100,
+			false,
+			W_RESUME_COMMAND
+			);
+		inGameGUI->addButton(buttonToAdd);
+
+		// AND LET'S ADD OUR SCREENS
+		gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
+	}
 
     /*
         initViewport - initializes the game's viewport.
