@@ -174,14 +174,17 @@ namespace cse380 {
 		  //SFMLTextureManager* manager = static_cast<SFMLTextureManager*>(this->guiTextureManager);
 		  SFMLOS* os = static_cast<SFMLOS*>(this->game->getOS());
 		  sf::RenderWindow& window = os->getWindow();
+		  gsm::sprite::AnimatedSprite& player = game->getGSM().getSpriteManager().getPlayer();
 		  gsm::physics::PhysicalProperties pp = game->getGSM().getSpriteManager().getPlayer().getPhysicalProperties();
 		  if (game->getGSM().isGameInProgress())
 		  {
-			  Light light = Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, 3.14f, 6.5f, true);
+			  Light playerLight = Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, 3.14f, 6.5f, true);
 //			  std::cout << light.pointRectDist(light.getPosition()) << " " << light.getReach();
-			  if (light.getReach() >= light.pointRectDist(light.getPosition()))
-			  {
-				  window.draw(light.computeAndGetLightShape(255,255,255));
+			  if (player.lightsOn){
+				  if (playerLight.getReach() >= playerLight.pointRectDist(playerLight.getPosition()))
+				  {
+					  window.draw(playerLight.computeAndGetLightShape(255, 255, 255));
+				  }
 			  }
 			  vector<gsm::ai::Bot*> bots = game->getGSM().getSpriteManager().getBots();
 			  for (gsm::ai::Bot* bot : bots) {
@@ -206,10 +209,10 @@ namespace cse380 {
 //				  if (pp.getVelocityX() < 0 && pp.getVelocityY() == 0) angle = 1.57;
 //				  if (pp.getVelocityX() == 0 && pp.getVelocityY() > 0) angle = 3.14;
 //				  if (pp.getVelocityX() == 0 && pp.getVelocityY() < 0) angle = 0;
-				  light = Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, angle, 2.0f, true);
-				  if (light.getReach() >= light.pointRectDist(light.getPosition()))
+				  Light botLight = Light(game, b2Vec2(pp.getX(), pp.getY()), 500.0f, angle, 2.0f, true);
+				  if (botLight.getReach() >= botLight.pointRectDist(botLight.getPosition()))
 				  {
-					  window.draw(light.computeAndGetLightShape(255, 50, 50));
+					  window.draw(botLight.computeAndGetLightShape(255, 50, 50));
 				  }
 			  }
 			  //window.draw(light.computeAndGetLightShape());

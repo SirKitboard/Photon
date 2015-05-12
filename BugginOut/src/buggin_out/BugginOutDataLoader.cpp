@@ -264,6 +264,7 @@ namespace cse380 {
       player.setSpriteType(playerSpriteType);
       player.setAlpha(255);
       player.setCurrentState(IDLE);
+	  player.lightsOn = true;
       PhysicalProperties& playerProps = player.getPhysicalProperties();
 	  playerProps.initBody(game->getGameWorld());
       playerProps.setPosition(PLAYER_INIT_X, PLAYER_INIT_Y);
@@ -440,8 +441,11 @@ namespace cse380 {
 		SpriteManager* sm = &(gsm->getSpriteManager());
 		
 		sm->clearBots();
-		sm->getPlayer().getPhysicalProperties().setX(80);
-		sm->getPlayer().getPhysicalProperties().setX(100);
+		sm->getPlayer().getPhysicalProperties().setX(150);
+		sm->getPlayer().getPhysicalProperties().setX(150);
+
+		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
+		makeLightBot(game,playerSpriteType,500.0f,500.0f);
 		//AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
 		//makeLightBot(game, playerSpriteType, 1200, 800);
 

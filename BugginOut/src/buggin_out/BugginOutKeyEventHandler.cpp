@@ -107,6 +107,10 @@ namespace cse380 {
 		      if (input->isKeyDownForFirstTime(T_KEY)) {
 			      gsm.getPhysics().activateForSingleUpdate();
 		      }
+			  if (input->isKeyDownForFirstTime(SPACE_KEY))
+			  {
+				  gsm.getSpriteManager().getPlayer().lightsOn = !gsm.getSpriteManager().getPlayer().lightsOn;
+			  }
 
 		      // NOW SET THE ACTUAL PLAYER VELOCITY
 		      pp.setVelocity(vX*1000000, vY*1000000);

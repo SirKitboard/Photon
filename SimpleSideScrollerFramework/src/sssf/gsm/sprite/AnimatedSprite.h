@@ -32,6 +32,7 @@ namespace cse380 {
         /// </summary>
         class AnimatedSprite : public physics::CollidableObject {
         public:
+			bool lightsOn;
           /// <summary>
           /// Typedef for a function that's called whenever a sprite finishes
           /// its current animation and loops back. The parameters represent the
