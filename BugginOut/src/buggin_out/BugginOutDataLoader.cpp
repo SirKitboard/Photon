@@ -246,7 +246,6 @@ namespace cse380 {
 
       // LOAD THE LEVEL'S BACKGROUND TILES
       tmxmi::TMXMapImporter tmxMapImporter;
-	  game->createNewWorld();
       tmxMapImporter.loadWorld(game, path);
 
       

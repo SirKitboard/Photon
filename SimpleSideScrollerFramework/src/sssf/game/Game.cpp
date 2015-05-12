@@ -73,7 +73,7 @@ namespace cse380 {
 	  void Game::createNewWorld() {
 		    b2Vec2 gravity(0.0f, 0.0f);
 			gameWorld = new b2World(gravity);
-			gameWorld->SetContactListener(new gsm::physics::CollisionHandler(this));
+//			gameWorld->SetContactListener(new gsm::physics::CollisionHandler(this));
 	  }
 
 
@@ -163,6 +163,26 @@ namespace cse380 {
         // THAT'S ONE THING YOU'LL BE DOING
         dataLoader->loadLevel1(this);
       }
+
+	  void Game::setWorld(const char* filename)
+	  {
+		  b2dJson json;
+		  std::string errorMsg;
+		  gameWorld = json.readFromFile(filename, errorMsg);
+
+		  this->getGSM().clearBodies();
+
+		  json.getBodiesByCustomString("type", "wall", this->getGSM().getWalls());
+		  json.getBodiesByCustomString("type", "sentry", this->getGSM().getSentries());
+
+		  for (auto wallBody : this->getGSM().getWalls())
+		  {
+			  wallBody->SetUserData(new char('w'));
+		  }
+
+		  gameWorld->SetContactListener(new gsm::physics::CollisionHandler(this));
+
+	  }
     }
   }
 }

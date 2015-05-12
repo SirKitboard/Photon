@@ -135,18 +135,7 @@ namespace cse380 {
 
 		b2World* getGameWorld() { return gameWorld; }
 
-		void setWorld(const char* filename)
-        {
-			b2dJson json;
-	        std::string errorMsg;
-			gameWorld = json.readFromFile(filename, errorMsg);
-
-			this->getGSM().clearBodies();
-
-			json.getBodiesByCustomString("type", "wall", this->getGSM().getWalls());
-			json.getBodiesByCustomString("type", "sentry", this->getGSM().getSentries());
-
-        }
+		void setWorld(const char* filename);
 
         // AND FOR GETTING THE NAME OF THE FILE USED FOR LOADING THIS LEVEL
         const wstring& getCurrentLevelFileName() const {
