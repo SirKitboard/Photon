@@ -197,6 +197,7 @@ namespace cse380 {
       bugginOutTextGenerator->initText(game);
 	  game->getAudio()->initSoundEffect(0, "data/audio/effects/alert.ogg");
 	  game->getAudio()->initSoundEffect(1, "data/audio/effects/bump.ogg");
+	  game->getAudio()->initSoundEffect(2, "data/audio/effects/loseBeep.ogg");
       // INIT THE VIEWPORT TOO
       initViewport(game->getGUI(), properties);
 
@@ -442,7 +443,7 @@ namespace cse380 {
 		gsm->unloadCurrentLevel();
 
 		game->setWorld("data/levels/level_one/level_one.json");
-
+		
 		loadWorld(game, W_LEVEL_1_PATH);
 		gsm = &(game->getGSM());
 		SpriteManager* sm = &(gsm->getSpriteManager());
@@ -475,6 +476,7 @@ namespace cse380 {
 
 		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"yellow_box_man");
 		makeLightBot(game, playerSpriteType, 500.0f, 500.0f);
+		game->getGUI().getViewport().reset();
 	}
 
 	void BugginOutDataLoader::loadLevel3(Game* game) {
@@ -493,6 +495,7 @@ namespace cse380 {
 
 		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"yellow_box_man");
 		makeLightBot(game, playerSpriteType, 500.0f, 500.0f);
+		game->getGUI().getViewport().reset();
 	}
 
 

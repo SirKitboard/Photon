@@ -29,7 +29,16 @@ namespace cse380 {
 							else if (*b == 'p' && *a == 'w') {
 								game->getAudio()->playSound(1);
 							}
+							else if (*a == 'p' && *b == 'b') {
+								game->getAudio()->playSound(1);
+								game->levelLose();
+							}
+							else if (*b == 'p' && *a == 'b') {
+								game->getAudio()->playSound(2);
+								game->levelLose();
+							}
 						}
+
 					}
 
 				};

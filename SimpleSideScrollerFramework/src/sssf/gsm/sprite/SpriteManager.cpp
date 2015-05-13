@@ -166,6 +166,13 @@ namespace cse380 {
           }
         }
 
+
+		void SpriteManager::checkWin(Game* game) {
+			if (player.getPhysicalProperties().getX() > 3200 || player.getPhysicalProperties().getY()>1920) {
+				game->levelWin();
+			}
+		}
+
         void SpriteManager::addBot(Bot* botToAdd) {
           bots.push_back(botToAdd);
         }

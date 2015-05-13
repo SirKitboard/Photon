@@ -171,16 +171,18 @@ namespace cse380 {
 	  }
 
 	  void Game::levelLose() {
-		  dataLoader->initWinGUI(this);
+		  dataLoader->initLoseGUI(this);
 		  togglePause();
 	  }
 
 	  void Game::nextLevel() {
 		  currentLevel++;
+		  togglePause();
 		  dataLoader->loadLevelHelper(this,currentLevel);
       }
 
 	  void Game::reloadLevel() {
+		  togglePause();
 		  dataLoader->loadLevelHelper(this, currentLevel);
       }
 

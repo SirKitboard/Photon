@@ -62,6 +62,8 @@ namespace cse380 {
           vector<Bot*>::iterator end() { return bots.end(); }
           vector<Bot*>::const_iterator cend() const { return bots.cend(); }
 
+		  void checkWin(Game*);
+
 		  ai::pathfinding::GridPathfinder* getPathFinder() { return pathfinder; }
 		  void				setPathfinder(ai::pathfinding::GridPathfinder *initPathfinder) { pathfinder = initPathfinder; }
           // ^ These allow SpriteManager to be used in foreach loops

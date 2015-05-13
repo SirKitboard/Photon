@@ -80,6 +80,7 @@ namespace cse380 {
           world.update(game);
           if (game->getPaused()) {
             physics.update(game);
+			spriteManager.checkWin(game);
           }
         }
       }
