@@ -74,6 +74,7 @@ namespace cse380 {
 		virtual void initInGameGUI(Game*) = 0;
 		virtual void initWinGUI(Game*) = 0;
 		virtual void initLoseGUI(Game*) = 0;
+		virtual void initCompleteGUI(Game*) = 0;
       private:
         // THIS IS THE LOCATION OF ALL GAME DATA TO BE LOADED
         wstring gameDataPathName;

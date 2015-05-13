@@ -717,6 +717,58 @@ namespace cse380 {
 		gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
 	}
 
+
+	void BugginOutDataLoader::initCompleteGUI(Game* game) {
+		// NOW ADD THE IN-GAME GUI
+		ScreenGUI* inGameGUI = new ScreenGUI();
+		TextureManager* guiTextureManager = game->getGraphics()->getGUITextureManager();
+		GameGUI& gui = game->getGUI();
+		size_t normalTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_PATH);
+		size_t mouseOverTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_MO_PATH);
+		size_t imageIDWin = guiTextureManager->loadTexture(W_WIN_IMAGE_PATH);
+		size_t imageIDThanks = guiTextureManager->loadTexture(W_THANKS_IMAGE_PATH);
+		OverlayImage imageToAdd;
+		imageToAdd.x = 241;
+		imageToAdd.y = 10;
+		imageToAdd.z = 0;
+		imageToAdd.alpha = 255;
+		imageToAdd.width = 543;
+		imageToAdd.height = 543;
+		imageToAdd.imageID = imageIDWin;
+		inGameGUI->addOverlayImage(imageToAdd);
+
+		OverlayImage imageToAdd2;
+		imageToAdd2.x = 350;
+		imageToAdd2.y = 450;
+		imageToAdd2.z = 0;
+		imageToAdd2.alpha = 255;
+		imageToAdd2.width = 500;
+		imageToAdd2.height = 126;
+		imageToAdd2.imageID = imageIDThanks;
+		inGameGUI->addOverlayImage(imageToAdd2);
+		
+
+		// INIT THE QUIT BUTTON
+		Button* buttonToAdd = new Button(
+			normalTextureID,
+			mouseOverTextureID,
+			452,
+			580,
+			0,
+			255,
+			200,
+			100,
+			false,
+			W_QUIT_COMMAND
+			);
+		inGameGUI->addButton(buttonToAdd);
+
+		inGameGUI->registerButtonEventHandler(new BugginOutButtonEventHandler());
+
+		// AND LET'S ADD OUR SCREENS
+		gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
+	}
+
 	void BugginOutDataLoader::initLoseGUI(Game* game) {
 		// NOW ADD THE IN-GAME GUI
 		ScreenGUI* inGameGUI = new ScreenGUI();

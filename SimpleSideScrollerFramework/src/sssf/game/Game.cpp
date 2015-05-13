@@ -166,7 +166,12 @@ namespace cse380 {
       }
 
 	  void Game::levelWin() {
-		  dataLoader->initWinGUI(this);
+		  if (currentLevel >= 3) {
+			  dataLoader->initCompleteGUI(this);
+		  }
+		  else {
+			  dataLoader->initWinGUI(this);
+		  }
 		  togglePause();
 	  }
 

@@ -88,6 +88,7 @@ namespace cse380 {
 	  void loadLevel2(Game* game) override;
 	  void loadLevel3(Game* game) override;
 	  void loadLevelHelper(Game*, int) override;
+	  void initCompleteGUI(Game*) override;
 	  
 
     };
