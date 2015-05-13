@@ -704,7 +704,7 @@ namespace cse380 {
 			200,
 			100,
 			false,
-			W_RESUME_COMMAND
+			W_NEXT_LEVEL_COMMAND
 			);
 		inGameGUI->addButton(buttonToAdd);
 
@@ -762,7 +762,7 @@ namespace cse380 {
 			200,
 			100,
 			false,
-			W_RESUME_COMMAND
+			W_RELOAD_LEVEL_COMMAND
 			);
 		inGameGUI->addButton(buttonToAdd);
 
@@ -770,6 +770,19 @@ namespace cse380 {
 		// AND LET'S ADD OUR SCREENS
 		gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
 	}
+
+	void BugginOutDataLoader::loadLevelHelper(Game* game, int levelToLoad) {
+		if (levelToLoad == 1) {
+			loadLevel1(game);
+		}
+		else if (levelToLoad == 2) {
+			loadLevel2(game);
+		}
+		else if (levelToLoad == 3) {
+			loadLevel3(game);
+		}
+	}
+
 
     /*
         initViewport - initializes the game's viewport.

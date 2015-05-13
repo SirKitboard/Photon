@@ -41,6 +41,7 @@ namespace cse380 {
 //		  gameWorld->SetContactListener(new gsm::physics::CollisionHandler(this));
 		  luaState = LuaPlus::LuaState::Create();
 		  int result = luaState->DoFile("LuaTest.lua");
+		  currentLevel = 1;
       }
 
       Game::~Game() {

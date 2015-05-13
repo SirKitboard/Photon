@@ -48,6 +48,13 @@ namespace cse380 {
 	  else if (command == W_RESUME_COMMAND) {
 		  game->togglePause();
 	  }
+
+	  else if (command == W_NEXT_LEVEL_COMMAND) {
+		  game->nextLevel();
+	  }
+	  else if (command == W_RELOAD_LEVEL_COMMAND) {
+		  game->reloadLevel();
+	  }
     }
   }
 }

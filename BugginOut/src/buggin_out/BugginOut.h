@@ -54,6 +54,8 @@ namespace cse380 {
     static  wstring    W_EXIT_COMMAND = L"Exit";
     static  wstring    W_QUIT_COMMAND = L"Quit";
 	static  wstring    W_RESUME_COMMAND = L"Resume";
+	static  wstring    W_NEXT_LEVEL_COMMAND = L"Next";
+	static  wstring    W_RELOAD_LEVEL_COMMAND = L"Reload";
     static  wstring    W_GREEN_CURSOR_PATH = L"GREEN_CURSOR_PATH";
     static  wstring    W_RED_CURSOR_PATH = L"RED_CURSOR_PATH";
 	static  wstring	W_SPLASH_SCREEN_PATH = L"SPLASH_SCREEN_PATH";

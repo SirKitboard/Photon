@@ -6,12 +6,12 @@
     BugginOutDataLoader.h
 
     This class provides a custom importer for the BugginOutGame to import
-    game data, gui data, and world (i.e. level) data.
+    game data, gui data, and world (i.e. level
+#include <unordered_map>) data.
     */
 #pragma once
 
 #include <string>
-#include <unordered_map>
 
 #ifndef CROSS
 #include <windows.h>
@@ -84,10 +84,10 @@ namespace cse380 {
       void initInGameGUI(Game*) override;
 	  void initWinGUI(Game*) override;
 	  void initLoseGUI(Game*) override;
-	  void loadLevel1(Game* game);
-	  void loadLevel2(Game* game);
-	  void loadLevel3(Game* game);
-	  void loadLevelHelper(Game*);
+	  void loadLevel1(Game* game) override;
+	  void loadLevel2(Game* game) override;
+	  void loadLevel3(Game* game) override;
+	  void loadLevelHelper(Game*, int) override;
 	  
 
     };

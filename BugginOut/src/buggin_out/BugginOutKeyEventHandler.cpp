@@ -175,12 +175,10 @@ namespace cse380 {
 		  game->getAudio()->playSound(0);
 	  }
 	  else if ((input->isKeyDown(LCTRL_KEY) || input->isKeyDown(RCTRL_KEY)) && input->isKeyDownForFirstTime(W_KEY)) {
-		  game->getDataLoader()->initWinGUI(game);
-		  game->togglePause();
+		  game->levelWin();
 	  }
 	  else if ((input->isKeyDown(LCTRL_KEY) || input->isKeyDown(RCTRL_KEY)) && input->isKeyDownForFirstTime(L_KEY)) {
-		  game->getDataLoader()->initLoseGUI(game);
-		  game->togglePause();
+		  game->levelLose();
 	  }
 	  
 
