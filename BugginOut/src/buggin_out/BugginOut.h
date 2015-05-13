@@ -69,6 +69,8 @@ namespace cse380 {
 	static  wstring W_RESUME_IMAGE_MO_PATH = L"RESUME_IMAGE_MO_PATH";
 	static  wstring W_NEXT_LEVEL_PATH = L"NEXT_LEVEL_PATH";
 	static  wstring W_NEXT_LEVEL_MO_PATH = L"NEXT_LEVEL_MO_PATH";
+	static  wstring W_RETRY_LEVEL_PATH = L"RETRY_LEVEL_PATH";
+	static  wstring W_RETRY_LEVEL_MO_PATH = L"RETRY_LEVEL_MO_PATH";
 	static  wstring	W_ABOUT_IMAGE_PATH = L"ABOUT_IMAGE_PATH";
 	static  wstring	W_ABOUT_IMAGE_H_PATH = L"ABOUT_IMAGE_H_PATH";
 	static  wstring	W_HELP_IMAGE_PATH = L"HELP_IMAGE_PATH";
@@ -109,7 +111,7 @@ namespace cse380 {
     const unsigned int G_KEY = sf::Keyboard::G;
     const unsigned int P_KEY = sf::Keyboard::P;
     const unsigned int T_KEY = sf::Keyboard::T;
-	const unsigned int P_KET = sf::Keyboard::T;
+	const unsigned int L_KEY = sf::Keyboard::L;
     const unsigned int UP_KEY = sf::Keyboard::Up;
 	const unsigned int LCTRL_KEY = sf::Keyboard::LControl;
 	const unsigned int RCTRL_KEY = sf::Keyboard::RControl;

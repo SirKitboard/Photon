@@ -164,6 +164,25 @@ namespace cse380 {
         dataLoader->loadLevel1(this);
       }
 
+	  void Game::levelWin() {
+		  dataLoader->initWinGUI(this);
+		  togglePause();
+	  }
+
+	  void Game::levelLose() {
+		  dataLoader->initWinGUI(this);
+		  togglePause();
+	  }
+
+	  void Game::nextLevel() {
+		  currentLevel++;
+		  dataLoader->loadLevelHelper(this,currentLevel);
+      }
+
+	  void Game::reloadLevel() {
+		  dataLoader->loadLevelHelper(this, currentLevel);
+      }
+
 	  void Game::setWorld(const char* filename)
 	  {
 		  b2dJson json;

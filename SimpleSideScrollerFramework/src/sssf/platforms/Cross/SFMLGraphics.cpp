@@ -289,6 +289,8 @@ namespace cse380 {
         SFMLOS* os = static_cast<SFMLOS*>(this->game->getOS());
         sf::RenderWindow& window = os->getWindow();
 		sf::BlendMode blend = sf::BlendMultiply;
+		blend.alphaSrcFactor = sf::BlendMode::SrcAlpha;
+		blend.colorDstFactor = sf::BlendMode::SrcColor;
         // GO THROUGH EACH ITEM IN THE LIST
         for (const RenderItem& itemToRender : worldRenderList) {
           // LET'S GET THE TEXTURE WE WANT TO RENDER
@@ -316,7 +318,7 @@ namespace cse380 {
           // Not the most efficient way to render, but it'll do.
           // Maybe you'll get to make this faster!
 
-          window.draw(sprite, blend);
+          window.draw(sprite,blend);
         }
         worldRenderList.clear();
       }

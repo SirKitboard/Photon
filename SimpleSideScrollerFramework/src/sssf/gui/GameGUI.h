@@ -82,6 +82,7 @@ namespace cse380 {
          * Adds a constructed ScreenGUI to the game's gui.
          */
         void addScreenGUI(const GameState gameState, ScreenGUI* screenToAdd) {
+			
           screens[static_cast<uint8_t>(gameState)] = screenToAdd;
         }
 

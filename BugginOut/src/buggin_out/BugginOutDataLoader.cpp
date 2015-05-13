@@ -113,6 +113,10 @@ namespace cse380 {
 	  W_WIN_IMAGE_PATH = properties[W_WIN_IMAGE_PATH];
 	  W_THANKS_IMAGE_PATH = properties[W_THANKS_IMAGE_PATH];
 	  W_HELP_IMAGE_H_PATH = properties[W_HELP_IMAGE_H_PATH];
+	  W_NEXT_LEVEL_PATH = properties[W_NEXT_LEVEL_PATH];
+	  W_NEXT_LEVEL_MO_PATH = properties[W_NEXT_LEVEL_MO_PATH];
+	  W_RETRY_LEVEL_PATH = properties[W_RETRY_LEVEL_PATH];
+	  W_RETRY_LEVEL_MO_PATH = properties[W_RETRY_LEVEL_MO_PATH];
 	  SPRITE_TYPES_DIR = properties[SPRITE_TYPES_DIR];
 	  SPRITE_TYPES_LIST = SPRITE_TYPES_DIR + properties[SPRITE_TYPES_LIST];
 	  wstring& viewPortAxisProp = properties[L"MAX_VIEWPORT_AXIS_VELOCITY"];
@@ -367,7 +371,7 @@ namespace cse380 {
       //initCursor(gui, guiTextureManager);
       initSplashScreen(game, gui, guiTextureManager);
       initMainMenu(gui, guiTextureManager);
-      initInGameGUI(gui, guiTextureManager);
+      initInGameGUI(game);
     }
 
     /*
@@ -447,7 +451,7 @@ namespace cse380 {
 		sm->getPlayer().getPhysicalProperties().setX(150);
 		sm->getPlayer().getPhysicalProperties().setX(150);
 
-		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
+		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"yellow_box_man");
 		makeLightBot(game,playerSpriteType,500.0f,500.0f);
 		//AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
 		//makeLightBot(game, playerSpriteType, 1200, 800);
@@ -458,32 +462,37 @@ namespace cse380 {
 	void BugginOutDataLoader::loadLevel2(Game* game) {
 		GameStateManager* gsm = &(game->getGSM());
 		gsm->unloadCurrentLevel();
-		
-		loadWorld(game, W_LEVEL_2_PATH);
+
+		game->setWorld("data/levels/level_two/level_two.json");
+
+		loadWorld(game, W_LEVEL_1_PATH);
 		gsm = &(game->getGSM());
 		SpriteManager* sm = &(gsm->getSpriteManager());
 
 		sm->clearBots();
-		sm->getPlayer().getPhysicalProperties().setX(80);
-		sm->getPlayer().getPhysicalProperties().setX(100);
-		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
-		makeLightBot(game, playerSpriteType, 1200, 800);
-		game->getGUI().getViewport().reset();
+		sm->getPlayer().getPhysicalProperties().setX(150);
+		sm->getPlayer().getPhysicalProperties().setX(150);
+
+		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"yellow_box_man");
+		makeLightBot(game, playerSpriteType, 500.0f, 500.0f);
 	}
 
 	void BugginOutDataLoader::loadLevel3(Game* game) {
 		GameStateManager* gsm = &(game->getGSM());
+		gsm->unloadCurrentLevel();
+
+		game->setWorld("data/levels/level_three/level_three.json");
+
+		loadWorld(game, W_LEVEL_1_PATH);
+		gsm = &(game->getGSM());
 		SpriteManager* sm = &(gsm->getSpriteManager());
 
 		sm->clearBots();
-		sm->getPlayer().getPhysicalProperties().setX(80);
-		sm->getPlayer().getPhysicalProperties().setX(100);
-		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"red_box_man");
-		makeLightBot(game, playerSpriteType, 1200, 800);
-		makeLightBot(game, playerSpriteType, 1240, 200);
-		makeLightBot(game, playerSpriteType, 2040, 1700);
-		game->createNewWorld();
-		game->getGUI().getViewport().reset();
+		sm->getPlayer().getPhysicalProperties().setX(150);
+		sm->getPlayer().getPhysicalProperties().setX(150);
+
+		AnimatedSpriteType* playerSpriteType = sm->getSpriteType(L"yellow_box_man");
+		makeLightBot(game, playerSpriteType, 500.0f, 500.0f);
 	}
 
 
@@ -592,14 +601,17 @@ namespace cse380 {
 
       // AND LET'S ADD OUR SCREENS
       gui.addScreenGUI(GameState::GS_MAIN_MENU, mainMenuGUI);
+	  
+	  
     }
 
     /*
         initInGameGUI - initializes the game's in-game gui.
         */
-    void BugginOutDataLoader::initInGameGUI(GameGUI& gui,
-      TextureManager* guiTextureManager) {
+    void BugginOutDataLoader::initInGameGUI(Game* game) {
       // NOW ADD THE IN-GAME GUI
+		TextureManager* guiTextureManager = game->getGraphics()->getGUITextureManager();
+		GameGUI& gui = game->getGUI();
       ScreenGUI* inGameGUI = new ScreenGUI();
 
       size_t normalTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_PATH);
@@ -640,16 +652,27 @@ namespace cse380 {
 	  inGameGUI->addButton(buttonToAdd);
 
       // AND LET'S ADD OUR SCREENS
-      gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
+	  inGameGUI->registerButtonEventHandler(new BugginOutButtonEventHandler());
+	  gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
     }
 
-	void BugginOutDataLoader::initWinGUI(GameGUI& gui,
-		TextureManager* guiTextureManager) {
+	void BugginOutDataLoader::initWinGUI(Game* game) {
 		// NOW ADD THE IN-GAME GUI
 		ScreenGUI* inGameGUI = new ScreenGUI();
-
+		TextureManager* guiTextureManager = game->getGraphics()->getGUITextureManager();
+		GameGUI& gui = game->getGUI();
 		size_t normalTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_PATH);
 		size_t mouseOverTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_MO_PATH);
+		size_t imageID = guiTextureManager->loadTexture(W_WIN_IMAGE_PATH);
+		OverlayImage imageToAdd;
+		imageToAdd.x = 241;
+		imageToAdd.y = 10;
+		imageToAdd.z = 0;
+		imageToAdd.alpha = 255;
+		imageToAdd.width = 543;
+		imageToAdd.height = 543;
+		imageToAdd.imageID = imageID;
+		inGameGUI->addOverlayImage(imageToAdd);
 
 		// INIT THE QUIT BUTTON
 		Button* buttonToAdd = new Button(
@@ -667,14 +690,14 @@ namespace cse380 {
 		inGameGUI->addButton(buttonToAdd);
 
 
-		normalTextureID = guiTextureManager->loadTexture(W_RESUME_IMAGE_PATH);
-		mouseOverTextureID = guiTextureManager->loadTexture(W_RESUME_IMAGE_MO_PATH);
+		normalTextureID = guiTextureManager->loadTexture(W_NEXT_LEVEL_PATH);
+		mouseOverTextureID = guiTextureManager->loadTexture(W_NEXT_LEVEL_MO_PATH);
 
 		// INIT THE QUIT BUTTON
 		buttonToAdd = new Button(
 			normalTextureID,
 			mouseOverTextureID,
-			437,
+			432,
 			330,
 			0,
 			255,
@@ -685,6 +708,65 @@ namespace cse380 {
 			);
 		inGameGUI->addButton(buttonToAdd);
 
+		inGameGUI->registerButtonEventHandler(new BugginOutButtonEventHandler());
+
+		// AND LET'S ADD OUR SCREENS
+		gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
+	}
+
+	void BugginOutDataLoader::initLoseGUI(Game* game) {
+		// NOW ADD THE IN-GAME GUI
+		ScreenGUI* inGameGUI = new ScreenGUI();
+		TextureManager* guiTextureManager = game->getGraphics()->getGUITextureManager();
+		GameGUI& gui = game->getGUI();
+		size_t normalTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_PATH);
+		size_t mouseOverTextureID = guiTextureManager->loadTexture(W_EXIT_IMAGE_MO_PATH);
+		size_t imageID = guiTextureManager->loadTexture(W_LOSE_IMAGE_PATH);
+		OverlayImage imageToAdd;
+		imageToAdd.x = 262;
+		imageToAdd.y = 10;
+		imageToAdd.z = 0;
+		imageToAdd.alpha = 255;
+		imageToAdd.width = 500;
+		imageToAdd.height = 156;
+		imageToAdd.imageID = imageID;
+		inGameGUI->addOverlayImage(imageToAdd);
+
+		// INIT THE QUIT BUTTON
+		Button* buttonToAdd = new Button(
+			normalTextureID,
+			mouseOverTextureID,
+			452,
+			430,
+			0,
+			255,
+			200,
+			100,
+			false,
+			W_QUIT_COMMAND
+			);
+		inGameGUI->addButton(buttonToAdd);
+
+
+		normalTextureID = guiTextureManager->loadTexture(W_RETRY_LEVEL_PATH);
+		mouseOverTextureID = guiTextureManager->loadTexture(W_RETRY_LEVEL_MO_PATH);
+
+		// INIT THE QUIT BUTTON
+		buttonToAdd = new Button(
+			normalTextureID,
+			mouseOverTextureID,
+			442,
+			330,
+			0,
+			255,
+			200,
+			100,
+			false,
+			W_RESUME_COMMAND
+			);
+		inGameGUI->addButton(buttonToAdd);
+
+		inGameGUI->registerButtonEventHandler(new BugginOutButtonEventHandler());
 		// AND LET'S ADD OUR SCREENS
 		gui.addScreenGUI(GameState::GS_GAME_IN_PROGRESS, inGameGUI);
 	}

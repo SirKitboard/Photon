@@ -174,6 +174,11 @@ namespace cse380 {
         void processGameData();
         void quitApp();
 
+		void levelWin();
+		void levelLose();
+		void nextLevel();
+		void reloadLevel();
+
 		bool getPaused() { return paused; }
 		void togglePause() { paused = !paused; }
 
@@ -240,6 +245,7 @@ namespace cse380 {
         // THIS KEEPS TRACK OF THE NAME OF THE LEVEL FILE THAT'S BEING USED
         wstring currentLevelFileName;
         wstring currentLevelDir;
+		int currentLevel;
       };
     }
   }

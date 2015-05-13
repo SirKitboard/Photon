@@ -141,6 +141,7 @@ namespace cse380 {
 			                            game->getGSM().getWorld().getWorldHeight());
 	      }
 		if (input->isKeyDownForFirstTime(ESC_KEY)) {
+			game->getDataLoader()->initInGameGUI(game);
 			game->togglePause();
 		}
 
@@ -172,6 +173,14 @@ namespace cse380 {
 
 	  else if ((input->isKeyDown(LCTRL_KEY) || input->isKeyDown(RCTRL_KEY)) && input->isKeyDownForFirstTime(A_KEY)) {
 		  game->getAudio()->playSound(0);
+	  }
+	  else if ((input->isKeyDown(LCTRL_KEY) || input->isKeyDown(RCTRL_KEY)) && input->isKeyDownForFirstTime(W_KEY)) {
+		  game->getDataLoader()->initWinGUI(game);
+		  game->togglePause();
+	  }
+	  else if ((input->isKeyDown(LCTRL_KEY) || input->isKeyDown(RCTRL_KEY)) && input->isKeyDownForFirstTime(L_KEY)) {
+		  game->getDataLoader()->initLoseGUI(game);
+		  game->togglePause();
 	  }
 	  
 

@@ -16,8 +16,10 @@ const static wchar_t DEFAULT_DELIMITER = ':';
 
 namespace cse380 {
   namespace sssf {
-
-    namespace game { class Game; }
+	  namespace game {
+		  class Game;
+		 
+	  }
 
     namespace data {
 
@@ -68,7 +70,10 @@ namespace cse380 {
 		virtual void loadLevel1(Game*) = 0;
 		virtual void loadLevel2(Game*) = 0;
 		virtual void loadLevel3(Game*) = 0;
-
+		virtual void loadLevelHelper(Game*, int) = 0;
+		virtual void initInGameGUI(Game*) = 0;
+		virtual void initWinGUI(Game*) = 0;
+		virtual void initLoseGUI(Game*) = 0;
       private:
         // THIS IS THE LOCATION OF ALL GAME DATA TO BE LOADED
         wstring gameDataPathName;

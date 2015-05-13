@@ -97,6 +97,7 @@ namespace cse380 {
          * handle their events, should they be clicked. This method only needs
          * to be callled once for each screen gui, when it is being loaded.
          */
+
         void registerButtonEventHandler(input::ButtonEventHandler* eventHandler);
 
         /**
