@@ -52,6 +52,8 @@ namespace cse380 {
     static  wstring    W_GO_TO_MM_COMMAND = L"Go To Main Menu";
     static  wstring    W_START_COMMAND = L"Start";
     static  wstring    W_EXIT_COMMAND = L"Exit";
+	static  wstring    W_HELP_COMMAND = L"Help";
+	static  wstring    W_ABOUT_COMMAND = L"About";
     static  wstring    W_QUIT_COMMAND = L"Quit";
 	static  wstring    W_RESUME_COMMAND = L"Resume";
 	static  wstring    W_NEXT_LEVEL_COMMAND = L"Next";
@@ -59,6 +61,8 @@ namespace cse380 {
     static  wstring    W_GREEN_CURSOR_PATH = L"GREEN_CURSOR_PATH";
     static  wstring    W_RED_CURSOR_PATH = L"RED_CURSOR_PATH";
 	static  wstring	W_SPLASH_SCREEN_PATH = L"SPLASH_SCREEN_PATH";
+	static  wstring	W_HELP_SCREEN_PATH = L"HELP_SCREEN_PATH";
+	static  wstring	W_ABOUT_SCREEN_PATH = L"ABOUT_SCREEN_PATH";
 	static  wstring	W_MAIN_MENU_PATH = L"MAIN_MENU_PATH";
 	static  wstring	W_RDM_PATH = L"RDM_PATH";
 	static  wstring	W_START_IMAGE_PATH = L"START_IMAGE_PATH";

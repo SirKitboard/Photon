@@ -165,6 +165,16 @@ namespace cse380 {
             this->unloadCurrentLevel();
             currentGameState = GameState::GS_MAIN_MENU;
           }
+
+		  void goToHelp() {
+			  this->unloadCurrentLevel();
+			  currentGameState = GameState::GS_MENU_HELP_MENU;
+          }
+
+		  void goToAbout() {
+			  this->unloadCurrentLevel();
+			  currentGameState = GameState::GS_MENU_ABOUT_MENU;
+          }
           // METHODS DEFINED in GameStateManager.cpp
 
           /**

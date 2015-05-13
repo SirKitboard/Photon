@@ -97,6 +97,8 @@ namespace cse380 {
 	  W_GREEN_CURSOR_PATH = properties[W_GREEN_CURSOR_PATH];
 	  W_RED_CURSOR_PATH = properties[W_RED_CURSOR_PATH];
 	  W_SPLASH_SCREEN_PATH = properties[W_SPLASH_SCREEN_PATH];
+	  W_HELP_SCREEN_PATH = properties[W_HELP_SCREEN_PATH];
+	  W_ABOUT_SCREEN_PATH = properties[W_ABOUT_SCREEN_PATH];
 	  W_START_IMAGE_PATH = properties[W_START_IMAGE_PATH];
 	  W_START_IMAGE_MO_PATH = properties[W_START_IMAGE_MO_PATH];
 	  W_MAIN_MENU_PATH = properties[W_MAIN_MENU_PATH];
@@ -372,6 +374,8 @@ namespace cse380 {
       //initCursor(gui, guiTextureManager);
       initSplashScreen(game, gui, guiTextureManager);
       initMainMenu(gui, guiTextureManager);
+	  initAbout(game, gui, guiTextureManager);
+	  initHelp(game, gui, guiTextureManager);
       initInGameGUI(game);
     }
 
@@ -437,6 +441,60 @@ namespace cse380 {
       // AND REGISTER IT WITH THE GUI
       gui.addScreenGUI(GameState::GS_SPLASH_SCREEN, splashScreenGUI);
     }
+
+	void BugginOutDataLoader::initHelp(Game* game, GameGUI& gui,
+		TextureManager* guiTextureManager) {
+		// NOW, FIRST LET'S ADD A SPLASH SCREEN GUI
+		ScreenGUI* splashScreenGUI = new ScreenGUI();
+
+		// WE'LL ONLY HAVE ONE IMAGE FOR OUR GIANT BUTTON
+		size_t normalTextureID = guiTextureManager->loadTexture(W_HELP_SCREEN_PATH);
+		size_t mouseOverTextureID = normalTextureID;
+
+		// INIT THE QUIT BUTTON
+		Button* buttonToAdd = new Button(
+			normalTextureID,
+			mouseOverTextureID,
+			0,
+			0,
+			0,
+			255,
+			game->getGraphics()->getScreenWidth(),
+			game->getGraphics()->getScreenHeight(),
+			false,
+			W_GO_TO_MM_COMMAND);
+		splashScreenGUI->addButton(buttonToAdd);
+
+		// AND REGISTER IT WITH THE GUI
+		gui.addScreenGUI(GameState::GS_MENU_HELP_MENU, splashScreenGUI);
+	}
+
+	void BugginOutDataLoader::initAbout(Game* game, GameGUI& gui,
+		TextureManager* guiTextureManager) {
+		// NOW, FIRST LET'S ADD A SPLASH SCREEN GUI
+		ScreenGUI* splashScreenGUI = new ScreenGUI();
+
+		// WE'LL ONLY HAVE ONE IMAGE FOR OUR GIANT BUTTON
+		size_t normalTextureID = guiTextureManager->loadTexture(W_ABOUT_SCREEN_PATH);
+		size_t mouseOverTextureID = normalTextureID;
+
+		// INIT THE QUIT BUTTON
+		Button* buttonToAdd = new Button(
+			normalTextureID,
+			mouseOverTextureID,
+			0,
+			0,
+			0,
+			255,
+			game->getGraphics()->getScreenWidth(),
+			game->getGraphics()->getScreenHeight(),
+			false,
+			W_GO_TO_MM_COMMAND);
+		splashScreenGUI->addButton(buttonToAdd);
+
+		// AND REGISTER IT WITH THE GUI
+		gui.addScreenGUI(GameState::GS_MENU_ABOUT_MENU, splashScreenGUI);
+	}
 
 	void BugginOutDataLoader::loadLevel1(Game* game) {
 		GameStateManager* gsm = &(game->getGSM());
@@ -577,7 +635,7 @@ namespace cse380 {
 		  200,
 		  100,
 		  false,
-		  L""
+		  W_ABOUT_COMMAND
 		  );
 
 	  mainMenuGUI->addButton(buttonToAdd);
@@ -597,7 +655,7 @@ namespace cse380 {
 		  200,
 		  100,
 		  false,
-		  L""
+		  W_HELP_COMMAND
 		  );
 
 	  mainMenuGUI->addButton(buttonToAdd);

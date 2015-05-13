@@ -39,6 +39,16 @@ namespace cse380 {
         game->setCurrentLevel(W_LEVEL_1_DIR, W_LEVEL_1_NAME);
         game->startGame();
       }
+
+	  else if (command == W_HELP_COMMAND) {
+		  sssf::gsm::state::GameStateManager& gsm = game->getGSM();
+		  gsm.goToHelp();
+	  }
+
+	  else if (command == W_ABOUT_COMMAND) {
+		  sssf::gsm::state::GameStateManager& gsm = game->getGSM();
+		  gsm.goToAbout();
+	  }
       // THE USER PRESSED THE Quit BUTTON ON THE IN-GAME MENU,
       // SO LET'S UNLOAD THE LEVEL AND RETURN TO THE MAIN MENU
       else if (command == W_QUIT_COMMAND) {

@@ -81,6 +81,8 @@ namespace cse380 {
       void initCursor(GameGUI&, TextureManager*);
       void initSplashScreen(Game*, GameGUI&, TextureManager*);
       void initMainMenu(GameGUI&, TextureManager*);
+	  void initHelp(Game*, GameGUI&, TextureManager*);
+	  void initAbout(Game*, GameGUI&, TextureManager*);
       void initInGameGUI(Game*) override;
 	  void initWinGUI(Game*) override;
 	  void initLoseGUI(Game*) override;

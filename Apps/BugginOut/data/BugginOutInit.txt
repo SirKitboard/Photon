@@ -15,6 +15,8 @@ COLOR_KEY_BLUE:224
 GREEN_CURSOR_PATH:data/gui/cursor/green_cursor.png
 RED_CURSOR_PATH:data/gui/cursor/red_cursor.png
 SPLASH_SCREEN_PATH:data/gui/overlays/photon_splash2.png
+HELP_SCREEN_PATH:data/gui/overlays/help2.png
+ABOUT_SCREEN_PATH:data/gui/overlays/about.png
 MAIN_MENU_PATH:data/gui/overlays/photon_menu.png
 RDM_PATH:data/gui/overlays/rdm.png
 START_IMAGE_PATH:data/gui/buttons/play.png
